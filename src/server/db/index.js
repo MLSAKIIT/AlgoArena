@@ -1,11 +1,14 @@
-const { PrismaClient } = require('@prisma/client');
+import { PrismaClient } from "@prisma/client";
 
-const global = {
-    prisma: PrismaClient | undefined
-};
+let db;
 
-export const db = global.prisma || new PrismaClient();
-
-if (process.env.NODE_ENV !== "production") {
-    global.prisma = db;
+if (process.env.NODE_ENV === "production") {
+  db = new PrismaClient();
+} else {
+  if (!global.db) {
+    global.db = new PrismaClient();
+  }
+  db = global.db;
 }
+
+export { db };
