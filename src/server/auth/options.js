@@ -1,7 +1,9 @@
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { db } from "../db";
-import { comparePassword } from "@/lib/bcrypt";
+import { comparePassword, hashPassword } from "@/lib/bcrypt";
+import { serverValidation, userExists } from "@/lib/validations";
+import createToken from "@/lib/jwt-token";
 
 export const authOptions = {
   adapter: PrismaAdapter(db),
@@ -13,50 +15,73 @@ export const authOptions = {
     CredentialsProvider({
       name: "credentials",
       credentials: {
-        email: {
-          label: "Email",
-          type: "text",
-          placeholder: "test@test.com",
-        },
+        name: { label: "Name", type: "text", placeholder: "John Doe" },
+        email: { label: "Email", type: "text", placeholder: "test@test.com" },
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        if (!credentials?.email || !credentials?.password) {
-          if (!credentials?.email && !credentials?.password)
-            throw new Error("Email and Password is required");
-          if (!credentials?.email) throw new Error("Email is required");
-          if (!credentials?.password) throw new Error("Password is required");
-        }
+        if (credentials?.name) {
+          let validate = await serverValidation(credentials);
+          if (validate) throw new Error(validate);
+          let existingUser = await userExists(db, credentials?.email);
+          if (existingUser)
+            throw new Error("User already exists. Please sign in.");
 
-        let exisitngUser;
-        try {
-          exisitngUser = await db.user.findUnique({
-            where: {
+          const token = createToken({
+            id: credentials.id,
+            name: credentials.name,
+            email: credentials.email,
+          });
+
+          const newUser = await db.user.create({
+            data: {
+              name: credentials?.name,
               email: credentials?.email,
+              password: await hashPassword(credentials.password),
+              verificationToken: token,
             },
-          }); 
-        } catch (error) {
-          throw new Error("Something went wrong. Please try again.")
-        }
-         
+          });
 
-        if (!exisitngUser) {
-          throw new Error("User not found. Please sign up.")
-        }
+          // TODO : send email with the verification token
 
-        // TODO: Hash the password and compare it to the hashed password in the database
-        // const isPasswordValid = await comparePassword(credentials.password, exisitngUser.password);
-        const isPasswordValid = exisitngUser.password === credentials.password;
+          return {
+            id: newUser.id,
+            name: newUser.name,
+            email: newUser.email,
+          };
+        } else {
+          let validate = serverValidation(credentials);
+          if (validate) throw new Error(validate);
 
-        if (!isPasswordValid) {
-          throw new Error("Wrong credentials. Please try again.")
+          let existingUser;
+          try {
+            existingUser = await db.user.findUnique({
+              where: { email: credentials?.email },
+            });
+          } catch (error) {
+            throw new Error("Something went wrong. Please try again.");
+          }
+
+          if (!existingUser) {
+            throw new Error("User not found. Please sign up.");
+          }
+
+          // TODO: Hash the password and compare it to the hashed password in the database
+          // const isPasswordValid = await comparePassword(credentials.password, existingUser.password);
+
+          const isPasswordValid =
+            existingUser.password === credentials.password;
+
+          if (!isPasswordValid) {
+            throw new Error("Wrong credentials. Please try again.");
+          }
+
+          return {
+            id: existingUser.id,
+            name: existingUser.name,
+            email: existingUser.email,
+          };
         }
-        
-        return {
-          id: exisitngUser.id,
-          name: exisitngUser.name,
-          email: exisitngUser.email,
-        };
       },
     }),
   ],
@@ -67,7 +92,7 @@ export const authOptions = {
           ...token,
           name: user.name,
           id: user.id,
-        }
+        };
       }
       return token;
     },
@@ -78,11 +103,12 @@ export const authOptions = {
           ...session.user,
           name: token.name,
           id: token.id,
-        }
-      }
-    }
+        },
+      };
+    },
   },
   pages: {
     signIn: "/sign-in",
+    signUp: "/sign-up",
   },
 };
