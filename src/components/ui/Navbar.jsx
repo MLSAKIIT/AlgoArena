@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="lg:flex lg:justify-between  lg:p-6 hidden z-10">
+      <div className="lg:flex lg:justify-between min-w-screen max-w-[120rem] lg:p-6 hidden z-10">
         <div className="top-0 w-3/6 min-w-[800px] max-w-[900px] flex g-8 justify-between items-baseline text-sm ">
           <Link
             href="/"
