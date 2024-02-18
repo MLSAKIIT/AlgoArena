@@ -1,10 +1,8 @@
 import React from 'react'
-import Hero from '../components/hero/page'
+import Navbar from '../ui/Navbar'
 const page = () => {
   return (
-    <>
-    <Hero/>
-    </>
+    <div><Navbar/></div>
   )
 }
 
