@@ -1,8 +1,13 @@
 import React from 'react'
 import Navbar from '../ui/Navbar'
+import HeroHome from '../ui/HeroHome'
 const page = () => {
   return (
-    <div><Navbar/></div>
+    <div>
+      <HeroHome/>
+    </div>
+    
+   
   )
 }
 
