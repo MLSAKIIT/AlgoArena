@@ -41,7 +41,6 @@ export function LoginForm({ callbackUrl }) {
         password: values.password,
         redirect: false,
       });
-      console.log(signInData);
       if (signInData?.ok) {
         toast.success("Logged in successfully");
         router.push(callbackUrl || "/");
