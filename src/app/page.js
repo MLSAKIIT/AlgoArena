@@ -4,11 +4,11 @@ import Hero from '../components/hero/page'
 
 import Domains from '@/components/domains/Domains';
 
-import Navbar from '@/components/ui/Navbar';
+
 
 const page = () => {
   return (
-    <div>
+    <div className=' flex flex-col gap-8'>
     <Hero/>
     <Domains />
     <Footer />
