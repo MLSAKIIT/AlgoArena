@@ -3,6 +3,7 @@
 import { db } from "@/server/db";
 import createToken from "@/lib/jwt-token";
 import { hashPassword } from "@/lib/bcrypt";
+import { sendEmail } from "@/lib/emailer";
 
 export const createUser = async (data) => {
   const { name, email, password } = data;
@@ -17,6 +18,6 @@ export const createUser = async (data) => {
       verificationToken: verifToken,
     },
   });
-  // TODO : Send Email with the generated verification token
+  await sendEmail(email, verifToken);
   return newUser;
 };

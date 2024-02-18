@@ -34,14 +34,13 @@ export const authOptions = {
             where: {
               email: credentials?.email,
             },
-          }); 
+          });
         } catch (error) {
-          throw new Error("Something went wrong. Please try again.")
+          throw new Error("Something went wrong. Please try again.");
         }
-         
 
         if (!exisitngUser) {
-          throw new Error("User not found. Please sign up.")
+          throw new Error("User not found. Please sign up.");
         }
 
         // TODO: Hash the password and compare it to the hashed password in the database
@@ -49,9 +48,13 @@ export const authOptions = {
         const isPasswordValid = exisitngUser.password === credentials.password;
 
         if (!isPasswordValid) {
-          throw new Error("Wrong credentials. Please try again.")
+          throw new Error("Wrong credentials. Please try again.");
         }
-        
+
+        if (!exisitngUser.emailVerified) {
+          throw new Error("Please verify your email.");
+        }
+
         return {
           id: exisitngUser.id,
           name: exisitngUser.name,
@@ -67,7 +70,7 @@ export const authOptions = {
           ...token,
           name: user.name,
           id: user.id,
-        }
+        };
       }
       return token;
     },
@@ -78,9 +81,9 @@ export const authOptions = {
           ...session.user,
           name: token.name,
           id: token.id,
-        }
-      }
-    }
+        },
+      };
+    },
   },
   pages: {
     signIn: "/sign-in",
