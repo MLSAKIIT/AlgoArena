@@ -5,8 +5,8 @@ import Domains from '@/components/domains/Domains';
 const page = () => {
   return (
     <>
-    <Domains />
     <Hero/>
+    <Domains />
     <Footer />
     </>
   )
