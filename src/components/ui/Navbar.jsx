@@ -12,8 +12,8 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="lg:flex lg:justify-between lg:w-screen lg:p-6 hidden absolute left-0">
-        <div className="top-0 w-3/6 min-w-[800px] flex g-8 justify-between items-baseline text-sm ">
+      <div className="lg:flex lg:justify-between lg:w-screen lg:p-6 hidden absolute left-0 right-0 min-w-screen">
+        <div className="top-0 w-3/6 min-w-[800px] max-w-[900px] flex g-8 justify-between items-baseline text-sm ">
           <Link
             href="/"
             className="text-white font-extrabold flex text-xl p-0 m-0  "
@@ -76,7 +76,7 @@ const Navbar = () => {
             About US
           </Link>
         </div>
-        <button className="bg-color-2 text-white pr-5 shadow-[0_0_1rem_0px_#9d5ae3] pl-5 pt-1 pb-1 rounded-xl hover:bg-gradient-to-r from-color-2 to-color-3 transition-all duration-200">
+        <button className="bg-color-2  absolute right-10 text-white pr-5 shadow-[0_0_1rem_0px_#9d5ae3] pl-5 pt-1 pb-1 rounded-xl hover:bg-gradient-to-r from-color-2 to-color-3 transition-all duration-200">
           Login
         </button>
       </div>

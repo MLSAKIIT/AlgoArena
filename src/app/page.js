@@ -4,11 +4,10 @@ import Hero from '../components/hero/page'
 import Navbar from '@/components/ui/Navbar';
 const page = () => {
   return (
-    <>
-    <Navbar/>
+    <div>
     <Hero/>
     <Footer />
-    </>
+    </div>
   )
 }
 
