@@ -4,6 +4,7 @@ import { db } from "@/server/db";
 import createToken from "@/lib/jwt-token";
 import { hashPassword } from "@/lib/bcrypt";
 import { sendEmail } from "@/lib/emailer";
+import { mailData } from "@/email/verification-email";
 
 export const createUser = async (data) => {
   const { name, email, password } = data;
@@ -18,6 +19,6 @@ export const createUser = async (data) => {
       verificationToken: verifToken,
     },
   });
-  await sendEmail(email, verifToken);
+  await sendEmail(mailData(email, verifToken));
   return newUser;
 };

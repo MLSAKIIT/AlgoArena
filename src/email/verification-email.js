@@ -6,3 +6,4 @@ export const mailData = (toEmail, verificationToken) => ({
   html: `<b>Thank you for creating an account. Please follow the link to verify your email.</b>
           <a href="http://localhost:3000/verifyemail/?verificationtoken=${verificationToken}">Verify Email</a>`,
 });
+//TODO:fix redirect link in prod

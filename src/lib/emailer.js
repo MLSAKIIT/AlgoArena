@@ -1,5 +1,4 @@
 import nodemailer from "nodemailer";
-import { mailData } from "./email-body";
 
 const transporter = nodemailer.createTransport({
   host: process.env.EMAIL_HOST,
@@ -11,6 +10,6 @@ const transporter = nodemailer.createTransport({
   secure: true,
 });
 
-export const sendEmail = async (toEmail, verificationToken) => {
-  await transporter.sendMail(mailData(toEmail, verificationToken));
+export const sendEmail = async (emailBody) => {
+  await transporter.sendMail(emailBody);
 };
