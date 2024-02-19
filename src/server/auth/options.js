@@ -34,24 +34,24 @@ export const authOptions = {
             where: {
               email: credentials?.email,
             },
-          }); 
+          });
         } catch (error) {
-          throw new Error("Something went wrong. Please try again.")
+          throw new Error("Something went wrong. Please try again.");
         }
-         
 
         if (!exisitngUser) {
-          throw new Error("User not found. Please sign up.")
+          throw new Error("User not found. Please sign up.");
         }
 
-        // TODO: Hash the password and compare it to the hashed password in the database
-        // const isPasswordValid = await comparePassword(credentials.password, exisitngUser.password);
-        const isPasswordValid = exisitngUser.password === credentials.password;
+        const isPasswordValid = await comparePassword(
+          credentials.password,
+          exisitngUser.password
+        );
 
         if (!isPasswordValid) {
-          throw new Error("Wrong credentials. Please try again.")
+          throw new Error("Wrong credentials. Please try again.");
         }
-        
+
         return {
           id: exisitngUser.id,
           name: exisitngUser.name,
@@ -67,10 +67,24 @@ export const authOptions = {
           ...token,
           name: user.name,
           id: user.id,
-        }
+        };
       }
       return token;
     },
+
+    async signIn({ user }) {
+      const existingUser = await db.user.findFirst({
+        where: {
+          id: user.id,
+        },
+      });
+
+      if (!existingUser?.emailVerified) {
+        return false;
+      }
+      return true;
+    },
+
     async session({ session, token, user }) {
       return {
         ...session,
@@ -78,9 +92,9 @@ export const authOptions = {
           ...session.user,
           name: token.name,
           id: token.id,
-        }
-      }
-    }
+        },
+      };
+    },
   },
   pages: {
     signIn: "/sign-in",
