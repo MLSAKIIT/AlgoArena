@@ -90,6 +90,10 @@ module.exports = {
         "gradient-hero-img":
           "radial-gradient(50% 50% at 50% 50%, rgba(128, 116, 255, 0.67) 0%, rgba(123, 112, 238, 0.00) 100%)",
       },
+      screens:{
+        'mid':'450px',
+        
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
