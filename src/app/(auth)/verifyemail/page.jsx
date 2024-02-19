@@ -1,4 +1,4 @@
-import { verifyEmail } from "../actions/verifyEmail";
+import { verifyEmail } from "@/app/actions/verifyEmail";
 import Link from "next/link";
 
 const EmailVerificationPage = async (props) => {
