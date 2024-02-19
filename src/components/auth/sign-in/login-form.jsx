@@ -46,7 +46,12 @@ export function LoginForm({ callbackUrl }) {
         router.push(callbackUrl || "/");
         router.refresh();
       } else {
-        toast.error(signInData.error);
+        if (signInData.error == "AccessDenied") {
+          // AccessDenied is returned by next-auth signIn callback when the user email is not verified
+          toast.error("Email not verified. Please verify your email.");
+        } else {
+          toast.error(signInData.error);
+        }
       }
     },
   });
@@ -107,7 +112,7 @@ export function LoginForm({ callbackUrl }) {
           </div>
           <Button className="w-full" type="submit" disabled={isSubmitting}>
             Login
-            {isSubmitting && (<Loader2 className="animate-spin h-4 w-4 ml-2"/>)}
+            {isSubmitting && <Loader2 className="animate-spin h-4 w-4 ml-2" />}
           </Button>
         </CardFooter>
       </Card>
