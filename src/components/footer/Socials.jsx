@@ -8,8 +8,8 @@ import GradientImg from "./GradientImg";
 const socials = () => {
     return (
         <div className="relative flex flex-col bottom-0 sm:flex-row justify-between w-full items-center box-border mt-24 ">
-            <GradientImg />
-            <div className="mb-4 sm:mb-12 sm:pl-8 text-white sm:text-3xl text-2xl z-10 text-center ">AlgoArena x MLSA</div>
+            <GradientImg></GradientImg>
+            <div className="mb-4 sm:mb-12 sm:pl-8 text-white sm:text-3xl text-2xl z-10 text-center">AlgoArena x MLSA</div>
             <div className="flex text-[#9747ff] sm:mb-12 m-4">
                 <div className="icons mx-2  hover:text-white cursor-pointer active:scale-95">
                     <a href="#">
