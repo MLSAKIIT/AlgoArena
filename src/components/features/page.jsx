@@ -22,7 +22,7 @@ const Features = () => {
               <p className='text-white'>Created learning path to</p> <p>make you learn what matters</p>
             </p>
             <p className='text-white font-poppins pt-5'>
-              Embrace wisdom's compass, learn what truly holds value. In the journey of knowledge, discern the essence, learn what matters.
+              Embrace wisdom&apos;s compass, learn what truly holds value. In the journey of knowledge, discern the essence, learn what matters.
             </p>
             <button class="bg-purple-500 text-white py-2 px-4 rounded-full mt-5 shadow-[0_0_1rem_0px_#9d5ae3]">
               Explore Now
@@ -60,7 +60,7 @@ const Features = () => {
               <p className='text-white'>track you progress</p><p>while you learn</p> 
             </p>
             <p className='text-white font-poppins pt-5'>
-              Measure your steps, chart your course, and let each milestone be a testament to your journey's force.
+              Measure your steps, chart your course, and let each milestone be a testament to your journey&apos;s force.
             </p>
             <button class="bg-purple-500 text-white py-2 px-4 rounded-full mt-5 shadow-[0_0_1rem_0px_#9d5ae3]">
               Start Now
