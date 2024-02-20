@@ -1,7 +1,7 @@
 "use client";
 
 import { newPasswordSchema } from "@/schemas/auth/new-password";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useTransition } from "react";
 import { useFormik } from "formik";
 import { Button } from "@/components/ui/button";
@@ -20,9 +20,7 @@ import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
 import { newPassword } from "@/app/actions/new-password";
 
-const NewPasswordForm = () => {
-  const searchParams = useSearchParams();
-  const token = searchParams.get("token");
+const NewPasswordForm = ( { token }) => {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
 
