@@ -19,8 +19,12 @@ import { loginSchema } from "@/schemas/auth/login";
 import { signIn } from "next-auth/react";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
+import { useState, useTransition } from "react";
+import { resendVerificationEmail } from "@/app/actions/resend-verification-email";
 
 export function LoginForm({ callbackUrl }) {
+  const [isPending, startTransition] = useTransition();
+  const [showResendEmailOption, setShowResendEmailOption] = useState(false);
   const router = useRouter();
   const {
     values,
@@ -49,12 +53,29 @@ export function LoginForm({ callbackUrl }) {
         if (signInData.error == "AccessDenied") {
           // AccessDenied is returned by next-auth signIn callback when the user email is not verified
           toast.error("Email not verified. Please verify your email.");
+          setShowResendEmailOption(true);
         } else {
           toast.error(signInData.error);
         }
       }
     },
   });
+
+  const onResendEmail = () => {
+    startTransition(() => {
+      resendVerificationEmail(values.email)
+        .then((data) => {
+          if (data.success) {
+            toast.success("Verification email sent successfully");
+          } else {
+            toast.error(data.error);
+          }
+        })
+        .catch((_) => {
+          toast.error("Error sending verification email");
+        });
+    });
+  };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-8">
@@ -65,36 +86,61 @@ export function LoginForm({ callbackUrl }) {
             Enter your email and password to login to your account
           </CardDescription>
         </CardHeader>
-        <CardContent className="grid gap-4">
-          <div className="grid gap-2">
-            <Label htmlFor="email">Email</Label>
-            <Input
-              name="email"
-              placeholder="test@example.com"
-              type="email"
-              value={values.email}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              className={cn(errors.email && "border-red-500")}
-            />
-            {errors.email && (
-              <p className="text-red-500 text-sm">{errors.email}</p>
-            )}
+        <CardContent>
+          <div className="flex flex-col space-y-4">
+            <div className="flex flex-col space-y-2">
+              <Label htmlFor="email">Email</Label>
+              <Input
+                name="email"
+                placeholder="test@example.com"
+                type="email"
+                value={values.email}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={cn(errors.email && "border-red-500")}
+              />
+              {errors.email && (
+                <p className="text-red-500 text-sm">{errors.email}</p>
+              )}
+            </div>
+            <div className="flex flex-col space-y-2">
+              <Label htmlFor="password">Password</Label>
+              <Input
+                name="password"
+                placeholder="********"
+                type="password"
+                value={values.password}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={cn(errors.password && "border-red-500")}
+              />
+              {errors.password && (
+                <p className="text-red-500 text-sm">{errors.password}</p>
+              )}
+            </div>
           </div>
-          <div className="grid gap-2">
-            <Label htmlFor="password">Password</Label>
-            <Input
-              name="password"
-              placeholder="********"
-              type="password"
-              value={values.password}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              className={cn(errors.password && "border-red-500")}
-            />
-            {errors.password && (
-              <p className="text-red-500 text-sm">{errors.password}</p>
-            )}
+          <div className="flex flex-col items-start">
+            <Link
+              className={buttonVariants({
+                variant: "link",
+                className: "px-0 ",
+              })}
+              href={"/reset"}
+            >
+              Forgot your password?
+            </Link>
+
+            {showResendEmailOption ? (
+              <Button
+                variant="link"
+                className="px-0 text-purple-500"
+                type="button"
+                onClick={onResendEmail}
+              >
+                Resend verification email
+                {isPending && <Loader2 className="animate-spin h-4 w-4 ml-2" />}
+              </Button>
+            ) : null}
           </div>
         </CardContent>
         <CardFooter className="flex flex-col items-start gap-5">
