@@ -6,6 +6,7 @@ export const data = [
       description:
         "Learn Mobile App Development: iOS, Android, and Cross-platform development with Flutter and React Native!",
       createdBy: "John",
+      time: 6,
       progress: 0.3,
     },
     sections: [
@@ -123,6 +124,7 @@ export const data = [
       description:
         "Master the art of Web Development: HTML, CSS, JavaScript, and popular frameworks like React and Angular!",
       createdBy: "Doe",
+      time: 18,
       progress: 0.2,
     },
     sections: [

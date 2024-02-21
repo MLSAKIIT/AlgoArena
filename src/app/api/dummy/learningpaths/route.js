@@ -10,6 +10,7 @@ import { data } from "@/data/learning-paths";
 //   title:       string;
 //   description: string;
 //   createdBy:   string;
+//   time:        number;
 //   progress:    number;
 // }
 
