@@ -97,10 +97,10 @@ export function LoginForm({ callbackUrl }) {
                 value={values.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className={cn(errors.email && "border-red-500")}
+                className={cn(errors.email && "border-destructive")}
               />
               {errors.email && (
-                <p className="text-red-500 text-sm">{errors.email}</p>
+                <p className="text-destructive text-sm">{errors.email}</p>
               )}
             </div>
             <div className="flex flex-col space-y-2">
@@ -112,10 +112,10 @@ export function LoginForm({ callbackUrl }) {
                 value={values.password}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className={cn(errors.password && "border-red-500")}
+                className={cn(errors.password && "border-destructive")}
               />
               {errors.password && (
-                <p className="text-red-500 text-sm">{errors.password}</p>
+                <p className="text-destructive text-sm">{errors.password}</p>
               )}
             </div>
           </div>
@@ -123,7 +123,7 @@ export function LoginForm({ callbackUrl }) {
             <Link
               className={buttonVariants({
                 variant: "link",
-                className: "px-0 ",
+                className: "pl-0",
               })}
               href={"/reset"}
             >
