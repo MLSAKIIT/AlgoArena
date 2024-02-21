@@ -1,10 +1,10 @@
 import jwt from "jsonwebtoken";
 
-export default function createToken(user) {
+export default function createToken(user, expiresIn = "1d") {
   return jwt.sign(
-    { user: { name: user.name, email: user.email } },
+    { user: { ...user } },
     process.env.JWT_SECRET,
-    { expiresIn: "1h" }
+    { expiresIn }
   );
 }
 
