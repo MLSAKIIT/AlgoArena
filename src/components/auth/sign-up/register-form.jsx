@@ -15,12 +15,12 @@ import Link from "next/link";
 import { useFormik } from "formik";
 import { cn } from "@/lib/utils";
 import { Label } from "@/components/ui/label";
-import { loginSchema } from "@/schemas/auth/login";
-import { signIn } from "next-auth/react";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
+import { registerSchema } from "@/schemas/auth/register";
+import { createUser } from "@/app/actions/register";
 
-export function LoginForm({ callbackUrl }) {
+export default function RegisterForm() {
   const router = useRouter();
   const {
     values,
@@ -31,27 +31,28 @@ export function LoginForm({ callbackUrl }) {
     isSubmitting,
   } = useFormik({
     initialValues: {
+      name: "",
       email: "",
       password: "",
+      confirmPassword: "",
     },
-    validationSchema: loginSchema,
+    validationSchema: registerSchema,
     onSubmit: async (values) => {
-      const signInData = await signIn("credentials", {
-        email: values.email,
-        password: values.password,
-        redirect: false,
-      });
-      if (signInData?.ok) {
-        toast.success("Logged in successfully");
-        router.push(callbackUrl || "/");
-        router.refresh();
-      } else {
-        if (signInData.error == "AccessDenied") {
-          // AccessDenied is returned by next-auth signIn callback when the user email is not verified
-          toast.error("Email not verified. Please verify your email.");
+      try {
+        const newUser = await createUser(values);
+
+        if (newUser && !newUser.error) {
+          toast.success("Account created successfully");
+          router.push("/");
         } else {
-          toast.error(signInData.error);
+          const errorMessage = newUser
+            ? newUser.error
+            : "Something went wrong. Please try again.";
+          toast.error(errorMessage);
         }
+      } catch (error) {
+        console.error(error);
+        toast.error(error.message);
       }
     },
   });
@@ -60,12 +61,27 @@ export function LoginForm({ callbackUrl }) {
     <form onSubmit={handleSubmit} className="space-y-8">
       <Card>
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl">Login to your account</CardTitle>
+          <CardTitle className="text-2xl">Create your account</CardTitle>
           <CardDescription>
-            Enter your email and password to login to your account
+            Enter your name, email and password to proceed creating your account
           </CardDescription>
         </CardHeader>
         <CardContent className="grid gap-4">
+          <div className="grid gap-2">
+            <Label htmlFor="name">Name</Label>
+            <Input
+              name="name"
+              placeholder="John Doe"
+              type="text"
+              value={values.name}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={cn(errors.name && "border-red-500")}
+            />
+            {errors.name && (
+              <p className="text-red-500 text-sm">{errors.name}</p>
+            )}
+          </div>
           <div className="grid gap-2">
             <Label htmlFor="email">Email</Label>
             <Input
@@ -96,6 +112,21 @@ export function LoginForm({ callbackUrl }) {
               <p className="text-red-500 text-sm">{errors.password}</p>
             )}
           </div>
+          <div className="grid gap-2">
+            <Label htmlFor="confirmPassword">confirmPassword</Label>
+            <Input
+              name="confirmPassword"
+              placeholder="********"
+              type="password"
+              value={values.confirmPassword}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={cn(errors.confirmPassword && "border-red-500")}
+            />
+            {errors.confirmPassword && (
+              <p className="text-red-500 text-sm">{errors.confirmPassword}</p>
+            )}
+          </div>
         </CardContent>
         <CardFooter className="flex flex-col items-start gap-5">
           <div>
@@ -105,13 +136,13 @@ export function LoginForm({ callbackUrl }) {
                 variant: "link",
                 className: "px-[2px] underline",
               })}
-              href={"/sign-up"}
+              href={"/sign-in"}
             >
-              Sign up
+              Sign In
             </Link>
           </div>
           <Button className="w-full" type="submit" disabled={isSubmitting}>
-            Login
+            Create Account
             {isSubmitting && <Loader2 className="animate-spin h-4 w-4 ml-2" />}
           </Button>
         </CardFooter>
