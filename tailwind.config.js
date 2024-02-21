@@ -24,7 +24,6 @@ module.exports = {
         "color-4": "#3C3D8E",
         "color-5": "#3D306F",
         "color-6": "#161A33",
-        primary: "#0F1629",
         fontFamily: {
           sans: ["Graphik", "sans-serif"],
           serif: ["Merriweather", "serif"],
@@ -36,7 +35,10 @@ module.exports = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-
+        primary: {
+          DEFAULT: "#0F1629",
+          foreground: "hsl(var(--primary-foreground))",
+        },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
