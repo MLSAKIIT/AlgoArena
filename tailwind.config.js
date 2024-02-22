@@ -24,7 +24,6 @@ module.exports = {
         "color-4": "#3C3D8E",
         "color-5": "#3D306F",
         "color-6": "#161A33",
-        primary: "#0F1629",
         fontFamily: {
           sans: ["Graphik", "sans-serif"],
           serif: ["Merriweather", "serif"],
@@ -36,7 +35,10 @@ module.exports = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
@@ -91,7 +93,7 @@ module.exports = {
           "radial-gradient(50% 50% at 50% 50%, rgba(128, 116, 255, 0.67) 0%, rgba(123, 112, 238, 0.00) 100%)",
       },
       screens:{
-        'mid':'450px',
+        'mid':'439px',
         
       },
     },
