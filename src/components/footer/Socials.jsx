@@ -5,10 +5,10 @@ import GradientImg from "./GradientImg";
 
 const Socials = () => {
     return (
-        <div className="relative flex flex-col bottom-0 sm:flex-row justify-between w-full items-center box-border mt-24 ">
+        <div className="relative flex flex-col bottom-0 sm:flex-row justify-between w-screen items-center box-border mt-24 ">
             <GradientImg />
-            <div className="mb-4 sm:mb-12 sm:pl-8 text-white sm:text-3xl text-2xl z-10 text-center">AlgoArena x MLSA</div>
-            <div className="flex text-[#9747ff] sm:mb-12 m-4">
+            <div className="mb-4 sm:mb-10 sm:pl-8 text-white sm:text-3xl text-xl z-10 text-center font-semibold">AlgoArena x MLSA</div>
+            <div className="flex text-[#9747ff] sm:mb-10 sm:mr-10 mr-4">
                 <div className="icons mx-2 hover:text-white cursor-pointer active:scale-95">
                     <a href="#">
                         <FaGithubSquare size={30} />
