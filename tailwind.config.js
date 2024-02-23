@@ -1,3 +1,5 @@
+import { fontFamily } from "tailwindcss/defaultTheme"
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -24,12 +26,6 @@ module.exports = {
         "color-4": "#3C3D8E",
         "color-5": "#3D306F",
         "color-6": "#161A33",
-        fontFamily: {
-          sans: ["Graphik", "sans-serif"],
-          serif: ["Merriweather", "serif"],
-          poppins: ["Poppins", "sans-serif"],
-          the_bold_font: ["The Bold Font"],
-        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -68,6 +64,10 @@ module.exports = {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      fontFamily: {
+        popins: ["var(--font-poppins)", ...fontFamily.serif],
+        theboldfont: ["var(--font-theboldfont)", ...fontFamily.sans]
       },
       keyframes: {
         "accordion-down": {
