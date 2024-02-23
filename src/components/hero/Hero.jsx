@@ -25,28 +25,7 @@ const Hero = () => {
                 className="w-[100px] mid:w-[200px] lg:w-[22rem] ml-2 hidden mid:flex"
               />
             </div>
-            <div className="font-bold font-the_bold_font bg-gradient-horizon bg-clip-text text-[transparent] lg:text-4xl mb-1 text-xl mid:text-2xl  mid:text-start mid:hidden block text-center">
-              HORIZON
-            </div>
-            <div className="flex">
-              <div className="font-bold font-the_bold_font bg-gradient-horizon bg-clip-text text-[transparent] lg:text-4xl mb-1 text-xl mid:text-2xl  mid:text-start hidden mid:flex">
-                HORIZON
-              </div>
-              <Image
-                src="/dash.svg"
-                alt="dash"
-                height={100}
-                width={24}
-                className="w-[100px] mid:w-[200px] lg:w-[22rem] ml-2 hidden mid:flex"
-              />
-            </div>
-            <Image
-              src="/dash.svg"
-              alt="dash"
-              height={100}
-              width={24}
-              className="w-[230px] block scale-x-[-1] my-2 mx:auto static mid:hidden"
-            />
+
             <div className="font-[400] font-poppins text-[white] lg:text-xl text-md lg:ml-1 mid:text-xl">
               Learn Anything, Anytime, Anywhere
             </div>
