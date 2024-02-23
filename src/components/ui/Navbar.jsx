@@ -65,9 +65,9 @@ const Navbar = () => {
             Community
           </Link>
           <Link
-            href="/about"
+            href="/aboutUs"
             className={`flex justify-center text-white  gap-2 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
-              usePathname() === "/about"
+              usePathname() === "/aboutUs"
                 ? "border-2 border-color-3 pr-8 pl-8 pt-2 pb-2 rounded shadow-[0_0_1rem_0px_#9d5ae3]  bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
                 : ""
             }`}
@@ -152,7 +152,7 @@ const Navbar = () => {
             About US
           </Link>
           <div className="my-4 border-t border-[#939393] mr-6 ml-6"></div>
-          <button className="bg-color-2 text-[white] pr-5 pl-5 pt-1 pb-1 mr-6 ml-6 rounded-md hover:bg-gradient-to-r from-color-2 to-color-4">
+          <button className="bg-color-2 text-[white] pr-5 pl-5 pt-1 pb-1 mr-6 ml-6 rounded-full hover:bg-gradient-to-r from-color-2 to-color-4">
             Login
           </button>
         </div>
