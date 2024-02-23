@@ -27,11 +27,11 @@ const Domains = ({initialData}) => {
                     COURSES
                 </p>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-10 md:px-[100px] lg:px-[200px] sm:px-[100px] px-[20px]">
+            <a className="z-20 grid grid-cols-2 md:grid-cols-3 gap-4 mt-10 md:px-[100px] lg:px-[200px] sm:px-[100px] px-[20px]">
                 {data && data.enrolledCourses
-                    ? data.enrolledCourses.map((course) => <DomainCard key={course.id} title={course.title} content={course.description} progress={course.progress} link="/dashboard" />)
+                    ? data.enrolledCourses.map((course) => <DomainCard key={course.id} title={course.title} content={course.description} progress={course.progress} link={data.redirectRoute} />)
                     : null}
-            </div>
+            </a>
         </div>
     );
 };
