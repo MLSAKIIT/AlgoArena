@@ -1,4 +1,4 @@
-import LearningPath from "@/components/learningPath/learningPath";
+import LearningPath from "@/components/learningPath/LearningPath";
 
 
 export default function page({params}){
