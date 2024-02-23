@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <>
       <div className="lg:flex lg:justify-between min-w-screen max-w-[120rem] lg:p-6 hidden z-10">
-        <div className="top-0 w-3/6 min-w-[800px] max-w-[900px] flex g-8 justify-between items-baseline text-sm ">
+        <div className="top-0 w-3/6 min-w-[800px] max-w-[900px] flex g-8 justify-between items-baseline text-sm  pr-10 ">
           <Link
             href="/"
             className="text-white font-extrabold flex text-xl p-0 m-0  "
@@ -24,7 +24,7 @@ const Navbar = () => {
             href="/"
             className={`flex justify-center text-white  gap-2 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
               usePathname() === "/"
-                ? "border-2 border-color-3 pr-8 shadow-[0_0_1rem_0px_#9d5ae3] pl-8 pt-2 pb-2 rounded bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
+                ? "border-2 border-color-3 shadow-[0_0_1rem_0px_#9d5ae3] pr-4 pl-4  pt-2 pb-2 rounded bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
                 : ""
             }`}
           >
@@ -41,18 +41,19 @@ const Navbar = () => {
             href="/learningPath"
             className={`flex justify-center text-white  gap-2 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
               usePathname() === "/learningPath"
-                ? "border-2 border-color-3 pr-8 pl-8 shadow-[0_0_1rem_0px_#9d5ae3] pt-2 pb-2 rounded bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
+                ? "border-2 border-color-3 pr-4 pl-4 shadow-[0_0_1rem_0px_#9d5ae3] pt-2 pb-2 rounded bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
                 : ""
             }`}
           >
             <Image src="/lp.png" alt="AlgoArena" width={18} height={18} />
             Learning Path
           </Link>
+
           <Link
             href="/community"
-            className={`flex justify-center text-white  gap-2 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
+            className={`flex justify-center text-white pr-2 pl-2 pt-4 pb-4 gap-2 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
               usePathname() === "/community"
-                ? "border-2 border-color-3 pr-8 pl-8 pt-2 pb-2 shadow-[0_0_1rem_0px_#9d5ae3] rounded bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
+                ? "border-2 border-color-3 pr-4 pl-4  shadow-[0_0_1rem_0px_#9d5ae3] rounded bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
                 : ""
             }`}
           >
@@ -68,7 +69,7 @@ const Navbar = () => {
             href="/aboutUs"
             className={`flex justify-center text-white  gap-2 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
               usePathname() === "/aboutUs"
-                ? "border-2 border-color-3 pr-8 pl-8 pt-2 pb-2 rounded shadow-[0_0_1rem_0px_#9d5ae3]  bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
+                ? "border-2 border-color-3  rounded shadow-[0_0_1rem_0px_#9d5ae3] pr-4 pl-4  pt-2 pb-2  bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
                 : ""
             }`}
           >

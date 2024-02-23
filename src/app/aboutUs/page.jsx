@@ -1,3 +1,4 @@
+"use client";
 import Footer from "../../components/footer/Footer";
 import InfoCard from "@/components/ui/infoCard";
 import about1 from "@/app/images/asset/about1.png";

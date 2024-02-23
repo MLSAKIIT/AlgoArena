@@ -9,7 +9,7 @@ const team = () => {
       <h1 className="  text-4xl mb-6 font-bold font-sans w-50 bg-gradient-to-r from-white to-[#9d5ae3] inline-block text-transparent bg-clip-text mt-5">
         OUR SPECIAL TEAM
       </h1>
-      <p>
+      <p className="text-center">
         <q>
           Meet Our Team: The dedicated individuals driving <br />
           MLSA &apos;s mission forward with passion and expertise.
