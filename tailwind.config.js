@@ -1,4 +1,4 @@
-import { fontFamily } from "tailwindcss/defaultTheme"
+import { fontFamily } from "tailwindcss/defaultTheme";
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -67,7 +67,7 @@ module.exports = {
       },
       fontFamily: {
         popins: ["var(--font-poppins)", ...fontFamily.serif],
-        theboldfont: ["var(--font-theboldfont)", ...fontFamily.sans]
+        theboldfont: ["var(--font-theboldfont)", ...fontFamily.sans],
       },
       keyframes: {
         "accordion-down": {
@@ -91,10 +91,10 @@ module.exports = {
           "linear-gradient(90deg, #FFF 2.09%, #9D5AE3 75.49%)",
         "gradient-hero-img":
           "radial-gradient(50% 50% at 50% 50%, rgba(128, 116, 255, 0.67) 0%, rgba(123, 112, 238, 0.00) 100%)",
+        "gradient-videos": "linear-gradient(90deg, #FFF 40.2%, #9D5AE3 66.62%)",
       },
-      screens:{
-        'mid':'439px',
-        
+      screens: {
+        mid: "439px",
       },
     },
   },
