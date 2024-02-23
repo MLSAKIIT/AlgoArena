@@ -28,7 +28,7 @@ module.exports = {
           sans: ["Graphik", "sans-serif"],
           serif: ["Merriweather", "serif"],
           poppins: ["Poppins", "sans-serif"],
-          the_bold_font: ["The Bold Font", "sans-serif"],
+          the_bold_font: ["The Bold Font"],
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -91,10 +91,10 @@ module.exports = {
           "linear-gradient(90deg, #FFF 2.09%, #9D5AE3 75.49%)",
         "gradient-hero-img":
           "radial-gradient(50% 50% at 50% 50%, rgba(128, 116, 255, 0.67) 0%, rgba(123, 112, 238, 0.00) 100%)",
-        "gradient-videos": "linear-gradient(90deg, #FFF 40.2%, #9D5AE3 66.62%)",
       },
-      screens: {
-        mid: "439px",
+      screens:{
+        'mid':'439px',
+        
       },
     },
   },
