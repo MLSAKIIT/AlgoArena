@@ -12,17 +12,17 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="lg:flex lg:justify-between min-w-screen max-w-[120rem] lg:p-6 hidden z-10">
-        <div className="top-0 w-3/6 min-w-[800px] max-w-[900px] flex g-8 justify-between items-baseline text-sm ">
+      <div className="2xl:px-20 lg:flex lg:justify-between min-w-screen max-w-[120rem] lg:p-6 hidden z-10">
+        <div className="2xl:justify-start 2xl:gap-24 2xl:pr-24 2xl:max-w-full 2xl:w-full top-0 w-3/6 min-w-[800px] max-w-[900px] flex g-8 justify-between items-baseline text-sm ">
           <Link
             href="/"
-            className="text-white font-extrabold flex text-xl p-0 m-0  "
+            className="text-white  font-extrabold flex text-xl p-0 m-0  "
           >
             AlgoArena
           </Link>
           <Link
             href="/"
-            className={`flex justify-center text-white  gap-2 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
+            className={`flex 2xl:ml-auto justify-center text-white  gap-2 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
               usePathname() === "/"
                 ? "border-2 border-color-3 pr-8 shadow-[0_0_1rem_0px_#9d5ae3] pl-8 pt-2 pb-2 rounded bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
                 : ""
@@ -66,7 +66,7 @@ const Navbar = () => {
           </Link>
           <Link
             href="/about"
-            className={`flex justify-center text-white  gap-2 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
+            className={`flex 2xl:mr-auto justify-center text-white  gap-2 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
               usePathname() === "/about"
                 ? "border-2 border-color-3 pr-8 pl-8 pt-2 pb-2 rounded shadow-[0_0_1rem_0px_#9d5ae3]  bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
                 : ""
