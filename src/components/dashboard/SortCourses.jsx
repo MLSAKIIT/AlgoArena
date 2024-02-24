@@ -2,8 +2,33 @@
 
 import SortBox from "./SortBox"
 
-const courses = ["APP DEVELOPMENT","UI/UX","APP DEVELOPMENT","UI/UX","APP DEVELOPMENT","UI/UX"]
 
+const COURSES = [
+  {
+    id: 1,
+    course:"APP DEVELOPMENT",
+  },
+  {
+    id: 2,
+    course:"UI/UX",
+  },
+  {
+    id: 3,
+    course:"CYBER SECURITY",
+  },
+  {
+    id: 4,
+    course:"AI ML",
+  },
+  {
+    id: 5,
+    course:"WEB DEVELOPMENT",
+  },
+  {
+    id: 6,
+    course:"CLOUD",
+  },
+]
 
 export default function SortCourses() {
   return (
@@ -11,9 +36,9 @@ export default function SortCourses() {
             <h3 className="text-white font-medium mr-3 ">Sort By: </h3>
 
             <div className="SORT DOMAINS DIV flex overflow-scroll  justify-between whitespace-nowrap no-scrollbar ">
-              {courses.map((course) => {
+              {COURSES.map(({id, courseName}) => {
                 return (
-                    <SortBox CourseName={course}></SortBox>
+                    <SortBox key={id} CourseName={courseName}></SortBox>
                 )
               })}
             </div>
