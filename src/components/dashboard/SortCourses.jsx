@@ -17,6 +17,6 @@ export default function SortCourses() {
                 )
               })}
             </div>
-          </div>
-  )
+          </div>
+  )
 }

@@ -7,7 +7,7 @@ import Title from "../ui/Title";
 import SortCourses from "./SortCourses";
 
 
-export default function Dashboard({username}) {
+export default function Dashboard() {
   return (
     
       <div className="overflow-hidden min-h-screen top-auto flex-auto xl:max-w-full  px-5 lg:max-w-7xl md:max-w-5xl">
@@ -50,17 +50,18 @@ export default function Dashboard({username}) {
         <SortCourses></SortCourses>
 
           <div className=" box-border lg:w-4/5 m-auto sm:auto-cols-max mt-12 gap-6 sm:grid sm:grid-cols-3 lg:px-auto md:px-auto flex sm:overflow-visible  overflow-scroll whitespace-nowrap no-scrollbar py-4 w-11/12 ">
+            <DashCoursesCard title="WEB DEVELOPMENT" members="99999"></DashCoursesCard>
             <DashCoursesCard title="UI/UX" members="99999"></DashCoursesCard>
             <DashCoursesCard title="UI/UX" members="99999"></DashCoursesCard>
             <DashCoursesCard title="UI/UX" members="99999"></DashCoursesCard>
-            <DashCoursesCard title="UI/UX" members="99999"></DashCoursesCard>
-            <DashCoursesCard title="UI/UX" members="99999"></DashCoursesCard>
+            <DashCoursesCard title="APP DEVELOPMENT" members="99999"></DashCoursesCard>
             <DashCoursesCard title="UI/UX" members="99999"></DashCoursesCard>
           </div>
-          <div className="overflow-hidden pt-32 sm:mb-0 mb-5 w-screen min-w-[100vw] max-w-full ">
+
+          <div className="overflow-hidden pt-32 sm:mb-[-25px] mb-5 w-screen min-w-[100vw] max-w-full z-30">
             <Socials></Socials>
           </div>
         </div>
-      </div>
-  );
+      </div>
+  );
 }
