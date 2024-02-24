@@ -5,6 +5,7 @@ import Image from "next/image";
 import DashCoursesCard from "./Dashcard";
 import Title from "../ui/Title";
 import SortCourses from "./SortCourses";
+import MoreCourses from "./MoreCourses";
 
 
 export default function Dashboard() {
@@ -41,7 +42,7 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <div className="CONTENT DIV flex flex-col mx-auto justify-between  xl:max-w-7xl md:max-w-5xl sm:max-w-4xl  items-center">
+        <div className="CONTENT DIV flex flex-col mx-auto justify-between  xl:max-w-7xl md:max-w-5xl sm:max-w-4xl max-w-screen items-center">
           {/* TITLE 1 */}
           <div className="HEADING DIV md:mt-12 mt-6 overflow-hidden relative ">
             <Title text="MORE COURSES FOR YOU" />
@@ -49,13 +50,8 @@ export default function Dashboard() {
 
         <SortCourses></SortCourses>
 
-          <div className=" box-border lg:w-4/5 m-auto sm:auto-cols-max mt-12 gap-6 sm:grid sm:grid-cols-3 lg:px-auto md:px-auto flex sm:overflow-visible  overflow-scroll whitespace-nowrap no-scrollbar py-4 w-11/12 ">
-            <DashCoursesCard title="WEB DEVELOPMENT" members="99999"></DashCoursesCard>
-            <DashCoursesCard title="UI/UX" members="99999"></DashCoursesCard>
-            <DashCoursesCard title="UI/UX" members="99999"></DashCoursesCard>
-            <DashCoursesCard title="UI/UX" members="99999"></DashCoursesCard>
-            <DashCoursesCard title="APP DEVELOPMENT" members="99999"></DashCoursesCard>
-            <DashCoursesCard title="UI/UX" members="99999"></DashCoursesCard>
+          <div className=" box-border lg:w-4/5  m-auto sm:auto-cols-max mt-12 sm:gap-6 gap-3 sm:grid sm:grid-cols-3 lg:px-auto md:px-auto flex sm:overflow-visible  overflow-scroll whitespace-nowrap no-scrollbar py-4 sm:w-11/12 w-screen ">
+            <MoreCourses></MoreCourses>
           </div>
 
           <div className="overflow-hidden pt-32 sm:mb-[-25px] mb-5 w-screen min-w-[100vw] max-w-full z-30">
