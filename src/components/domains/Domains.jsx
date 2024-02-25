@@ -15,7 +15,7 @@ const Domains = () => {
           OUR DOMAINS
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10 md:px-[100px] lg:px-[200px] sm:px-[100px] px-[20px] sm:mx-0 mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10 sm:px-[10px] px-[20px] mx-auto">
         <Link href="/domains/2">
           <DomainCard
             className="cursor-pointer"
