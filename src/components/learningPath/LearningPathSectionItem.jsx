@@ -5,15 +5,18 @@ import { Circle } from "lucide-react";
 import React, { useState } from "react";
 import { FaRegCheckCircle } from "react-icons/fa";
 
-const LearningPathSectionItem = ({ info }) => {
+const LearningPathSectionItem = ({ info , point}) => {
   const [opened, setOpened] = useState(false);
+  const [videoPoint , setVideoPoint] = useState(0)
+  const { title, teacher, completed, progress } = info;
 
   const handleClick = () => {
     if (opened === false) {
       setOpened(true);
+      setVideoPoint(point)
     }
   };
-  const { title, teacher, completed, progress } = info;
+  
   return (
     <div className="flex justify-between my-2 items-center m-2">
       <div className="flex  gap-3 items-center my-1">
