@@ -1,9 +1,9 @@
-// Domains.js
 "use client";
+import Image from "next/image";
 import {useState, useEffect} from "react";
 import DomainCard from "./DashBoardDomainsCard";
 
-const Domains = ({initialData}) => {
+const DashBoardDomains = ({initialData}) => {
     const [data, setData] = useState(initialData);
 
     useEffect(() => {
@@ -18,33 +18,29 @@ const Domains = ({initialData}) => {
     const userName = data && data.userName ? data.userName : "User";
 
     return (
-        <div className="flex flex-col ml-20">
-            <p className="text-3xl font-sans font-bold bg-gradient-to-r text-white bg-clip-text lg:px-[200px] sm:px-[100px] px-[20px] mt-4">WELCOME BACK, {userName}</p>
-            <br />
-            <div className="flex">
-                <p className="text-3xl font-sans font-bold bg-gradient-to-r from-white to-purple-500 text-transparent bg-clip-textinline-block bg-clip-text lg:px-[200px] sm:px-[100px] px-[20px]">
-                    YOUR ENROLLED <br />
-                    COURSES
-                </p>
+        <>
+            <div className="absolute lg:h-[80rem] lg:w-[78rem] lg:top-[-180px] lg:left-[-250px] lg:block hidden">
+                <Image src="/dashboard-ellipse1.svg" alt="Ellipse" height={100} width={80} className="absolute w-[80rem] h-[75rem] left-[13rem] top-[15rem] overflow-hidden lg:block hidden " />
             </div>
-            <a className="z-20 grid grid-cols-2 md:grid-cols-3 gap-4 mt-10 md:px-[100px] lg:px-[200px] sm:px-[100px] px-[20px]">
-                {data && data.enrolledCourses
-                    ? data.enrolledCourses.map((course) => <DomainCard key={course.id} title={course.title} content={course.description} progress={course.progress} link={data.redirectRoute} />)
-                    : null}
-            </a>
-        </div>
+            <div className="flex flex-col ml-20 z-20 mt-14">
+                <p className="text-3xl font-sans font-bold bg-gradient-to-r text-white bg-clip-text lg:px-[200px] sm:px-[100px] px-[20px] mt-4">WELCOME BACK, {userName}</p>
+                <br />
+                <div className="flex">
+                    <p className="text-3xl font-sans font-bold bg-gradient-to-r from-white to-purple-500 text-transparent bg-clip-textinline-block bg-clip-text lg:px-[200px] sm:px-[100px] px-[20px]">
+                        YOUR ENROLLED <br />
+                        COURSES
+                    </p>
+                </div>
+                <div className="z-20 grid grid-cols-2 md:grid-cols-3 mt-10 md:px-[100px] lg:px-[200px] sm:px-[100px] px-[20px]">
+                    {data && data.enrolledCourses
+                        ? data.enrolledCourses.map((course) => (
+                              <DomainCard key={course.id} title={course.title} content={course.description} progress={course.progress} redirectURL={course.redirectURL} />
+                          ))
+                        : null}
+                </div>
+            </div>
+        </>
     );
 };
 
-export async function getServerSideProps() {
-    const res = await fetch("http://localhost:3000/api/dummy/dashboard");
-    const initialData = await res.json();
-
-    return {
-        props: {
-            initialData,
-        },
-    };
-}
-
-export default Domains;
+export default DashBoardDomains;

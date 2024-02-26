@@ -11,12 +11,10 @@ const DomainCard = ({ title, img }) => {
       <div className="relative w-1/2 h-full">
         <Image
           src={img}
-          layout="fill"
-          objectFit="cover"
-          className="rounded-lg group-hover:scale-125 duration-500"
+          className="rounded-lg group-hover:scale-125 duration-500 object-cover layout-fill"
         />
       </div>
-    </div>
+    </div> 
   );
 };
 
