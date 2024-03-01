@@ -3,11 +3,18 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [open, setOpen] = React.useState(false);
   const onClick = () => {
     setOpen(!open);
+  };
+
+  const router = useRouter();
+
+  const login = () => {
+    router.push("/sign-in");
   };
 
   return (
@@ -76,7 +83,10 @@ const Navbar = () => {
             About US
           </Link>
         </div>
-        <button className="bg-color-2  text-white pr-5 shadow-[0_0_1rem_0px_#9d5ae3] pl-5 pt-1 pb-1 rounded-xl hover:bg-gradient-to-r from-color-2 to-color-3 transition-all duration-200">
+        <button
+          onClick={login}
+          className="bg-color-2  text-white pr-5 shadow-[0_0_1rem_0px_#9d5ae3] pl-5 pt-1 pb-1 rounded-xl hover:bg-gradient-to-r from-color-2 to-color-3 transition-all duration-200"
+        >
           Login
         </button>
       </div>
@@ -152,7 +162,10 @@ const Navbar = () => {
             About US
           </Link>
           <div className="my-4 border-t border-[#939393] mr-6 ml-6"></div>
-          <button className="bg-color-2 text-[white] pr-5 pl-5 pt-1 pb-1 mr-6 ml-6 rounded-md hover:bg-gradient-to-r from-color-2 to-color-4">
+          <button
+            onClick={login}
+            className="bg-color-2 text-[white] pr-5 pl-5 pt-1 pb-1 mr-6 ml-6 rounded-md hover:bg-gradient-to-r from-color-2 to-color-4"
+          >
             Login
           </button>
         </div>
