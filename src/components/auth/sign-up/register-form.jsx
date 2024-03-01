@@ -18,7 +18,7 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
 import { registerSchema } from "@/schemas/auth/register";
-import { createUser } from "@/app/actions/register";
+import { createUser } from "@/actions/register";
 
 export default function RegisterForm() {
   const router = useRouter();
