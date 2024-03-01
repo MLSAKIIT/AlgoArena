@@ -29,7 +29,7 @@ const Navbar = () => {
             }`}
           >
             <Image
-              src="/home_fill.svg"
+              src="/assets/icons/home_fill.svg"
               alt="AlgoArena"
               width={20}
               height={20}
@@ -45,7 +45,7 @@ const Navbar = () => {
                 : ""
             }`}
           >
-            <Image src="/lp.png" alt="AlgoArena" width={18} height={18} />
+            <Image src="/assets/icons/lp.png" alt="AlgoArena" width={18} height={18} />
             Learning Path
           </Link>
           <Link
@@ -57,7 +57,7 @@ const Navbar = () => {
             }`}
           >
             <Image
-              src="/community.png"
+              src="/assets/icons/community.png"
               alt="AlgoArena"
               width={18}
               height={18}
@@ -72,7 +72,7 @@ const Navbar = () => {
                 : ""
             }`}
           >
-            <Image src="/about.png" alt="AlgoArena" width={18} height={18} />
+            <Image src="/assets/icons/about.png" alt="AlgoArena" width={18} height={18} />
             About US
           </Link>
         </div>
@@ -82,7 +82,7 @@ const Navbar = () => {
       </div>
       <div className="flex justify-between p-6  w-screen lg:hidden ">
         <Image
-          src="/menu.svg"
+          src="/assets/icons/menu.svg"
           alt="Ellipse"
           height={20}
           width={20}
@@ -99,7 +99,7 @@ const Navbar = () => {
         }`}
       >
         <Image
-          src="/close.svg"
+          src="/assets/icons/close.svg"
           alt="Close"
           width={20}
           height={20}
@@ -115,7 +115,7 @@ const Navbar = () => {
             className="flex  text-[white]  gap-2 px-4 py-2 mr-6 ml-6 rounded hover:bg-color-3"
           >
             <Image
-              src="/home_fill.png"
+              src="/assets/icons/home_fill.png"
               alt="AlgoArena"
               width={20}
               height={10}
@@ -127,7 +127,7 @@ const Navbar = () => {
             href="/"
             className="flex  text-[white]  gap-2 px-4 py-2 mr-6 ml-6 hover:bg-color-3"
           >
-            <Image src="/lp.png" alt="AlgoArena" width={20} height={10} />
+            <Image src="/assets/icons/lp.png" alt="AlgoArena" width={20} height={10} />
             Learning Path
           </Link>
           <div className="my-4 border-t border-[#939393] mr-6 ml-6"></div>
@@ -136,7 +136,7 @@ const Navbar = () => {
             className="flex  text-[white]  gap-2 px-4 py-2 mr-6 ml-6  hover:bg-color-3"
           >
             <Image
-              src="/community.png"
+              src="/assets/icons/community.png"
               alt="AlgoArena"
               width={20}
               height={10}
@@ -148,7 +148,7 @@ const Navbar = () => {
             href="/about-us"
             className="flex  text-white gap-2 px-4 py-2 mr-6 ml-6 hover:bg-color-3"
           >
-            <Image src="/about.png" alt="AlgoArena" width={20} height={10} />
+            <Image src="/assets/icons/about.png" alt="AlgoArena" width={20} height={10} />
             About US
           </Link>
           <div className="my-4 border-t border-[#939393] mr-6 ml-6"></div>
