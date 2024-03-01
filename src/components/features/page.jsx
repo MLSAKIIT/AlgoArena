@@ -16,14 +16,15 @@ const Features = () => {
               src="/learning.png"
               height={440}
               width={457}
+              alt="Learning"
             />
           </div>
 
           <div className="md:ml-60">
-            <p className="text-3xl font-poppins leading-7 tracking-tighter font-bold uppercase bg-gradient-to-r from-white to-purple-500 bg-clip-text text-transparent inline-block">
+            <div className="text-3xl font-poppins leading-7 tracking-tighter font-bold uppercase bg-gradient-to-r from-white to-purple-500 bg-clip-text text-transparent inline-block">
               <p className="text-white">Created learning path to</p>{" "}
               <p>make you learn what matters</p>
-            </p>
+            </div>
             <p className="text-white font-poppins pt-5">
               Embrace wisdom&apos;s compass, learn what truly holds value. In
               the journey of knowledge, discern the essence, learn what matters.
@@ -39,10 +40,10 @@ const Features = () => {
 
         <div className="flex flex-col md:flex-row mb-20">
           <div className="pr-10 md:pl-40 md:order-2">
-            <p className="text-3xl font-poppins leading-7 tracking-tighter font-bold uppercase bg-gradient-to-r from-white to-purple-500 bg-clip-text text-transparent inline-block">
+            <div className="text-3xl font-poppins leading-7 tracking-tighter font-bold uppercase bg-gradient-to-r from-white to-purple-500 bg-clip-text text-transparent inline-block">
               <p className="text-white">Build and interact with</p>{" "}
               <p>your community</p>
-            </p>
+            </div>
             <p className="text-white font-poppins pt-5">
               Building community requires empathy, communication, and a shared
               vision. Together, we construct bridges of understanding and
@@ -71,10 +72,10 @@ const Features = () => {
           </div>
 
           <div className="md:ml-40">
-            <p className="text-3xl font-poppins leading-7 tracking-tighter font-bold uppercase bg-gradient-to-r from-white to-purple-500 bg-clip-text text-transparent inline-block">
+            <div className="text-3xl font-poppins leading-7 tracking-tighter font-bold uppercase bg-gradient-to-r from-white to-purple-500 bg-clip-text text-transparent inline-block">
               <p className="text-white">track you progress</p>
               <p>while you learn</p>
-            </p>
+            </div>
             <p className="text-white font-poppins pt-5">
               Measure your steps, chart your course, and let each milestone be a
               testament to your journey&apos;s force.
