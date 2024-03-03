@@ -71,7 +71,7 @@ const LearningPathsPage = async ({ params: { domain }, searchParams }) => {
         <h2 className="text-xl">
           <span>
             Showing results for{" "}
-            <span className="font-semibold">"{searchParams.q}"</span>
+            <span className="font-semibold">&quot;{searchParams.q}&quot;</span>
           </span>
         </h2>
       )}
@@ -79,7 +79,10 @@ const LearningPathsPage = async ({ params: { domain }, searchParams }) => {
       <section>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4">
           {paths.map((path) => (
-            <Link href={`/learning-paths/${path.domain}/${path.id}`} key={path.id}>
+            <Link
+              href={`/learning-paths/${path.domain}/${path.id}`}
+              key={path.id}
+            >
               <LearningPathCard data={path} />
             </Link>
           ))}
