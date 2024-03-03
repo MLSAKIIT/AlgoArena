@@ -1,4 +1,4 @@
-import { searchAction } from "@/app/actions/search";
+import { searchAction } from "@/actions/search";
 import React from "react";
 import { Input } from "../ui/input";
 import { Search } from "lucide-react"
