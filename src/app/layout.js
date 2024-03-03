@@ -1,7 +1,8 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
-const inter = Inter({ subsets: ["latin"] });
+import Navbar from "@/components/ui/Navbar";
+import { cn } from "@/lib/utils";
+import { fontPopins, fontTheBoldFont } from "@/lib/font";
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +12,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={cn(
+        "min-h-screen bg-background font-popins antialiased",
+        fontPopins.variable,
+        fontTheBoldFont.variable
+      )}>
+        <Navbar />
         {children}
         <Toaster position="bottom-center" richColors />
       </body>
