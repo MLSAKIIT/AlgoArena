@@ -6,7 +6,6 @@ import {
   Card,
   CardHeader,
   CardTitle,
-  CardDescription,
   CardContent,
   CardFooter,
 } from "@/components/ui/card";
@@ -71,7 +70,11 @@ export default function RegisterForm() {
               value={values.name}
               onChange={handleChange}
               onBlur={handleBlur}
-              className={cn(errors.name && "border-red-500")}
+              className={cn(
+                `bg-[url('/assets/auth/user.svg')] ${
+                  errors.name && "border-red-500"
+                }`
+              )}
             />
             {errors.name && (
               <p className="text-red-500 text-sm">{errors.name}</p>
@@ -85,7 +88,11 @@ export default function RegisterForm() {
               value={values.email}
               onChange={handleChange}
               onBlur={handleBlur}
-              className={cn(errors.email && "border-red-500")}
+              className={cn(
+                `bg-[url('/assets/auth/email.svg')] ${
+                  errors.email && "border-red-500"
+                }`
+              )}
             />
             {errors.email && (
               <p className="text-red-500 text-sm">{errors.email}</p>
@@ -99,7 +106,11 @@ export default function RegisterForm() {
               value={values.password}
               onChange={handleChange}
               onBlur={handleBlur}
-              className={cn(errors.password && "border-red-500")}
+              className={cn(
+                `bg-[url('/assets/auth/eye.svg')] ${
+                  errors.password && "border-red-500"
+                }`
+              )}
             />
             {errors.password && (
               <p className="text-red-500 text-sm">{errors.password}</p>
@@ -113,7 +124,11 @@ export default function RegisterForm() {
               value={values.confirmPassword}
               onChange={handleChange}
               onBlur={handleBlur}
-              className={cn(errors.confirmPassword && "border-red-500")}
+              className={cn(
+                `bg-[url('/assets/auth/eye.svg')] ${
+                  errors.confirmPassword && "border-red-500"
+                }`
+              )}
             />
             {errors.confirmPassword && (
               <p className="text-red-500 text-sm">{errors.confirmPassword}</p>

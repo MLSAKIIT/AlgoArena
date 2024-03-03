@@ -6,7 +6,6 @@ import {
   Card,
   CardHeader,
   CardTitle,
-  CardDescription,
   CardContent,
   CardFooter,
 } from "@/components/ui/card";
@@ -90,20 +89,19 @@ export function LoginForm({ callbackUrl }) {
             <div className="flex flex-col space-y-2">
               <Input
                 name="email"
-                icon="/email.svg"
                 placeholder="Email"
                 type="email"
                 value={values.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 className={cn(
-                  `bg-[url('/email.svg')] ${
-                    errors.email && "border-destructive"
+                  `bg-[url('/assets/auth/email.svg')] ${
+                    errors.email && "border-red-500"
                   }`
                 )}
               />
               {errors.email && (
-                <p className="text-destructive text-sm">{errors.email}</p>
+                <p className="text-red-500 text-sm">{errors.email}</p>
               )}
             </div>
             <div className="flex flex-col space-y-2">
@@ -115,13 +113,13 @@ export function LoginForm({ callbackUrl }) {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 className={cn(
-                  `bg-[url('/eye.svg')] ${
-                    errors.password && "border-destructive"
+                  `bg-[url('/assets/auth/eye.svg')] ${
+                    errors.password && "border-red-500"
                   }`
                 )}
               />
               {errors.password && (
-                <p className="text-destructive text-sm">{errors.password}</p>
+                <p className="text-red-500 text-sm">{errors.password}</p>
               )}
             </div>
           </div>

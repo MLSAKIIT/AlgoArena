@@ -8,21 +8,21 @@ function Page() {
       <RegisterForm />
       {/* Background */}
       <Image
-        src="/Ellipse3.svg"
+        src="/assets/icons/Ellipse3.svg"
         alt="Ellipse"
         height={100}
         width={24}
         className="fixed min-[1536px]:hidden -z-10 w-[80rem] h-[75rem] left-[-20rem] top-[5rem] opacity-60 lg:block hidden "
       />
       <Image
-        src="/Ellipse3.svg"
+        src="/assets/icons/Ellipse3.svg"
         alt="Ellipse"
         height={100}
         width={24}
         className="fixed min-[1536px]:hidden -z-10 w-[68.0625rem] h-[56.5rem] left-[-16rem] top-[16rem] opacity-50 lg:block hidden"
       />
       <Image
-        src="/Ellipse3.svg"
+        src="/assets/icons/Ellipse3.svg"
         alt="Ellipse"
         height={100}
         width={24}
