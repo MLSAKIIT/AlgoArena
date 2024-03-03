@@ -2,8 +2,8 @@ import Image from "next/image";
 
 const Features = () => {
   return (
-    <section>
-      <div className="flex justify-center">
+    <section className="max-w-[120rem] ">
+      <div className="flex justify-center mt-30">
         <p className="text-3xl font-sans font-bold bg-gradient-to-r from-white to-purple-500 inline-block text-transparent bg-clip-text">
           FEATURES
         </p>
@@ -16,6 +16,7 @@ const Features = () => {
               src="/assets/features/learning.png"
               height={440}
               width={457}
+              alt="learning pic"
             />
           </div>
 
@@ -67,7 +68,12 @@ const Features = () => {
 
         <div className="flex flex-col md:flex-row mb-20">
           <div className="pl-10 md:pr-10 md:order-2">
-            <Image src="/assets/features/progress.png" width={400} height={400} alt="Picture" />
+            <Image
+              src="/assets/features/progress.png"
+              width={400}
+              height={400}
+              alt="Picture"
+            />
           </div>
 
           <div className="md:ml-40">

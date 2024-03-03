@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Domains = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col max-w-[120rem]">
       <div className="flex justify-center">
         <p className="text-2xl font-sans font-bold bg-gradient-to-r from-white to-purple-500 inline-block text-transparent bg-clip-text">
           OUR DOMAINS
