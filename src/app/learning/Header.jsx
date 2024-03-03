@@ -1,10 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import circular from "@/app/images/domain-logos/circular.png";
-import play from "@/app/images/learning/play.png";
-import time from "@/app/images/learning/time.png";
-import user from "@/app/images/learning/user.png";
-import progress from "@/app/images/learning/progress.png";
 
 const Header = ({ title, description, videos, hours, creator }) => {
   return (
@@ -12,7 +7,7 @@ const Header = ({ title, description, videos, hours, creator }) => {
       <div
         className="absolute inset-0  h-50 max-h-62 bg-left-top bg-no-repeat bg-blend-normal"
         style={{
-          backgroundImage: `url(${circular.src})`,
+          backgroundImage: `url(/assets/domain/circular.png)`,
           backgroundSize: "contain",
         }}
       ></div>
@@ -32,7 +27,7 @@ const Header = ({ title, description, videos, hours, creator }) => {
 
           <div className=" col-start-5 font-light text-sm gap-3 hidden sm:flex">
             <div>
-              <Image src={progress} alt="progress" height={15} width={15} />
+              <Image src={"/assets/icons/progress.png"} alt="progress" height={15} width={15} />
             </div>
             <div>Your Progress</div>
           </div>
@@ -40,18 +35,18 @@ const Header = ({ title, description, videos, hours, creator }) => {
 
         <div className=" grid-cols-8 my-5 hidden sm:grid">
           <div className="flex gap-1">
-            <Image src={play} height={5} width={15} alt="play-bttn" />
+            <Image src={"/assets/icons/play.png"} height={5} width={15} alt="play-bttn" />
             <p className="text-xs font-extralight">{videos} Videos</p>
           </div>
           <div className="flex gap-1">
-            <Image src={time} height={5} width={15} alt="time-img" />
+            <Image src={"/assets/icons/time.png"} height={5} width={15} alt="time-img" />
             <p className="text-xs font-extralight">{hours} hours</p>
           </div>
         </div>
 
         <div className="flex gap-2 hidden sm:flex">
           <div>
-            <Image src={user} alt="user" height={15} width={15} />
+            <Image src={"/assets/icons/user.png"} alt="user" height={15} width={15} />
           </div>
           <div>
             <p className="text-xs">Created by {creator}</p>

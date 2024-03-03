@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { DomainApi } from "@/app/utils/constants";
+import { DomainApi } from "@/constants";
 import LearningPathSection from "./LearningPathSection";
 import LearningPathHeader from "./LearningPathHeader";
 
