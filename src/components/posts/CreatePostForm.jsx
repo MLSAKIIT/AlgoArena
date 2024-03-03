@@ -10,7 +10,7 @@ import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
 import { Loader2 } from "lucide-react";
 import SelectComponent from "./SelectComponent";
-import { domains, tags } from "@/app/constants";
+import { domains, tags } from "@/constants";
 import { postSchema } from "@/schemas/posts/new-post";
 
 const CreatePostForm = () => {
