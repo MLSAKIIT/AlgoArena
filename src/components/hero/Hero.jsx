@@ -20,7 +20,7 @@ const Hero = () => {
                 HORIZON
               </div>
               <Image
-                src="/dash.svg"
+                src="/assets/icons/dash.svg"
                 alt="dash"
                 height={100}
                 width={24}
@@ -33,7 +33,7 @@ const Hero = () => {
             </div>
             <div className="absolute lg:h-[42.3rem] lg:w-[70rem] lg:top-[-180px] lg:left-[-250px] overflow-hidden rotate-[-15deg] lg:block hidden">
               <Image
-                src="/Ellipse3.svg"
+                src="/assets/icons/Ellipse3.svg"
                 alt="Ellipse"
                 height={100}
                 width={24}
@@ -42,7 +42,7 @@ const Hero = () => {
             </div>
             <div className="absolute h-[20rem] w-[68.0625rem] top-[80px] left-[-250px] overflow-hidden rotate-[2deg] z-1 lg:block hidden">
               <Image
-                src="/Ellipse3.svg"
+                src="/assets/icons/Ellipse3.svg"
                 alt="Ellipse"
                 height={100}
                 width={24}
@@ -52,7 +52,7 @@ const Hero = () => {
 
             <div className="absolute h-[17rem] w-[51.5rem] top-[150px] left-[-250px] overflow-hidden rotate-[-5deg] z-1 lg:block hidden">
               <Image
-                src="/Ellipse3.svg"
+                src="/assets/icons/Ellipse3.svg"
                 alt="Ellipse"
                 height={100}
                 width={24}
@@ -63,7 +63,7 @@ const Hero = () => {
           <div className="relative rounded-full bg-gradient-hero-img h-[170px] w-[170px] lg:mt-0 mt-9 lg:h-[18rem] lg:w-[22rem] mid:h-52 mid:w-52">
             <Image
               className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-60%] h-[170px] w-[170px] lg:h-[18rem] lg:w-[22rem] mid:h-52 mid:w-52"
-              src="/Objects.svg"
+              src="/assets/icons/Objects.svg"
               alt="objects"
               width={24}
               height={24}

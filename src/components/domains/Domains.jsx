@@ -1,10 +1,4 @@
 import DomainCard from "./DomainCard";
-import webd from "@/app/images/domain-logos/webd.png";
-import devops from "@/app/images/domain-logos/devops.png";
-import block from "@/app/images/domain-logos/block.png";
-import ai from "@/app/images/domain-logos/ai.png";
-import ui from "@/app/images/domain-logos/ui.png";
-import appd from "@/app/images/domain-logos/appd.png";
 import Link from "next/link";
 
 const Domains = () => {
@@ -20,34 +14,34 @@ const Domains = () => {
           <DomainCard
             className="cursor-pointer"
             title="WEB DEVELOPMENT"
-            img={webd}
+            img={"/assets/domain/webd.png"}
           />
         </Link>
         <Link href="/domains/1">
-          <DomainCard className="cursor-pointer" title="DEVOPS" img={devops} />
+          <DomainCard className="cursor-pointer" title="DEVOPS" img={"/assets/domain/devops.png"} />
         </Link>
         <Link href="/domains/3">
           <DomainCard
             className="cursor-pointer"
             title="BLOCKCHAIN"
-            img={block}
+            img={"/assets/domain/block.png"}
           />
         </Link>
         <Link href="/domains/4">
           <DomainCard
             className="cursor-pointer"
             title="ARTIFICIAL INTELLIGENCE"
-            img={ai}
+            img={"/assets/domain/ai.png"}
           />
         </Link>
         <Link href="/domains/5">
-          <DomainCard className="cursor-pointer" title="UI/UX" img={ui} />
+          <DomainCard className="cursor-pointer" title="UI/UX" img={"/assets/domain/ui.png"} />
         </Link>
         <Link href="/domains/0">
           <DomainCard
             className="cursor-pointer"
             title="APP DEVELOPMENT"
-            img={appd}
+            img={"/assets/domain/appd.png"}
           />
         </Link>
       </div>
