@@ -19,7 +19,7 @@ const Header = ({ title, description, videos, hours, creator }) => {
 
       <div className="mx-10  w-auto">
         <div className="my-1">
-          <p className="text-3xl font-sans font-bold bg-gradient-to-r from-white to-purple-900 inline-block text-transparent bg-clip-text my-1">
+          <p className="text-3xl font-san font-bold bg-gradient-to-r from-white to-purple-900 inline-block text-transparent bg-clip-text my-1">
             {title}
           </p>
           <div className=" bg-gradient-to-r from-purple-900 to-bg-purple-400 h-[0.180rem] w-1/4"></div>

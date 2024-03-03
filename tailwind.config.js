@@ -65,6 +65,9 @@ module.exports = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      fontSize: {
+        xss: "0.7rem",
+      },
       fontFamily: {
         popins: ["var(--font-poppins)", ...fontFamily.serif],
         theboldfont: ["var(--font-theboldfont)", ...fontFamily.sans],
@@ -95,6 +98,7 @@ module.exports = {
       },
       screens: {
         mid: "439px",
+        xs: "371px",
       },
     },
   },

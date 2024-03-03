@@ -30,6 +30,7 @@ const LearningPath = ({ slugId }) => {
   }, [slugId]);
 
   const { header, sections } = domainData;
+
   return (
     <div>
       {Object.keys(domainData).length === 0 ? (
@@ -37,6 +38,7 @@ const LearningPath = ({ slugId }) => {
       ) : (
         <div>
           <LearningPathHeader header={header} />
+
           <LearningPathSection sections={sections} />
         </div>
       )}
