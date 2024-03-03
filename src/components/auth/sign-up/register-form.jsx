@@ -14,7 +14,6 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useFormik } from "formik";
 import { cn } from "@/lib/utils";
-import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
 import { registerSchema } from "@/schemas/auth/register";
@@ -59,19 +58,15 @@ export default function RegisterForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-8">
-      <Card>
+      <Card className="sm:bg-color-6 w-full sm:w-96 sm:rounded-2xl rounded-none sm:border-solid border-none ">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl">Create your account</CardTitle>
-          <CardDescription>
-            Enter your name, email and password to proceed creating your account
-          </CardDescription>
+          <CardTitle className="text-2xl">Create Account</CardTitle>
         </CardHeader>
         <CardContent className="grid gap-4">
           <div className="grid gap-2">
-            <Label htmlFor="name">Name</Label>
             <Input
               name="name"
-              placeholder="John Doe"
+              placeholder="Name"
               type="text"
               value={values.name}
               onChange={handleChange}
@@ -83,10 +78,9 @@ export default function RegisterForm() {
             )}
           </div>
           <div className="grid gap-2">
-            <Label htmlFor="email">Email</Label>
             <Input
               name="email"
-              placeholder="test@example.com"
+              placeholder="Email"
               type="email"
               value={values.email}
               onChange={handleChange}
@@ -98,10 +92,9 @@ export default function RegisterForm() {
             )}
           </div>
           <div className="grid gap-2">
-            <Label htmlFor="password">Password</Label>
             <Input
               name="password"
-              placeholder="********"
+              placeholder="Password"
               type="password"
               value={values.password}
               onChange={handleChange}
@@ -113,10 +106,9 @@ export default function RegisterForm() {
             )}
           </div>
           <div className="grid gap-2">
-            <Label htmlFor="confirmPassword">confirmPassword</Label>
             <Input
               name="confirmPassword"
-              placeholder="********"
+              placeholder="Confirm Password"
               type="password"
               value={values.confirmPassword}
               onChange={handleChange}
@@ -129,22 +121,22 @@ export default function RegisterForm() {
           </div>
         </CardContent>
         <CardFooter className="flex flex-col items-start gap-5">
-          <div>
-            Dont have an account?
+          <Button className="w-full" type="submit" disabled={isSubmitting}>
+            Create Account
+            {isSubmitting && <Loader2 className="animate-spin h-4 w-4 ml-2" />}
+          </Button>
+          <div className="text-xs text-gray-300 text-center w-full">
+            Dont have an account?{" "}
             <Link
               className={buttonVariants({
-                variant: "link",
-                className: "px-[2px] underline",
+                variant: "authLink",
+                className: "text-xs",
               })}
               href={"/sign-in"}
             >
               Sign In
             </Link>
           </div>
-          <Button className="w-full" type="submit" disabled={isSubmitting}>
-            Create Account
-            {isSubmitting && <Loader2 className="animate-spin h-4 w-4 ml-2" />}
-          </Button>
         </CardFooter>
       </Card>
     </form>
