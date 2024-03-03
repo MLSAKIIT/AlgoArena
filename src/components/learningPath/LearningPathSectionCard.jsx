@@ -11,7 +11,8 @@ const LearningPathSectionCard = ({ section, showItem, setShowIndex }) => {
     setShowIndex();
   };
 
-  const { id, title, time, videos } = section;
+  const { id, title, time } = section;
+  const videos = section.chapters
 
   const eachVideoPoint = 100/ videos.length;
 
