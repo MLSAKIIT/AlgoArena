@@ -1,4 +1,4 @@
-import { domains, tags } from "@/app/constants";
+import { domains, tags } from "@/constants";
 import * as yup from "yup";
 
 export const postSchema = yup.object({

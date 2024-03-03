@@ -13,7 +13,7 @@ const Features = () => {
         <div className="flex flex-col md:flex-row mb-20">
           <div className="pl-10 md:pr-10 md:order-2">
             <Image
-              src="/learning.png"
+              src="/assets/features/learning.png"
               height={440}
               width={457}
             />
@@ -57,7 +57,7 @@ const Features = () => {
           </div>
           <div className="pr-10 md:pr-20 md:order-1">
             <Image
-              src="/communityy.png"
+              src="/assets/features/communityy.png"
               width={500}
               height={500}
               alt="Picture"
@@ -67,7 +67,7 @@ const Features = () => {
 
         <div className="flex flex-col md:flex-row mb-20">
           <div className="pl-10 md:pr-10 md:order-2">
-            <Image src="/progress.png" width={400} height={400} alt="Picture" />
+            <Image src="/assets/features/progress.png" width={400} height={400} alt="Picture" />
           </div>
 
           <div className="md:ml-40">

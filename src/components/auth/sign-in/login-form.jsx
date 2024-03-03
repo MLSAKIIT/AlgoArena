@@ -19,7 +19,7 @@ import { signIn } from "next-auth/react";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
 import { useState, useTransition } from "react";
-import { resendVerificationEmail } from "@/app/actions/resend-verification-email";
+import { resendVerificationEmail } from "@/actions/resend-verification-email";
 
 export function LoginForm({ callbackUrl }) {
   const [isPending, startTransition] = useTransition();
