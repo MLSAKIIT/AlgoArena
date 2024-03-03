@@ -18,7 +18,7 @@ import { cn } from "@/lib/utils";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
-import { newPassword } from "@/app/actions/new-password";
+import { newPassword } from "@/actions/new-password";
 
 const NewPasswordForm = ( { token }) => {
   const router = useRouter();
