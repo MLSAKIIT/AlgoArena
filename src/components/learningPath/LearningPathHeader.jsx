@@ -1,10 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import circular from "@/app/images/domain-logos/circular.png";
-import play from "@/app/images/learning/play.png";
-import time from "@/app/images/learning/time.png";
-import user from "@/app/images/learning/user.png";
-import progress from "@/app/images/learning/progress.png";
 
 const LearningPathHeader = ({ header, videos }) => {
   return (
@@ -13,7 +8,7 @@ const LearningPathHeader = ({ header, videos }) => {
         <div
           className="absolute inset-0   h-[20 rem] sm:h-[30rem] md[40rem] bg-left-top bg-no-repeat bg-blend-normal"
           style={{
-            backgroundImage: `url(${circular.src})`,
+            backgroundImage: `url('/assets/domain/circular.png')`,
             backgroundSize: "contain",
           }}
         ></div>
@@ -31,7 +26,12 @@ const LearningPathHeader = ({ header, videos }) => {
 
             <div className="flex my-5">
               <div>
-                <Image src={progress} alt="progress" height={15} width={15} />
+                <Image
+                  src={"/assets/icons/progress.png"}
+                  alt="progress"
+                  height={15}
+                  width={15}
+                />
               </div>
               <div className="mx-8 text-xss xs:text-xs text-white">
                 Your Progress
@@ -41,13 +41,23 @@ const LearningPathHeader = ({ header, videos }) => {
 
           <div className="flex gap-6 sm:mt-5 md:mt-2 lg:mt-1">
             <div className="flex gap-2">
-              <Image src={play} height={5} width={15} alt="play-bttn" />
+              <Image
+                src={"/assets/icons/play.png"}
+                height={5}
+                width={15}
+                alt="play-bttn"
+              />
               <p className="text-xss xs:text-xs font-extralight">
                 {videos} Videos
               </p>
             </div>
             <div className="flex gap-2">
-              <Image src={time} height={5} width={15} alt="time-img" />
+              <Image
+                src={"/assets/icons/time.png"}
+                height={5}
+                width={15}
+                alt="time-img"
+              />
               <p className="text-xss xs:text-xs font-extralight">
                 {header.time} hours
               </p>
@@ -55,7 +65,12 @@ const LearningPathHeader = ({ header, videos }) => {
           </div>
           <div className="flex my-5 gap-2">
             <div>
-              <Image src={user} alt="user" height={15} width={15} />
+              <Image
+                src={"/assets/icons/user.png"}
+                alt="user"
+                height={15}
+                width={15}
+              />
             </div>
             <div>
               <p className="text-xss xs:text-xs">
