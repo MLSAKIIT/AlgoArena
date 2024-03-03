@@ -1,8 +1,8 @@
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
-import Navbar from "@/components/ui/Navbar";
 import { cn } from "@/lib/utils";
 import { fontPopins, fontTheBoldFont } from "@/lib/font";
+import Navbar from "@/components/ui/Navbar";
 
 export const metadata = {
   title: "Create Next App",
@@ -12,11 +12,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={cn(
-        "min-h-screen bg-background font-popins antialiased",
-        fontPopins.variable,
-        fontTheBoldFont.variable
-      )}>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-popins antialiased",
+          fontPopins.variable,
+          fontTheBoldFont.variable
+        )}
+      >
         <Navbar />
         {children}
         <Toaster position="bottom-center" richColors />

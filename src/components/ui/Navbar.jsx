@@ -12,13 +12,8 @@ const Navbar = () => {
 
   return (
     <>
-<<<<<<< HEAD
-      <div className="lg:flex lg:justify-between min-w-screen max-w-[120rem] lg:p-6 hidden z-10">
-        <div className="top-0 w-3/6 min-w-[800px] max-w-[900px] flex g-8 justify-between items-baseline text-sm  pr-10 ">
-=======
       <div className="2xl:px-20 lg:flex lg:justify-between min-w-screen max-w-[120rem] lg:p-6 hidden z-10">
-        <div className="2xl:justify-start 2xl:gap-24 2xl:pr-24 2xl:max-w-full 2xl:w-full top-0 w-3/6 min-w-[800px] max-w-[900px] flex g-8 justify-between items-baseline text-sm ">
->>>>>>> 791a53178a87f377a7dc0b8d74f8894b5fac48b5
+        <div className="2xl:justify-start 2xl:gap-24 2xl:pr-24 2xl:max-w-full 2xl:w-full top-0 w-3/6 min-w-[800px] max-w-[900px] flex g-8 pr-1.5 justify-between items-baseline text-sm ">
           <Link
             href="/"
             className="text-white  font-extrabold flex text-xl p-0 m-0  "
@@ -27,9 +22,9 @@ const Navbar = () => {
           </Link>
           <Link
             href="/"
-            className={`flex 2xl:ml-auto justify-center text-white  gap-2 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
+            className={`flex 2xl:ml-auto justify-center text-white  gap-2 pr-2 pl-2  pt-2 pb-2 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
               usePathname() === "/"
-                ? "border-2 border-color-3 shadow-[0_0_1rem_0px_#9d5ae3] pr-4 pl-4  pt-2 pb-2 rounded bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
+                ? "border-2 border-color-3 shadow-[0_0_1rem_0px_#9d5ae3]  rounded bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
                 : ""
             }`}
           >
@@ -43,10 +38,10 @@ const Navbar = () => {
             Home
           </Link>
           <Link
-            href="/learningPath"
-            className={`flex justify-center text-white  gap-2 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
-              usePathname() === "/learningPath"
-                ? "border-2 border-color-3 pr-4 pl-4 shadow-[0_0_1rem_0px_#9d5ae3] pt-2 pb-2 rounded bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
+            href="/dashboard"
+            className={`flex justify-center text-white  pr-2 pl-2 gap-2 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
+              usePathname() === "/dashboard"
+                ? "border-2 border-color-3 shadow-[0_0_1rem_0px_#9d5ae3] pt-2 pb-2 rounded bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
                 : ""
             }`}
           >
@@ -58,7 +53,7 @@ const Navbar = () => {
             href="/community"
             className={`flex justify-center text-white pr-2 pl-2 pt-4 pb-4 gap-2 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
               usePathname() === "/community"
-                ? "border-2 border-color-3 pr-4 pl-4  shadow-[0_0_1rem_0px_#9d5ae3] rounded bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
+                ? "border-2 border-color-3  shadow-[0_0_1rem_0px_#9d5ae3] rounded bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
                 : ""
             }`}
           >
@@ -71,17 +66,10 @@ const Navbar = () => {
             Community
           </Link>
           <Link
-<<<<<<< HEAD
             href="/aboutUs"
-            className={`flex justify-center text-white  gap-2 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
+            className={`flex 2xl:mr-auto justify-center text-white pr-2 pl-2  gap-2 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
               usePathname() === "/aboutUs"
-                ? "border-2 border-color-3  rounded shadow-[0_0_1rem_0px_#9d5ae3] pr-4 pl-4  pt-2 pb-2  bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
-=======
-            href="/about"
-            className={`flex 2xl:mr-auto justify-center text-white  gap-2 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
-              usePathname() === "/about"
-                ? "border-2 border-color-3 pr-8 pl-8 pt-2 pb-2 rounded shadow-[0_0_1rem_0px_#9d5ae3]  bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
->>>>>>> 791a53178a87f377a7dc0b8d74f8894b5fac48b5
+                ? "border-2 border-color-3 pt-2 pb-2 rounded shadow-[0_0_1rem_0px_#9d5ae3]  bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
                 : ""
             }`}
           >
@@ -107,7 +95,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div
-        className={`fixed top-0 left-0 w-3/5 h-full z-10  lg:hidden bg-[white] bg-opacity-25 text-transparent backdrop-blur-sm border-white border-opacity-25 border transform duration-300 ${
+        className={`fixed top-0 left-0 w-3/5 h-full z-10  lg:hidden bg-[#161A33] bg-opacity-20 text-transparent backdrop-blur-sm border-white border-opacity-25 border transform duration-300 ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >

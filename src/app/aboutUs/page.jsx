@@ -13,8 +13,8 @@ import Image from "next/image";
 import Navbar from "@/components/ui/Navbar";
 const page = () => {
   return (
-    <>
-      <Navbar />
+    <div className="max-w-[120rem]">
+     
       <div className="flex flex-col gap-52 items-center">
         <div className="absolute h-[50rem] w-[71.5rem] -z-10 top-[180px] left-[-30px] overflow-hidden rotate-[-5deg] z-1 lg:block hidden">
           <Image
@@ -57,8 +57,8 @@ const page = () => {
             in bridging the technological divides, ensuring that no one is left
             behind.
           </p>
-        </div>
-        <div className="flex flex-col gap-52">
+        </div> 
+         <div className="flex flex-col gap-52">
           <InfoCard
             title="OUR VISION"
             img={about1}
@@ -87,7 +87,7 @@ const page = () => {
         <Team />
         <Footer />
       </div>
-    </>
+    </div>
   );
 };
 
