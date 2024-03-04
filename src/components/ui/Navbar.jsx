@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import profile from "@/app/images/asset/profile.png";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 
@@ -45,15 +46,20 @@ const Navbar = () => {
                 : ""
             }`}
           >
-            <Image src="/assets/icons/lp.png" alt="AlgoArena" width={18} height={18} />
+            <Image
+              src="/assets/icons/lp.png"
+              alt="AlgoArena"
+              width={18}
+              height={18}
+            />
             Learning Path
           </Link>
 
           <Link
             href="/community"
-            className={`flex justify-center text-white pr-2 pl-2 pt-4 pb-4 gap-2 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
+            className={`flex justify-center text-white pr-2 pl-2 gap-2 z-10 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
               usePathname() === "/community"
-                ? "border-2 border-color-3  shadow-[0_0_1rem_0px_#9d5ae3] rounded bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
+                ? "border-2 border-color-3  shadow-[0_0_1rem_0px_#9d5ae3] rounded pt-2 pb-2  bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
                 : ""
             }`}
           >
@@ -73,13 +79,21 @@ const Navbar = () => {
                 : ""
             }`}
           >
-            <Image src="/assets/icons/about.png" alt="AlgoArena" width={18} height={18} />
+            <Image
+              src="/assets/icons/about.png"
+              alt="AlgoArena"
+              width={18}
+              height={18}
+            />
             About US
           </Link>
         </div>
         <button className="bg-color-2  text-white pr-5 shadow-[0_0_1rem_0px_#9d5ae3] pl-5 pt-1 pb-1 rounded-xl hover:bg-gradient-to-r from-color-2 to-color-3 transition-all duration-200">
           Login
         </button>
+        {/* <div className="w-12 h-12 rounded-full bg-purple-500 flex justify-center items-center">
+          <Image src={profile} alt="User" width={30} height={30} />
+        </div> */}
       </div>
       <div className="flex justify-between p-6  w-screen lg:hidden ">
         <Image
@@ -95,7 +109,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div
-        className={`fixed top-0 left-0 w-3/5 h-full z-10  lg:hidden bg-[#161A33] bg-opacity-20 text-transparent backdrop-blur-sm border-white border-opacity-25 border transform duration-300 ${
+        className={`fixed top-0 left-0 w-3/5 h-full z-10  lg:hidden bg-black  text-transparent bg-opacity-60 backdrop-blur-sm border-white border-opacity-25 border transform duration-300 ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -128,7 +142,12 @@ const Navbar = () => {
             href="/"
             className="flex  text-[white]  gap-2 px-4 py-2 mr-6 ml-6 hover:bg-color-3"
           >
-            <Image src="/assets/icons/lp.png" alt="AlgoArena" width={20} height={10} />
+            <Image
+              src="/assets/icons/lp.png"
+              alt="AlgoArena"
+              width={20}
+              height={10}
+            />
             Learning Path
           </Link>
           <div className="my-4 border-t border-[#939393] mr-6 ml-6"></div>
@@ -149,11 +168,16 @@ const Navbar = () => {
             href="/about-us"
             className="flex  text-white gap-2 px-4 py-2 mr-6 ml-6 hover:bg-color-3"
           >
-            <Image src="/assets/icons/about.png" alt="AlgoArena" width={20} height={10} />
+            <Image
+              src="/assets/icons/about.png"
+              alt="AlgoArena"
+              width={20}
+              height={10}
+            />
             About US
           </Link>
           <div className="my-4 border-t border-[#939393] mr-6 ml-6"></div>
-          <button className="bg-color-2 text-[white] pr-5 pl-5 pt-1 pb-1 mr-6 ml-6 rounded-full hover:bg-gradient-to-r from-color-2 to-color-4">
+          <button className="bg-color-2 text-[white] pr-5 pl-5 pt-2 pb-2 mr-6 ml-10 rounded-xl  hover:bg-gradient-to-r from-color-2 to-color-4">
             Login
           </button>
         </div>

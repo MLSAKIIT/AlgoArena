@@ -2,7 +2,7 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
 import { fontPopins, fontTheBoldFont } from "@/lib/font";
-import Navbar from "@/components/ui/Navbar";
+
 
 export const metadata = {
   title: "Create Next App",
@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
           fontTheBoldFont.variable
         )}
       >
-        <Navbar />
+  
         {children}
         <Toaster position="bottom-center" richColors />
       </body>

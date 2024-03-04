@@ -14,7 +14,7 @@ import Navbar from "@/components/ui/Navbar";
 const page = () => {
   return (
     <div className="max-w-[120rem]">
-     
+     <Navbar/>
       <div className="flex flex-col gap-52 items-center">
         <div className="absolute h-[50rem] w-[71.5rem] -z-10 top-[180px] left-[-30px] overflow-hidden rotate-[-5deg] z-1 lg:block hidden">
           <Image
