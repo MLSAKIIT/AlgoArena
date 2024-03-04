@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "npx prisma generate"
+    "postinstall": "npx prisma generate",
+    "prepare": "husky"
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.7",
@@ -36,6 +37,7 @@
   "devDependencies": {
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
+    "husky": "^8.0.3",
     "eslint-config-next": "14.1.0",
     "postcss": "^8",
     "prisma": "^5.9.1",
