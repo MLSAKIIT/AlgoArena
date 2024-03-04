@@ -4,12 +4,14 @@ import Link from "next/link";
 import profile from "@/app/images/asset/profile.png";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { useSession } from "next-auth/react";
 
 const Navbar = () => {
   const [open, setOpen] = React.useState(false);
   const onClick = () => {
     setOpen(!open);
   };
+  const { data: session } = useSession();
 
   return (
     <>
@@ -88,9 +90,25 @@ const Navbar = () => {
             About US
           </Link>
         </div>
-        <button className="bg-color-2  text-white pr-5 shadow-[0_0_1rem_0px_#9d5ae3] pl-5 pt-1 pb-1 rounded-xl hover:bg-gradient-to-r from-color-2 to-color-3 transition-all duration-200">
-          Login
-        </button>
+        {session ? (
+          <Link
+            href="/dashboard"
+            className="bg-color-2 grid place-items-center  text-white pr-5 shadow-[0_0_1rem_0px_#9d5ae3] pl-5 pt-1 pb-1 rounded-xl hover:bg-gradient-to-r from-color-2 to-color-3 transition-all duration-200"
+          >
+            <Image
+              src="/assets/icons/user-dashboard.svg"
+              height={24}
+              width={24}
+            />
+          </Link>
+        ) : (
+          <Link
+            href="/sign-in"
+            className="bg-color-2 grid place-items-center  text-white pr-5 shadow-[0_0_1rem_0px_#9d5ae3] pl-5 pt-1 pb-1 rounded-xl hover:bg-gradient-to-r from-color-2 to-color-3 transition-all duration-200"
+          >
+            Login
+          </Link>
+        )}
         {/* <div className="w-12 h-12 rounded-full bg-purple-500 flex justify-center items-center">
           <Image src={profile} alt="User" width={30} height={30} />
         </div> */}
@@ -177,9 +195,21 @@ const Navbar = () => {
             About US
           </Link>
           <div className="my-4 border-t border-[#939393] mr-6 ml-6"></div>
-          <button className="bg-color-2 text-[white] pr-5 pl-5 pt-2 pb-2 mr-6 ml-10 rounded-xl  hover:bg-gradient-to-r from-color-2 to-color-4">
-            Login
-          </button>
+          {session ? (
+            <Link
+              href="/dashboard"
+              className="bg-color-2 text-[white] pr-5 pl-5 pt-2 pb-2 mr-6 ml-10 rounded-xl  hover:bg-gradient-to-r from-color-2 to-color-4"
+            >
+              Dashboard
+            </Link>
+          ) : (
+            <Link
+              href="/sign-in"
+              className="bg-color-2 text-[white] pr-5 pl-5 pt-2 pb-2 mr-6 ml-10 rounded-xl  hover:bg-gradient-to-r from-color-2 to-color-4"
+            >
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </>
