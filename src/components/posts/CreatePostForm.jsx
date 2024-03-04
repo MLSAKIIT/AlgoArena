@@ -12,6 +12,8 @@ import { Loader2 } from "lucide-react";
 import SelectComponent from "./SelectComponent";
 import { domains, tags } from "@/app/constants";
 import { postSchema } from "@/schemas/posts/new-post";
+import { createPost } from "@/app/actions/post";
+import { toast } from "sonner";
 
 const CreatePostForm = () => {
   const {
@@ -26,9 +28,25 @@ const CreatePostForm = () => {
       title: "",
       content: "",
       domain: "",
-      tech: "",
+      tags: "",
     },
     validationSchema: postSchema,
+    onSubmit: async (values) => {
+      try {
+        const newPost = await createPost(values);
+        if (newPost && !newPost.error) {
+          toast.success("Post created successfully");
+        } else {
+          const errorMessage = newPost
+            ? newPost.error
+            : "Something went wrong. Please try again.";
+          toast.error(errorMessage);
+        }
+      } catch (error) {
+        console.error(error);
+        toast.error(error.message);
+      }
+    },
   });
 
   return (
@@ -84,16 +102,16 @@ const CreatePostForm = () => {
           </div>
           {values.domain && (
             <div className="grid gap-2">
-              <Label htmlFor="name">Tech</Label>
+              <Label htmlFor="name">Tags</Label>
               <SelectComponent
-                name="tech"
-                value={values.tech}
-                id="tech"
+                name="tags"
+                value={values.tags}
+                id="tags"
                 options={tags[values.domain]}
                 onChange={handleChange}
               />
-              {errors.tech && (
-                <p className="text-red-500 text-sm">{errors.tech}</p>
+              {errors.tags && (
+                <p className="text-red-500 text-sm">{errors.tags}</p>
               )}
             </div>
           )}

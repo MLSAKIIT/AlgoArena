@@ -8,10 +8,10 @@ export const postSchema = yup.object({
     .string()
     .oneOf(domains, "Invalid Domain")
     .required("Domain is required"),
-  tech: yup.string().when("domain", (domain, schema) => {
+  tags: yup.string().when("domain", (domain, schema) => {
     const availableTags = tags[domain] || [];
     return schema
-      .required("Tech is required")
-      .oneOf(availableTags, "Inavlid Tech");
+      .required("Tag is required")
+      .oneOf(availableTags, "Inavlid Tag");
   }),
 });
