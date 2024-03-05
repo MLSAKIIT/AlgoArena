@@ -6,7 +6,6 @@ import {
   Card,
   CardHeader,
   CardTitle,
-  CardDescription,
   CardContent,
   CardFooter,
 } from "@/components/ui/card";
@@ -14,7 +13,6 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useFormik } from "formik";
 import { cn } from "@/lib/utils";
-import { Label } from "@/components/ui/label";
 import { loginSchema } from "@/schemas/auth/login";
 import { signIn } from "next-auth/react";
 import { toast } from "sonner";
@@ -78,56 +76,59 @@ export function LoginForm({ callbackUrl }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-8">
-      <Card>
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-8 w-full flex justify-center max-w-[120rem]"
+    >
+      <Card className="sm:bg-color-6 w-full sm:w-96 sm:rounded-2xl rounded-none sm:border-solid border-none h-[25rem]">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl">Login to your account</CardTitle>
-          <CardDescription>
-            Enter your email and password to login to your account
-          </CardDescription>
+          <CardTitle className="text-2xl">LOGIN</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex flex-col space-y-4">
             <div className="flex flex-col space-y-2">
-              <Label htmlFor="email">Email</Label>
               <Input
                 name="email"
-                placeholder="test@example.com"
+                placeholder="Email"
                 type="email"
                 value={values.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className={cn(errors.email && "border-destructive")}
+                className={cn(
+                  `bg-[url('/assets/auth/email.svg')] ${
+                    errors.email && "border-red-500"
+                  }`
+                )}
               />
               {errors.email && (
-                <p className="text-destructive text-sm">{errors.email}</p>
+                <p className="text-red-500 text-sm">{errors.email}</p>
               )}
             </div>
             <div className="flex flex-col space-y-2">
-              <Label htmlFor="password">Password</Label>
               <Input
                 name="password"
-                placeholder="********"
+                placeholder="Password"
                 type="password"
                 value={values.password}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className={cn(errors.password && "border-destructive")}
+                className={cn(
+                  `bg-[url('/assets/auth/eye.svg')] ${
+                    errors.password && "border-red-500"
+                  }`
+                )}
               />
               {errors.password && (
-                <p className="text-destructive text-sm">{errors.password}</p>
+                <p className="text-red-500 text-sm">{errors.password}</p>
               )}
             </div>
           </div>
           <div className="flex flex-col items-start">
             <Link
-              className={buttonVariants({
-                variant: "link",
-                className: "pl-0",
-              })}
+              className="my-2 text-gray-300 transition-colors hover:text-color-2 w-full text-xs text-end"
               href={"/reset"}
             >
-              Forgot your password?
+              Forgot Password?
             </Link>
 
             {showResendEmailOption ? (
@@ -144,22 +145,26 @@ export function LoginForm({ callbackUrl }) {
           </div>
         </CardContent>
         <CardFooter className="flex flex-col items-start gap-5">
-          <div>
-            Dont have an account?
+          <Button
+            className="w-full font-bold text-md"
+            type="submit"
+            disabled={isSubmitting}
+          >
+            LOGIN
+            {isSubmitting && <Loader2 className="animate-spin h-4 w-4 ml-2" />}
+          </Button>
+          <div className="text-xs text-gray-300 text-center w-full">
+            Dont have an account?{" "}
             <Link
               className={buttonVariants({
-                variant: "link",
-                className: "px-[2px] underline",
+                variant: "authLink",
+                className: "text-xs",
               })}
               href={"/sign-up"}
             >
-              Sign up
+              Register
             </Link>
           </div>
-          <Button className="w-full" type="submit" disabled={isSubmitting}>
-            Login
-            {isSubmitting && <Loader2 className="animate-spin h-4 w-4 ml-2" />}
-          </Button>
         </CardFooter>
       </Card>
     </form>
