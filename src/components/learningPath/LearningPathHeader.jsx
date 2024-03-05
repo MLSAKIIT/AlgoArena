@@ -20,7 +20,7 @@ const LearningPathHeader = ({ header, videos }) => {
             <div className="bg-gradient-to-r from-purple-900 to-bg-purple-400 h-[0.180rem] w-1/4"></div>
           </div>
           <div className="mt-5  md:flex md:justify-between">
-            <div className="w-3/2 xs:w-1/2 text-xss xs:text-xs md:w-2/6  max-w-md sm:w-50 text-white">
+            <div className="w-3/2 xs:w-1/2 text-xss xs:text-xs md:w-2/6  max-w-md sm:w-50 font-medium text-white">
               {header.description}
             </div>
 
@@ -33,7 +33,7 @@ const LearningPathHeader = ({ header, videos }) => {
                   width={15}
                 />
               </div>
-              <div className="mx-8 text-xss xs:text-xs text-white">
+              <div className="mx-8 text-xss xs:text-xs text-white font-medium">
                 Your Progress
               </div>
             </div>
@@ -47,9 +47,7 @@ const LearningPathHeader = ({ header, videos }) => {
                 width={15}
                 alt="play-bttn"
               />
-              <p className="text-xss xs:text-xs font-extralight">
-                {videos} Videos
-              </p>
+              <p className="text-xss xs:text-xs font-bold">{videos} Videos</p>
             </div>
             <div className="flex gap-2">
               <Image
@@ -58,7 +56,7 @@ const LearningPathHeader = ({ header, videos }) => {
                 width={15}
                 alt="time-img"
               />
-              <p className="text-xss xs:text-xs font-extralight">
+              <p className="text-xss xs:text-xs font-bold">
                 {header.time} hours
               </p>
             </div>
@@ -73,7 +71,7 @@ const LearningPathHeader = ({ header, videos }) => {
               />
             </div>
             <div>
-              <p className="text-xss xs:text-xs">
+              <p className="text-xss font-medium xs:text-xs">
                 Created by {header.createdBy}
               </p>
             </div>
