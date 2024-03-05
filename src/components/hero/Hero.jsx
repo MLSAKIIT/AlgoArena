@@ -1,10 +1,12 @@
 import React from "react";
 import Image from "next/image";
+import Navbar from "../ui/Navbar";
 
 const Hero = () => {
   return (
     <div>
-      <div className="lg:pt-32 pt-10 mb-10 lg:h-96 lg:mb-32 block max-w-7xl mx-auto">
+      <Navbar />
+      <div className="lg:pt-32 pt-10 mb-10  lg:h-96 lg:mb-32 block max-w-[120rem]  mx-auto">
         <div className="flex flex-wrap lg:flex-nowrap justify-evenly mid:gap-x-10/ md:gap-20 mid:mx-4 items-center lg:mx-auto">
           <div className="relative">
             <div className="font-theboldfont text-white lg:text-4xl text-xl mid:text-2xl text-center mid:text-start">
