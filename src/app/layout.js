@@ -2,7 +2,7 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
 import { fontPopins, fontTheBoldFont } from "@/lib/font";
-
+import { NextAuthProvider } from "@/components/auth/providers/nextAuthProvider";
 
 export const metadata = {
   title: "Create Next App",
@@ -19,8 +19,7 @@ export default function RootLayout({ children }) {
           fontTheBoldFont.variable
         )}
       >
-  
-        {children}
+        <NextAuthProvider>{children}</NextAuthProvider>
         <Toaster position="bottom-center" richColors />
       </body>
     </html>
