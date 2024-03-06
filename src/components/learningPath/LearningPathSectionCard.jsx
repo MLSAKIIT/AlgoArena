@@ -5,16 +5,15 @@ import LearningPathSectionItem from "./LearningPathSectionItem";
 
 const LearningPathSectionCard = ({ section, showItem, setShowIndex }) => {
   const [sectionOpen, setSectionOpen] = useState(true);
- 
 
   const handleClick = () => {
     setShowIndex();
   };
 
   const { id, title, time } = section;
-  const videos = section.chapters
+  const videos = section.chapters;
 
-  const eachVideoPoint = 100/ videos.length;
+  const eachVideoPoint = 100 / videos.length;
 
   return (
     <div className="border-[3px] border-color-2 rounded-xl  m-4 items-center p-3 md:max-w-6xl mx-auto w-10/12 md:w-9/12">
@@ -40,7 +39,11 @@ const LearningPathSectionCard = ({ section, showItem, setShowIndex }) => {
       </div>
       {showItem &&
         videos.map((video) => (
-          <LearningPathSectionItem key={video.id} info={video} point={eachVideoPoint} />
+          <LearningPathSectionItem
+            key={video.id}
+            info={video}
+            point={eachVideoPoint}
+          />
         ))}
     </div>
   );

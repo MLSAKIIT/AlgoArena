@@ -37,7 +37,7 @@ const LearningPath = ({ slugId }) => {
       ) : (
         <div>
           <LearningPathHeader header={header} />
-          <LearningPathSection sections={sections} />
+          {/* <LearningPathSection sections={sections} /> */}
         </div>
       )}
     </div>
