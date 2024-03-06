@@ -20,11 +20,11 @@ const CommunityPosts = () => {
     ];
   
     const postElements = posts.map((post, index) => (
-        <div>
+        <div key={index}>
             <div key={index} className=" border-solid border-purple-500 rounded-lg border-2 p-4 text-white">
               <div className='flex'>
                 <div className="mr-6 mt-1 h-10 w-10 border-2 border-slate-500 bg-slate-500 rounded-full">
-                  <Image/>
+                  <Image alt='user_img'/>
                 </div>
                 <div>
                   <p className="font-bold">From: {post.category}</p>

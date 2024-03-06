@@ -26,7 +26,7 @@ const MyComponent = () => {
               <p>
                 <div className='flex mt-4 mb-2'>
                   <div className="mr-6 mt-1 h-10 w-10 border-2 border-slate-500 bg-slate-500 rounded-full">
-                    <Image/>
+                    <Image alt='user_img'/>
                   </div>
                   <p className='mt-3 mr-2 font-bold'>[Username]</p>
                   <p className='mt-3'>x days ago</p>
@@ -44,7 +44,7 @@ const MyComponent = () => {
                 <div className='ml-8 pl-4 pb-6 border-purple-500 rounded-bl-3xl border-l-2 border-b-2'>
                     <div className='flex mt-4 mb-2'>
                       <div className="mr-6 mt-1 h-10 w-10 border-2 border-slate-500 bg-slate-500 rounded-full">
-                        <Image/>
+                        <Image alt='user_img'/>
                       </div>
                       <p className='mt-3 mr-2 font-bold'>[Username]</p>
                       <p className='mt-3'>x days ago</p>
