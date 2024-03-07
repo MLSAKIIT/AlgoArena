@@ -1,5 +1,5 @@
 import Image from "next/image";
-import CircularProgress from "@mui/joy/CircularProgress";
+// import CircularProgress from "@mui/joy/CircularProgress";
 import React, { useState, useEffect } from "react";
 
 const LearningPathHeader = ({ header, videos }) => {
@@ -24,7 +24,7 @@ const LearningPathHeader = ({ header, videos }) => {
     <>
       <div className="relative h-full min-w-screen max-w-[180rem] ">
         <div
-          className="absolute inset-0   h-[20 rem] sm:h-[30rem] md[40rem] bg-left-top bg-no-repeat bg-blend-normal"
+          className="absolute inset-0   h-[20 rem] sm:h-[30rem] md[40rem] bg-left-top bg-no-repeat bg-blend-normal z-[-1]"
           style={{
             backgroundImage: `url('/assets/domain/circular.png')`,
             backgroundSize: "contain",
@@ -45,7 +45,7 @@ const LearningPathHeader = ({ header, videos }) => {
             <div className="flex  mt-1">
               <div className="mr-8 flex gap-2 my-2 items-center text-xss xs:text-xs text-white">
                 <div className="relative ">
-                  <CircularProgress
+                  {/* <CircularProgress
                     sx={{
                       "--CircularProgress-progressThickness": "6px",
                       "--CircularProgress-trackThickness": "5px",
@@ -57,7 +57,7 @@ const LearningPathHeader = ({ header, videos }) => {
                     variant="plain"
                     color={color}
                     value={counter}
-                  />
+                  /> */}
 
                   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
                     <Image
