@@ -56,45 +56,37 @@ const Community = () => {
             </div>
           </div>
 
-          <div>
-            
+        <div>   
               
-          {window.innerWidth < 500 ? (
-              <div className="relative inline-block text-left">
-                <div>
-                  <button onClick={() => setIsOpen((prev) => !prev)} 
-                          className='flex items-center justify-center p-4 w-[150px] h-[40px] font-bold border-2 border-purple-500 text-white  rounded-lg
-                          absolute bottom-0'>
-                            SORT BY
-                      {!isOpen ? (
-                        <RxCaretDown className='h-14 text-4xl' />
-                      ) : (
-                        <RxCaretUp className='h-14 text-4xl'/>
-                      )}
-                  </button>
-                  {isOpen && (
-                    <p>
-                      <div className='absolute w-[150px] '>{dropdownContent}</div>
-                    </p>
-                    
-                  )}
-                </div>
-
+          <div className="relative inline-block text-left md:hidden">
+            <div>
+              <button onClick={() => setIsOpen((prev) => !prev)} 
+                    className='flex items-center justify-center p-4 w-[150px] h-[40px] font-bold border-2 border-purple-500 text-white rounded-lg absolute bottom-0'>
+                      SORT BY
+                {!isOpen ? (
+                  <RxCaretDown className='h-14 text-4xl' />
+                ) : (
+                  <RxCaretUp className='h-14 text-4xl'/>
+                )}
+              </button>
+            {isOpen && (
+              <div className='absolute w-[150px]'>
+                {dropdownContent}
               </div>
-          ) : (
-               <div className="p-4 h-20 mb-4 border-solid border-purple-500 rounded-lg border-2 flex items-center justify-center">
-                <div className='flex'>
-                  <div className="font-bold text-white py-1">
-                    SORT BY:
-                    {buttonElements}
-                  </div>
-                  
-                </div>
-                
-               </div>   
-              )}
-               
+            )}
+            </div>
           </div>
+
+          <div className="p-4 h-20 mb-4 border-solid border-purple-500 rounded-lg border-2 hidden md:flex items-center justify-center">
+           <div className='flex'>
+            <div className="font-bold text-white py-1">
+              SORT BY:
+              {buttonElements}
+            </div>
+           </div>
+          </div>
+       
+        </div>
           
           
             <CommunityPosts />
@@ -102,7 +94,7 @@ const Community = () => {
             <CommunityPosts />
 
           
-        </div>
+      </div>
         
 
 
