@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { DomainApi } from "@/app/utils/constants";
+import { DomainApi } from "@/constants";
 import LearningPathSection from "./LearningPathSection";
 import LearningPathHeader from "./LearningPathHeader";
 
@@ -37,7 +37,7 @@ const LearningPath = ({ slugId }) => {
       ) : (
         <div>
           <LearningPathHeader header={header} />
-          <LearningPathSection sections={sections} />
+          {/* <LearningPathSection sections={sections} /> */}
         </div>
       )}
     </div>
