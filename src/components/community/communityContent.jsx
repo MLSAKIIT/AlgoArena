@@ -19,7 +19,7 @@ const Content = () => {
       )}
       {expanded && (
         <div>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque illum numquam corrupti quasi maiores laboriosam neque repudiandae quibusdam, quam ipsam tempore itaque obcaecati et ratione debitis, unde iusto omnis id unde iusto omnis id omnis id
+          <p>Lorem ipsum dolor amet consectetur adipisicing elit. Doloremque illum numquam corrupti quasi maiores laboriosam neque repudiandae quibusdam, quam ipsam tempore itaque obcaecati et ratione debitis, unde iusto omnis id unde iusto omnis id omnis id
             </p>  
             
         </div>
