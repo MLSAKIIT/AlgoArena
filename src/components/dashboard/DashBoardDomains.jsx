@@ -3,8 +3,8 @@ import Image from "next/image";
 import {useState, useEffect} from "react";
 import DomainCard from "./DashBoardDomainsCard";
 
-const DashBoardDomains = ({initialData}) => {
-    const [data, setData] = useState(initialData);
+const DashBoardDomains = () => {
+    const [data, setData] = useState({});
 
     useEffect(() => {
         async function fetchData() {
@@ -22,7 +22,7 @@ const DashBoardDomains = ({initialData}) => {
             <div className="absolute lg:h-[80rem] lg:w-[78rem] lg:top-[-180px] lg:left-[-250px] lg:block hidden">
                 <Image src="/dashboard-ellipse1.svg" alt="Ellipse" height={100} width={80} className="absolute w-[80rem] h-[75rem] left-[13rem] top-[15rem] overflow-hidden lg:block hidden " />
             </div>
-            <div className="flex flex-col ml-20 z-20 mt-14">
+            <div className="flex flex-col justify-center items-center  z-20 mt-14">
                 <p className="text-3xl font-sans font-bold bg-gradient-to-r text-white bg-clip-text lg:px-[200px] sm:px-[100px] px-[20px] mt-4">WELCOME BACK, {userName}</p>
                 <br />
                 <div className="flex">
@@ -31,7 +31,8 @@ const DashBoardDomains = ({initialData}) => {
                         COURSES
                     </p>
                 </div>
-                <div className="z-20 grid grid-cols-2 md:grid-cols-3 mt-10 md:px-[100px] lg:px-[200px] sm:px-[100px] px-[20px]">
+                <div className="z-20 flex flex-nowrap xl:gap-[60px] mt-10 ###">
+                    
                     {data && data.enrolledCourses
                         ? data.enrolledCourses.map((course) => (
                               <DomainCard key={course.id} title={course.title} content={course.description} progress={course.progress} redirectURL={course.redirectURL} />
