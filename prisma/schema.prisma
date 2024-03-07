@@ -73,6 +73,8 @@ model LearningPath {
   authorId    String      @db.ObjectId
   user        User        @relation(fields: [authorId], references: [id], onDelete: Cascade)
   sections   Section[]
+  isForked     Boolean?   @default(false)
+  forkedFromId String?    @db.ObjectId
 }
 
 model Section {

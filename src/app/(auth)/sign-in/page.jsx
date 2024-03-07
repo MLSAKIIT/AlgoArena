@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const SignInPage = ({ searchParams }) => {
   return (
-    <div className=" relative overflow-hidden flex py-10 flex-col items-center justify-center flex-0 flex-auto lg:px-0">
+    <div className="h-screen relative overflow-hidden flex py-10 flex-col items-center justify-center flex-0 flex-auto lg:px-0">
       <LoginForm callbackUrl={searchParams.callbackUrl} />
       {/* Background */}
       <Image
