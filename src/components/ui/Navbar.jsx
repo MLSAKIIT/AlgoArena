@@ -214,6 +214,14 @@ const Navbar = () => {
               Login
             </Link>
           )}
+          {session && (
+            <Link
+              href="/sign-out"
+              className="bg-color-2 mt-2 text-[white] pr-5 pl-5 pt-2 pb-2 mr-6 ml-10 rounded-xl  hover:bg-gradient-to-r from-color-2 to-color-4"
+            >
+              Sign out
+            </Link>
+          )}
         </div>
       </div>
     </>

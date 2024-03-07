@@ -24,7 +24,7 @@ const LearningPathHeader = ({ header, videos }) => {
     <>
       <div className="relative h-full min-w-screen max-w-[180rem] ">
         <div
-          className="absolute inset-0   h-[20 rem] sm:h-[30rem] md[40rem] bg-left-top bg-no-repeat bg-blend-normal"
+          className="absolute inset-0   h-[20 rem] sm:h-[30rem] md[40rem] bg-left-top bg-no-repeat bg-blend-normal z-[-1]"
           style={{
             backgroundImage: `url('/assets/domain/circular.png')`,
             backgroundSize: "contain",
