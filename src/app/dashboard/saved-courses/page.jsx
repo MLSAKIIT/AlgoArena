@@ -6,7 +6,7 @@ export default function dashboard() {
   return (
     <>
       <Navbar />
-      <StaredCourse/>
+      <StaredCourse />
       <Dashboard username="AYUSH RANJAN"></Dashboard>
     </>
   );
