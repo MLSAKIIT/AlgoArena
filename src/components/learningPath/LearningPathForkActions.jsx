@@ -4,6 +4,7 @@ import { forkLearningPathAction } from "@/actions/forklearningpath";
 import { cn } from "@/lib/utils";
 import { GitFork } from "lucide-react";
 import SubmitButton from "@/components/SubmitButton";
+import LearningPathForkForm from "./LearningPathForkForm";
 
 const getParentLearningPath = async (id) => {
   const data = await db.learningPath.findUnique({
@@ -24,7 +25,6 @@ async function LearningPathForkActions({ isForked, parentPathId, id }) {
   const parentLearningPath = isForked
     ? await getParentLearningPath(parentPathId)
     : null;
-  const forkLearningPathActionWithId = forkLearningPathAction.bind(null, id);
 
   return (
     <div className="mx-10">
@@ -46,12 +46,7 @@ async function LearningPathForkActions({ isForked, parentPathId, id }) {
         </div>
       )}
       {!isForked && (
-        <form action={forkLearningPathActionWithId}>
-          <SubmitButton type="submit" className="mt-4 flex gap-2">
-            Fork
-            <GitFork className="w-4 h-4" />
-          </SubmitButton>
-        </form>
+        <LearningPathForkForm id={id} />
       )}
     </div>
   );
