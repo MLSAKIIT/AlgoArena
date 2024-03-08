@@ -11,7 +11,7 @@ export const createPost = async (data) => {
       domain: domain,
       tags: tags,
       // TODO: Replace with the user's id ( get from the session )
-      user: { connect: { id: "65d338e11f0b79f5ddad871e" } },
+      user: { connect: { id: "65e6261cbf92a412117be2ab" } },
     },
   });
   if (!newPost) return { error: "Post not created" };
@@ -26,16 +26,15 @@ export const getPosts = async () => {
   return posts;
 };
 
-// TODO: Replace with the user's id ( get from the session )
-export const likePost = async (postId, authorId, state, postLikeId) => {
+export const likePost = async (postId, state, postLikeId) => {
   // state = 1 : Like Post
   // state = 0 : Dislike Post
   console.log("Like Post Executed");
   try {
-    if (state === 1 && postId && authorId) {
+    if (state === 1 && postId && "65e6261cbf92a412117be2ab") {
       const postLike = await db.postLike.create({
         data: {
-          user: { connect: { id: authorId } },
+          user: { connect: { id: "65e6261cbf92a412117be2ab" } },
           post: { connect: { id: postId } },
         },
       });
@@ -54,7 +53,7 @@ export const likePost = async (postId, authorId, state, postLikeId) => {
   }
 };
 
-export const savePost = async (postId, authorId, state, savePostId) => {
+export const savePost = async (postId, state, savePostId) => {
   // state = 1 : Save a Post
   // state = 0 : Un Save a Post
   console.log("Save Post Executed");
@@ -62,7 +61,7 @@ export const savePost = async (postId, authorId, state, savePostId) => {
     if (state === 1) {
       const savePost = await db.savedPost.create({
         data: {
-          user: { connect: { id: authorId } },
+          user: { connect: { id: "65e6261cbf92a412117be2ab" } },
           post: { connect: { id: postId } },
         },
       });

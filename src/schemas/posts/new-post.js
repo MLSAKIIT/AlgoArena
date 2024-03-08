@@ -8,7 +8,7 @@ export const postSchema = yup.object({
     .string()
     .oneOf(domains, "Invalid Domain")
     .required("Domain is required"),
-  tags: yup.string().when("domain", (domain, schema) => {
+  tech: yup.string().when("domain", (domain, schema) => {
     const availableTags = tags[domain] || [];
     return schema
       .required("Tag is required")

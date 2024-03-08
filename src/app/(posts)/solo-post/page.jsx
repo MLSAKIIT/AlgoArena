@@ -23,14 +23,14 @@ const CreatePost = () => {
             {<SoloPost post={post} />}{" "}
             <div className="flex gap-5 justify-evenly p-3">
               <button
-                onClick={() => likePost(post.id, post.authorId, 1)}
+                onClick={() => likePost(post.id, 1, null)}
                 className="border p-3 rounded-md"
               >
                 Like a post
               </button>
               <button
                 className="border p-3 rounded-md"
-                onClick={() => savePost(post.id, post.authorId, 1)}
+                onClick={() => savePost(post.id, 1, null)}
               >
                 Save a Post
               </button>
