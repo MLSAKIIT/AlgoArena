@@ -22,6 +22,27 @@ export const data = {
             progress: 30,
             redirectURL: "/appdev",
         },
+        {
+            id: 3,
+            title: "App Development",
+            description: "Dive into Mobile App Development: Android and iOS development, Kotlin, Swift, Flutter, and React Native.",
+            progress: 30,
+            redirectURL: "/appdev",
+        },
+        {
+            id: 3,
+            title: "App Development",
+            description: "Dive into Mobile App Development: Android and iOS development, Kotlin, Swift, Flutter, and React Native.",
+            progress: 30,
+            redirectURL: "/appdev",
+        },
+        {
+            id: 3,
+            title: "App Development",
+            description: "Dive into Mobile App Development: Android and iOS development, Kotlin, Swift, Flutter, and React Native.",
+            progress: 30,
+            redirectURL: "/appdev",
+        },
     ],
     suggestedCourses: [
         {

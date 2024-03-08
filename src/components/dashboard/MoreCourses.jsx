@@ -34,7 +34,6 @@ const MORE_COURSES = [
 ];
 
 export default function MoreCourses() {
-    
     return (
         <>
             {MORE_COURSES.map(({id, course, members}) => {
