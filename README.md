@@ -1,5 +1,6 @@
 # MLSA ALGO ARENA
-<!-- ![MLSA Logo](https://github.com/preasha07/MLSA_webdev/assets/150994559/1f3dcf4c-ceb6-442e-8b2c-eb7b68fbb129) -->
+![Home Page](https://github.com/VinamraSaurav/AlgoArena/assets/80186642/19fd8666-9dab-41a1-88a5-6b0d3741791b)
+ 
 ## 📢 Introduction : 
 
 A comprehensive **learning ecosystem**, expertly built on **Next.js**, efficiently designed to cater to a diverse range of learners. We offer a wide variety of courses, including but not limited to programming, data science, design, and marketing, to name a few.
