@@ -54,8 +54,11 @@
   }
   body {
     @apply bg-background text-foreground;
-    @apply max-w-[120rem] 
+    @apply max-w-[120rem];
   }
 }
 
-
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none !important; 
+}
