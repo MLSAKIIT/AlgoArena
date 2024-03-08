@@ -1,18 +1,20 @@
 "use client";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import React, { useState } from "react";
+import React from "react";
 import LearningPathSectionItem from "./LearningPathSectionItem";
 
-const LearningPathSectionCard = ({ section, showItem, setShowIndex }) => {
-  const [sectionOpen, setSectionOpen] = useState(true);
-
+const LearningPathSectionCard = ({
+  section,
+  showItem,
+  setShowIndex,
+  teacher,
+  completedChapters,
+}) => {
   const handleClick = () => {
     setShowIndex();
   };
 
-  const { id, title, time, chapters } = section;
-
-  const eachVideoPoint = 100 / chapters.length;
+  const { title, chapters } = section;
 
   return (
     <div className="border-[3px] border-color-2 rounded-xl  m-4 items-center p-3 md:max-w-6xl mx-auto w-10/12 md:w-9/12 backdrop-blur-[7px]">
@@ -25,7 +27,7 @@ const LearningPathSectionCard = ({ section, showItem, setShowIndex }) => {
             {title}
           </div>
           <div className="flex text-sm font-popins font-[500]">
-            {chapters.length} chapters | {time} Hours
+            {chapters.length} Videos
           </div>
         </div>
         <div>
@@ -38,11 +40,12 @@ const LearningPathSectionCard = ({ section, showItem, setShowIndex }) => {
       </div>
       {showItem &&
         chapters &&
-        chapters.map((video) => (
+        chapters.map((chapter) => (
           <LearningPathSectionItem
-            key={video.id}
-            info={video}
-            point={eachVideoPoint}
+            key={chapter.id}
+            info={chapter}
+            teacher={teacher}
+            isCompleted={completedChapters.includes(chapter.id)}
           />
         ))}
     </div>

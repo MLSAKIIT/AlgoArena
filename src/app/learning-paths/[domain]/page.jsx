@@ -12,6 +12,8 @@ import Link from "next/link";
 
 import React from "react";
 import SearchBar from "@/components/learningPath/Search";
+import { ALLOWED_DOMAINS } from "@/constants";
+import { notFound } from "next/navigation";
 
 const getLearningPathsByDomain = async (domain, query) => {
   const actualQuery = query
@@ -60,6 +62,10 @@ const getLearningPathsByDomain = async (domain, query) => {
 };
 
 const LearningPathsPage = async ({ params: { domain }, searchParams }) => {
+  if (!Object.values(ALLOWED_DOMAINS).includes(domain)) {
+    return notFound();
+  }
+  
   const paths = await getLearningPathsByDomain(domain, searchParams.q);
   return (
     <div className="container flex flex-col gap-10">

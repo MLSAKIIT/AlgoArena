@@ -17,7 +17,7 @@ const DomainCard = ({ title, img }) => {
           alt="domain images"
         />
       </div>
-    </div>
+    </div> 
   );
 };
 
