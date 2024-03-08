@@ -53,7 +53,7 @@ const Features = () => {
               vision. Together, we construct bridges of understanding and
               support, fostering a tapestry of belonging and collaboration.
             </div>
-            <Link href={'/create-post'}>
+            <Link href={siteConfig.navBarLinks.community}>
               <button
                 className="bg-purple-500 text-white py-2 px-4 rounded-full mt-5 shadow-[0_0_1rem_0px_#9d5ae3]
             hover:bg-[#7f3dbf] active:scale-95 transition duration-200 "
