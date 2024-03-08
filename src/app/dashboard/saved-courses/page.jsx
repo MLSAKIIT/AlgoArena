@@ -1,6 +1,6 @@
-import Dashboard from "@/components/dashboard/Dashboard";
 import Navbar from "@/components/ui/Navbar";
 import StaredCourse from "@/components/startedCourses/StaredCourse";
+import DashboardStaredCourses from "@/components/startedCourses/DashboardStaredCourses";
 import { getAllLearningPathsWithProgress, getSavedLearningPathsWithProgress } from "@/data/dashboard";
 
 export default async function dashboard() {
@@ -10,8 +10,7 @@ export default async function dashboard() {
   return (
     <>
       <Navbar />
-      <StaredCourse data={savedLearningPaths} />
-      {/* <Dashboard username="AYUSH RANJAN"></Dashboard> */}
+      <DashboardStaredCourses data={savedLearningPaths} />
     </>
   );
 }
