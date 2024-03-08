@@ -1,7 +1,6 @@
 "use client";
-import { getPosts, likePost, savePost } from "@/app/actions/post";
+import { getPosts, likePost, savePost } from "@/actions/post";
 import SoloPost from "@/components/posts/SoloPost";
-// import SoloPost from "@/components/posts/SoloPost";
 import React, { useEffect } from "react";
 
 const CreatePost = () => {
