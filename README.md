@@ -38,7 +38,7 @@ Introducing Domain Groups, a power-packed addition that supercharges AlgoArena's
 | :----------: |  :-------:  | :-----: | :----------: |
 | Vaibhav Raj | Ankit Kumar | Amaan Bhati | Preasha Ghoshal |
 | Utkarsh Jha | Manish Malhotra | Harsh Raj | |
-| Vinamra Saurav | Ankit Kumar | | |
+| Vinamra Saurav | | | |
 | Kumar Priyanshu | | | |
 | Soumyadeep Mitra | | | |
 | Akangkha Sarkar | | | |
