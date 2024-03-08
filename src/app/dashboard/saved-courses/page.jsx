@@ -7,7 +7,7 @@ export default function dashboard() {
     <>
       <Navbar />
       <StaredCourse />
-      <Dashboard username="AYUSH RANJAN"></Dashboard>
+      {/* <Dashboard username="AYUSH RANJAN"></Dashboard> */}
     </>
   );
 }

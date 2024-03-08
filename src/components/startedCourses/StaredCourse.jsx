@@ -4,8 +4,8 @@ import StaredCourseCard from "./StaredCourseCard";
 
 const StaredCourse = () => {
   return (
-    <div className="max-w-7xl mt-4 mx-auto">
-      <div className="font-popins text-4xl font-[900] bg-gradient-course bg-clip-text text-transparent m-3 hidden md:block">
+    <div className="max-w-7xl mt-4 mx-auto mb-10">
+      <div className="font-popins text-4xl font-[900] bg-gradient-course bg-clip-text text-transparent m-3 hidden md:block w-[400px]">
         Your Stared Courses
       </div>
       <div className="font-popins text-4xl font-[900] bg-gradient-course bg-clip-text text-transparent m-3 block md:hidden">
