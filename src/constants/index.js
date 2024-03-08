@@ -52,3 +52,22 @@ export const MORE_COURSES = [
       href: `/learning-paths/${ALLOWED_DOMAINS.web}`
   },
 ];
+
+
+export const COMPLETED_COURSES = [
+    {
+        id:1,
+        course:"WEB DEVELOPMENT",
+        description:"Learn Full Stack Web Development: HTML/CSS, MySQL, PHP, JavaScript, and React and build a website from scratch!",
+    },
+    {
+        id:2,
+        course:"UI/UX",
+        description:"Start Your UI/UX Career in 2024: Figma, Web & App Design Mastery with In-Depth UX Theories - From Novice to Advanced.",
+    },
+    {
+        id:3,
+        course:"APP DEVELOPMENT",
+        description:"Learn XML and Kotlin and how to put them together to build your own Zomato, Instagram or any other app. Learn XML and Kotlin and how to put them together to build your own Zomato, Instagram or any other app. Learn XML and Kotlin and how to put them together to build your own Zomato, Instagram or any other app. Learn XML and Kotlin and how to put them together to build your own Zomato, Instagram or any other app.",
+    }
+]

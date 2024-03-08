@@ -11,7 +11,7 @@ export default async function dashboard() {
     <>
       <Navbar />
       <StaredCourse data={savedLearningPaths} />
-      <Dashboard data={currentlyWatchingLearningPaths} />
+      {/* <Dashboard username="AYUSH RANJAN"></Dashboard> */}
     </>
   );
 }
