@@ -34,6 +34,7 @@ const ChapterEdit = ({ index, chapter, handleChange }) => {
                 name="title"
                 placeholder="Title"
                 type="text"
+                required
                 value={chapter.title}
                 onChange={(e) => handleChange(index, e)}
                 //   onBlur={handleBlur}
@@ -46,6 +47,7 @@ const ChapterEdit = ({ index, chapter, handleChange }) => {
                 name="content"
                 placeholder="Content"
                 type="text"
+                required
                 className="bg-[url('/assets/icons/link.png')]"
                 value={chapter.content}
                 onChange={(e) => handleChange(index, e)}

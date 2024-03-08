@@ -3,13 +3,7 @@ import { Input } from "@/components/ui/input";
 import React, { useState } from "react";
 import EditSectionForm from "./EditSectionForm";
 
-const SectionComponent = ({
-  data,
-  handleChange,
-  index,
-  deleteSection,
-  editCurrentSelection,
-}) => {
+const SectionComponent = ({ data, handleChange, index, deleteSection }) => {
   const [editing, setEditing] = useState(false);
 
   const handleChapterChange = (index, e) => {
@@ -30,7 +24,9 @@ const SectionComponent = ({
   };
   const handleSectionChange = (e) => {
     // setSection((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-    handleChange(index, { ...data, [e.target.name]: e.target.value });
+    const newData = JSON.parse(JSON.stringify(data));
+    newData[e.target.name] = e.target.value;
+    handleChange(index, newData);
   };
   return (
     <>

@@ -4,15 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { domains } from "@/constants";
+import { ALLOWED_DOMAINS, domains } from "@/constants";
 import { cn } from "@/lib/utils";
 import { Label } from "@radix-ui/react-label";
 import { useFormik } from "formik";
 import React, { useState } from "react";
-import EditSectionForm from "./EditSectionForm";
+import { toast } from "sonner";
 import { CgChevronDown, CgChevronUp } from "react-icons/cg";
 import SectionComponent from "./SectionComponent";
-import { v4 as uuidv4 } from "uuid";
 import { Tags } from "./Tags";
 import { editFormSchema } from "@/schemas/editForm/edit-form";
 import { SubmitEditedFork } from "@/actions/edit-fork-path";
@@ -21,11 +20,7 @@ import { useRouter } from "next/navigation";
 const EditForm = ({ learningPathData }) => {
   const [sections, setSection] = useState(learningPathData.sections);
   const [showingSection, setShowingSection] = useState(false);
-  const [editForm, setEditForm] = useState(false);
-  const [currentSelection, setCurrentSelection] = useState();
   const router = useRouter();
-
-  const addChapter = () => {};
 
   const addSection = () => {
     setSection((oldSection) => [
@@ -43,9 +38,11 @@ const EditForm = ({ learningPathData }) => {
     setSection((oldSection) => oldSection.filter((_, i) => i !== index));
   };
   const handleSectionChange = (index, updatedSection) => {
-    setSection((oldSections) =>
-      oldSections.map((section, i) => (i === index ? updatedSection : section))
-    );
+    setSection((oldSections) => {
+      const newSection = JSON.parse(JSON.stringify(oldSections));
+      newSection[index] = updatedSection;
+      return newSection;
+    });
     console.log(sections);
   };
 
@@ -55,7 +52,6 @@ const EditForm = ({ learningPathData }) => {
 
   const editCurrentSelection = (selection) => {
     setCurrentSelection(selection);
-    console.log(selection);
     setEditForm(true);
   };
 
@@ -76,6 +72,10 @@ const EditForm = ({ learningPathData }) => {
     },
     validationSchema: editFormSchema,
     onSubmit: async (values) => {
+      if (sections.length <= 0) {
+        toast.error("Please add a section");
+      }
+
       const data = {
         id: learningPathData.id,
         ...values,
@@ -84,15 +84,21 @@ const EditForm = ({ learningPathData }) => {
 
       const status = await SubmitEditedFork(data);
       if (status.success) {
+        toast.success("Path Updated!");
         router.push("/");
+      } else {
+        toast.error("Something went wrong...");
       }
     },
   });
   return (
     <>
       {
-        <form onSubmit={handleSubmit}>
-          <Card className="sm:bg-color-7 w-full sm:w-96 sm:rounded-2xl rounded-none sm:border-solid border-none">
+        <form
+          className="border-none sm:border-solid border-2 border-color-2 rounded-xl flex h-max"
+          onSubmit={handleSubmit}
+        >
+          <Card className="sm:bg-color-7 w-full sm:w-[32rem] sm:rounded-2xl rounded-none sm:border-solid sm:border-color-2 border-none">
             <CardHeader className="space-y-1">
               <Input
                 name="title"
@@ -132,7 +138,7 @@ const EditForm = ({ learningPathData }) => {
                     name="domain"
                     id="domain"
                     value={values.domain}
-                    options={domains}
+                    options={Object.keys(ALLOWED_DOMAINS)}
                     onChange={handleChange}
                   />
                   {errors.domain && (

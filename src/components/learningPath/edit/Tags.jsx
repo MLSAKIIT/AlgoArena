@@ -34,14 +34,14 @@ export const Tags = ({ setFieldValue, value }) => {
           </div>
         ))}
       </div>
-      <div className="flex mt-4 flex-row">
+      <div className="flex mt-4 items-center justify-center gap-2 flex-row">
         <Input
+          placeholder="Enter Tag"
           value={currentTag}
           onChange={(e) => {
             e.preventDefault();
             setCurrentTag(e.target.value);
           }}
-          className="rounded-xl "
         />
         <Button type="button" onClick={addTag}>
           Add

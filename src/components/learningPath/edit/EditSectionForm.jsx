@@ -8,9 +8,6 @@ import { IoIosClose } from "react-icons/io";
 import ChapterEdit from "./ChapterEdit";
 
 const EditSectionForm = ({ section, addChapter, handleChange }) => {
-  // const handleSectionChange = (section) => {
-  //   section.
-  // }
   return (
     <>
       <div className="z-20 top-10 flex justify-center items-center">

@@ -1,4 +1,4 @@
-import { domains } from "@/constants";
+import { ALLOWED_DOMAINS } from "@/constants";
 import * as yup from "yup";
 
 export const editFormSchema = yup.object({
@@ -6,7 +6,7 @@ export const editFormSchema = yup.object({
   description: yup.string().required("Content is required"),
   domain: yup
     .string()
-    .oneOf(domains, "Invalid domain")
+    .oneOf(Object.keys(ALLOWED_DOMAINS), "Invalid domain")
     .required("Domain is required"),
   tags: yup
     .array()
