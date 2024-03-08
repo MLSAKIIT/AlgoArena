@@ -1,11 +1,17 @@
-import React from "react";
-import Image from "next/image";
-import member1 from "@/app/images/asset/member1.svg";
-import member2 from "@/app/images/asset/member2.png";
-import member3 from "@/app/images/asset/member3.png";
-const team = () => {
+"use client";
+import React, { useState } from "react";
+import Image from "next/legacy/image";
+import { data } from "@/data/teammember";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import TeamCard from "@/components/about/TeamCard";
+const teamdata = data;
+const Team = () => {
   return (
-    <div className="flex flex-col justify-center items-center gap-4">
+    <div className="flex flex-col justify-center items-center gap-4 mt-32 md:mt-0   ">
       <h1 className="  text-4xl mb-6 font-bold font-sans w-50 bg-gradient-to-r from-white to-[#9d5ae3] inline-block text-transparent bg-clip-text mt-5">
         OUR SPECIAL TEAM
       </h1>
@@ -15,25 +21,69 @@ const team = () => {
           MLSA &apos;s mission forward with passion and expertise.
         </q>
       </p>
-      <div className="flex gap-8 flex-col lg:flex-row">
-      <div className="flex flex-col justify-center items-center">
-        <Image src={member1} alt="person1" width={200} height={200} />
-        <p>MD Alam</p>
-        <p>UI/UX</p>
-      </div>
-      <div className="flex flex-col justify-center items-center">
-        <Image src={member2} alt="person1" width={200} height={200} />
-        <p>SImran shah</p>
-        <p>Web Developer</p>
-      </div>
-      <div className="flex flex-col justify-center items-center">
-        <Image src={member3} alt="person1" width={200} height={200} />
-        <p>Rohit Shah</p>
-        <p>Andriod Developer</p>
-      </div>
+
+      <div className="max-w-[92rem] h-fit  flex  mt-10 p-0">
+        <Swiper
+          slidesPerView="auto"
+          spaceBetween={30}
+          loop={true}
+          modules={[Navigation]}
+          navigation={{
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          }}
+          className="w-[80%] flex h-[25rem] justify-center items-center gap-4 "
+        >
+          <div
+            className="swiper-button-prev "
+            style={{
+              width: "60px !important",
+              bottom: "60px !important",
+              top: "150px !important",
+            }}
+          >
+            <Image
+              src="/assets/icons/arleft.png"
+              alt="nav-right"
+              width={800}
+              height={800}
+              className="p-8"
+            />
+          </div>
+          {teamdata &&
+            teamdata.map((member, key) => (
+              <SwiperSlide className="max-w-60" key={key}>
+                <TeamCard
+                  imageUrl={member.imageUrl}
+                  name={member.name}
+                  designation={member.designation}
+                  github={member.github}
+                  linkedIn={member.linkedIn}
+                  instagram={member.instagram}
+                />
+              </SwiperSlide>
+            ))}
+
+          <div
+            className="swiper-button-next"
+            style={{
+              width: "60px !important",
+              bottom: "60px !important",
+              top: "150px !important",
+            }}
+          >
+            <Image
+              src="/assets/icons/arrowright.png"
+              alt="nav-right"
+              width={800}
+              height={800}
+              className="p-8"
+            />
+          </div>
+        </Swiper>
       </div>
     </div>
   );
 };
 
-export default team;
+export default Team;
