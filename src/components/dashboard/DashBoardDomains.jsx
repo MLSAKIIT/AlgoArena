@@ -9,11 +9,11 @@ const DashBoardDomains = ({data}) => {
 
     return (
         <>
-            <div className="absolute lg:h-[80rem] lg:w-[78rem] lg:top-[-180px] lg:left-[-250px] lg:block hidden z-0">
-                <Image src="/dashboard-ellipse1.svg" alt="Ellipse" height={100} width={80} className="absolute w-[80rem] h-[75rem] left-[13rem] top-[15rem] overflow-hidden lg:block hidden z-0" />
+            <div className="absolute lg:h-[80rem] lg:w-[78rem] lg:top-[-180px] lg:left-[-250px] lg:block hidden -z-10">
+                <Image src="/dashboard-ellipse1.svg" alt="Ellipse" height={100} width={80} className="absolute w-[80rem] h-[75rem] left-[13rem] top-[15rem] overflow-hidden lg:block hidden" />
             </div>
             <div className="flex flex-col z-1 mt-14 max-w-7xl  mb-16">
-                <div className="text-3xl font-popins font-bold bg-gradient-to-r text-white bg-clip-text mt-4 ml-10 z-20">WELCOME BACK, {userName}</div>
+                <div className="text-3xl font-popins font-bold bg-gradient-to-r text-white bg-clip-text mt-4 ml-10 z-20">WELCOME BACK, {username}</div>
                 <br />
                 <p className="text-3xl font-sans font-bold bg-gradient-course w-[250px] text-transparent inline-block bg-clip-text z-20 ml-10">
                     YOUR ENROLLED COURSES

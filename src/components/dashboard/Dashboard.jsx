@@ -31,7 +31,9 @@ export default function dashboard({ data }) {
                       style={{flexWrap: "wrap"}}>
                       <MoreCourses />
                       {/* eclipse image */}
-                      <Image src="/dashboard-ellipse2.svg" alt="Ellipse" height={10} width={10} className="absolute w-[55rem] h-[40rem] right-0 overflow-hidden lg:block hidden z-0" /> 
+                      <div className=" -z-10 absolute w-[55rem] h-[40rem] right-0 overflow-hidden lg:block hidden pointer-events-none">
+                          <Image src="/dashboard-ellipse2.svg" alt="Ellipse" fill /> 
+                      </div>
                   </div>
 
                   {/* Footer part for phone devices */}

@@ -1,6 +1,7 @@
 "use client";
+import Link from "next/link";
 
-export default function DashCoursesCard({title, members}) {
+export default function DashCoursesCard({title, members, href}) {
     return (
         <>
             <Link href={href} className="hover:shadow-[0_0_16px_3px_#4a0f87] hover:scale-105 hover:backdrop-blur-[10px] transition-all backdrop-blur-sm border-[1.5px] border-purple-500 rounded-xl cursor-pointer h-[50px] sm:h-[100px] md:h-[100px] lg:h-[100px] max-w-[350px] md:w-[250px] relative flex flex-col justify-between group object-cover overflow-hidden mx-3 my-3 z-20">
@@ -14,6 +15,7 @@ export default function DashCoursesCard({title, members}) {
                     </div>
                 </div>
             </Link>
+            
         </>
     );
 }
