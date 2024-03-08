@@ -1,8 +1,7 @@
 import React from "react";
-import data from "./dummyData";
 import StaredCourseCard from "./StaredCourseCard";
 
-const StaredCourse = () => {
+const StaredCourse = ({ data }) => {
   return (
     <div className="max-w-7xl mt-4 mx-auto">
       <div className="font-popins text-4xl font-[900] bg-gradient-course bg-clip-text text-transparent m-3 hidden md:block">
