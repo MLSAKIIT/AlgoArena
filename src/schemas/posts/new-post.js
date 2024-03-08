@@ -11,7 +11,7 @@ export const postSchema = yup.object({
   tech: yup.string().when("domain", (domain, schema) => {
     const availableTags = tags[domain] || [];
     return schema
-      .required("Tech is required")
-      .oneOf(availableTags, "Inavlid Tech");
+      .required("Tag is required")
+      .oneOf(availableTags, "Inavlid Tag");
   }),
 });
