@@ -29,11 +29,10 @@ const CreatePostForm = () => {
       title: "",
       content: "",
       domain: "",
-      tags: "",
+      tech: "",
     },
     validationSchema: postSchema,
     onSubmit: async (values) => {
-      console.log("Submitting form...");
       try {
         const newPost = await createPost(values);
         console.log(newPost);
