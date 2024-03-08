@@ -36,8 +36,10 @@ Introducing Domain Groups, a power-packed addition that supercharges AlgoArena's
 
 | CONTRIBUTORS | MAINTAINERS | MENTORS | CONENT WRITER |
 | :----------: |  :-------:  | :-----: | :----------: |
-| Utkarsh Jha | Manish Malhotra | Amaan Bhati | Preasha Ghoshal |
-| Vinamra Saurav | Ankit Kumar | Harsh Raj | |
+| Vaibhav Raj | Ankit Kumar | Amaan Bhati | Preasha Ghoshal |
+| Utkarsh Jha | Manish Malhotra | Harsh Raj | |
+| Vinamra Saurav | Ankit Kumar | | |
+| Kumar Priyanshu | | | |
 | Soumyadeep Mitra | | | |
 | Akangkha Sarkar | | | |
 | Shruti | | | |
