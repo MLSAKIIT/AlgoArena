@@ -9,7 +9,7 @@ const StaredCourseCard = ({ course }) => {
     <div className="border rounded-xl border-color-2 p-4 mb-5 backdrop-blur-[5px] hover:shadow-[0_0_10px_3px_#4a0f87] cursor-pointer text-[white] hover:text-color-2">
       <div className=" flex gap-1">
         <div className="w-10/12 md:w-11/12 p ">
-          <div className="font-poppins text-xl md:text-2xl mb-4 md:mb-2 font-[900] bg-clip-text bg-gradient-course text-transparent w-[250px] line-clamp-1">
+        <div className="font-poppins text-xl md:text-2xl mb-4 md:mb-2 font-[900] bg-clip-text bg-gradient-course text-transparent w-[250px] line-clamp-1">
             {title}
           </div>
           <div className="text-sm text-[white] font-popins font-[500] line-clamp-3">
@@ -28,7 +28,7 @@ const StaredCourseCard = ({ course }) => {
           href={`/learning-paths/${domain}/${id}`}
           className="w-2/12 md:w-1/12 flex justify-center items-center hover:cursor-pointer"
         >
-          <FaArrowCircleRight className="text-3xl text-[white]" />
+          <FaArrowCircleRight className="text-3xl" />
         </Link>
       </div>
     </div>
