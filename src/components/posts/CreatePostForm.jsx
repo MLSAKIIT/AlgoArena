@@ -13,6 +13,8 @@ import SelectComponent from "./SelectComponent";
 import { domains, tags } from "@/constants";
 import { postSchema } from "@/schemas/posts/new-post";
 import Link from "next/link";
+import { toast } from "sonner";
+import { createPost } from "@/actions/post";
 
 const CreatePostForm = () => {
   const {
@@ -31,8 +33,10 @@ const CreatePostForm = () => {
     },
     validationSchema: postSchema,
     onSubmit: async (values) => {
+      console.log("Submitting form...");
       try {
         const newPost = await createPost(values);
+        console.log(newPost);
         if (newPost && !newPost.error) {
           toast.success("Post created successfully");
         } else {
@@ -54,7 +58,7 @@ const CreatePostForm = () => {
         <CardHeader className="space-y-1">
           <CardTitle className="text-3xl text-white">Create a Post</CardTitle>
         </CardHeader>
-        <hr class="border-t-3 border-color-2 mb-5"></hr>
+        <hr className="border-t-3 border-color-2 mb-5"></hr>
         <CardContent className="grid gap-4">
           <div className="grid gap-2">
             <Label htmlFor="name">Domain</Label>
@@ -114,7 +118,7 @@ const CreatePostForm = () => {
             )}
           </div>
         </CardContent>
-        <hr class="border-t-3 border-color-2 mb-5"></hr>
+        <hr className="border-t-3 border-color-2 mb-5"></hr>
       </Card>
       <div className="flex justify-end pr-10 pt-3 ">
         <Link href="/community">
