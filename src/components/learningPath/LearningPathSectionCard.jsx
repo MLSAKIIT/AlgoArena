@@ -10,10 +10,9 @@ const LearningPathSectionCard = ({ section, showItem, setShowIndex }) => {
     setShowIndex();
   };
 
-  const { id, title, time, videos } = section;
+  const { id, title, time, chapters } = section;
 
-
-  const eachVideoPoint = 100 / videos.length;
+  const eachVideoPoint = 100 / chapters.length;
 
   return (
     <div className="border-[3px] border-color-2 rounded-xl  m-4 items-center p-3 md:max-w-6xl mx-auto w-10/12 md:w-9/12 backdrop-blur-[7px]">
@@ -26,7 +25,7 @@ const LearningPathSectionCard = ({ section, showItem, setShowIndex }) => {
             {title}
           </div>
           <div className="flex text-sm font-popins font-[500]">
-            {videos.length} Videos | {time} Hours
+            {chapters.length} chapters | {time} Hours
           </div>
         </div>
         <div>
@@ -37,8 +36,9 @@ const LearningPathSectionCard = ({ section, showItem, setShowIndex }) => {
           )}
         </div>
       </div>
-      {showItem && videos &&
-        videos.map((video) => (
+      {showItem &&
+        chapters &&
+        chapters.map((video) => (
           <LearningPathSectionItem
             key={video.id}
             info={video}
