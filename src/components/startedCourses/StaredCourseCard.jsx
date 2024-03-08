@@ -6,7 +6,7 @@ import Link from "next/link";
 const StaredCourseCard = ({ course }) => {
   const { id, title, description, progress, videos, domain } = course;
   return (
-    <div className="border rounded-xl border-color-2 p-4 mb-5">
+    <div className="border rounded-xl border-color-2 p-4 mb-5 backdrop-blur-[5px] hover:shadow-[0_0_10px_3px_#4a0f87] cursor-pointer">
       <div className=" flex gap-1">
         <div className="w-10/12 md:w-11/12 p ">
           <div className="font-poppins text-xl md:text-2xl mb-4 md:mb-2 font-[900] bg-clip-text bg-gradient-course text-transparent ">

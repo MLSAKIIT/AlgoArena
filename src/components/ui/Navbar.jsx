@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="2xl:px-20 lg:flex justify-between min-w-screen max-w-[120rem] lg:p-6 hidden z-10">
+      <div className="2xl:px-20 lg:flex justify-between   max-w-[120rem] lg:p-6 hidden z-10">
         <div className="gap-10  top-0  min-w-[800px] w-full justify-between flex g-8 pr-1.5  items-baseline text-sm ">
           <Link
             href={siteConfig.navBarLinks.home}

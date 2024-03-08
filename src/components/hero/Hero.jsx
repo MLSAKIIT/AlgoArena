@@ -6,9 +6,9 @@ const Hero = () => {
   return (
     <div>
       <Navbar />
-      <div className="lg:pt-32 pt-10 mb-10  lg:h-96 lg:mb-32 block max-w-[120rem]  mx-auto">
-        <div className="flex flex-wrap lg:flex-nowrap justify-evenly mid:gap-x-10/ md:gap-20 mid:mx-4 items-center lg:mx-auto">
-          <div className="relative">
+      <div className="lg:pt-32 pt-10 mb-10 lg:h-96 lg:mb-32 grid  max-w-[120rem]  mx-auto place-items-center">
+        <div className="flex flex-wrap  lg:flex-nowrap justify-evenly mid:gap-x-10/ md:gap-20 mid:mx-4 items-center lg:mx-auto w-[75%]">
+          <div className="relative ">
             <div className="font-theboldfont text-white lg:text-4xl text-xl mid:text-2xl text-center mid:text-start">
               EXPLORE NEW
             </div>
@@ -28,7 +28,7 @@ const Hero = () => {
               />
             </div>
 
-            <div className="lg:text-xl text-md lg:ml-1 mid:text-xl">
+            <div className="lg:text-xl text-md lg:ml-1 mid:text-xl ">
               Learn Anything, Anytime, Anywhere
             </div>
             <div className="absolute lg:h-[42.3rem] lg:w-[70rem] lg:top-[-180px] lg:left-[-250px] overflow-hidden rotate-[-15deg] lg:block hidden">

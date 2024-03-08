@@ -14,8 +14,8 @@ import Navbar from "@/components/ui/Navbar";
 const page = () => {
   return (
     <div className="max-w-[120rem]">
-     <Navbar/>
-      <div className="flex flex-col gap-52 items-center">
+      <Navbar />
+      <div className="flex flex-col md:gap-44 gap-24 items-center justify-center">
         <div className="absolute h-[50rem] w-[71.5rem] -z-10 top-[180px] left-[-30px] overflow-hidden rotate-[-5deg] z-1 lg:block hidden">
           <Image
             src={ecllipse3}
@@ -44,12 +44,12 @@ const page = () => {
           />
         </div>
 
-        <div className="flex flex-col gap-6 text-center h-[75vh] justify-center items-center">
+        <div className="flex flex-col gap-6 text-wrap m-auto h-[40rem] max-w-[120rem] justify-center items-center">
           {" "}
           <h1 className="  text-6xl font-bold font-sans bg-gradient-to-r from-white to-[#9d5ae3] inline-block text-transparent bg-clip-text mt-5">
             ABOUT US
           </h1>
-          <p className="w-[70vw] text-md">
+          <p className="w-[70vw] max-w-[90%] text-md text-wrap">
             At MLSA (Microsoft Learning Student Ambassador), our mission is
             simple: “Tech for All.” We believe in empowering individuals to
             embrace the digital world with confidence through engaging events,
@@ -57,8 +57,8 @@ const page = () => {
             in bridging the technological divides, ensuring that no one is left
             behind.
           </p>
-        </div> 
-         <div className="flex flex-col gap-52">
+        </div>
+        <div className="flex flex-col md:gap-52 gap-20  max-w-[120rem] justify-around items-center">
           <InfoCard
             title="OUR VISION"
             img={about1}
