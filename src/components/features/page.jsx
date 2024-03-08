@@ -1,4 +1,6 @@
+import { siteConfig } from "@/constants/siteConfig";
 import Image from "next/image";
+import Link from "next/link";
 
 const Features = () => {
   return (
@@ -30,12 +32,14 @@ const Features = () => {
               Embrace wisdom&apos;s compass, learn what truly holds value. In
               the journey of knowledge, discern the essence, learn what matters.
             </p>
-            <button
-              className="bg-purple-500 text-white py-2 px-4 rounded-full mt-5 shadow-[0_0_1rem_0px_#9d5ae3]
+            <Link href={siteConfig.navBarLinks.learningPath}>
+              <button
+                className="mt-5 bg-purple-500 text-white py-2 px-4 rounded-full shadow-[0_0_1rem_0px_#9d5ae3]
             hover:bg-[#7f3dbf] active:scale-95 transition duration-200 "
-            >
-              Start Now
-            </button>
+              >
+                Start Now
+              </button>
+            </Link>
           </div>
         </div>
         <div className="flex flex-col-reverse md:flex-row gap-8  justify-center items-center w-[67%] text-center md:text-left ">
@@ -49,12 +53,14 @@ const Features = () => {
               vision. Together, we construct bridges of understanding and
               support, fostering a tapestry of belonging and collaboration.
             </div>
-            <button
-              className="bg-purple-500 text-white py-2 px-4 rounded-full mt-5 shadow-[0_0_1rem_0px_#9d5ae3]
+            <Link href={'/create-post'}>
+              <button
+                className="bg-purple-500 text-white py-2 px-4 rounded-full mt-5 shadow-[0_0_1rem_0px_#9d5ae3]
             hover:bg-[#7f3dbf] active:scale-95 transition duration-200 "
-            >
-              Build Now
-            </button>
+              >
+                Build Now
+              </button>
+            </Link>
           </div>
           <div className=" md:pr-20  ">
             <Image
@@ -87,12 +93,14 @@ const Features = () => {
               Measure your steps, chart your course, and let each milestone be a
               testament to your journey&apos;s force.
             </p>
-            <button
-              className="bg-purple-500 text-white py-2 px-4 rounded-full mt-5 shadow-[0_0_1rem_0px_#9d5ae3]
+            <Link href={siteConfig.navBarLinks.dashboard}>
+              <button
+                className="bg-purple-500 text-white py-2 px-4 rounded-full mt-5 shadow-[0_0_1rem_0px_#9d5ae3]
             hover:bg-[#7f3dbf] active:scale-95 transition duration-200 "
-            >
-              Start Now
-            </button>
+              >
+                Start Now
+              </button>
+            </Link>
           </div>
         </div>
       </div>
