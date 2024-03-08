@@ -2,7 +2,7 @@ const suggestions = () => {
   return (
     <>
       <div className="flex flex-col items-center justify-center w-5/6">
-        <h1 className="  text-4xl font-bold font-sans bg-gradient-to-r from-white to-[#9d5ae3] inline-block text-transparent bg-clip-text mt-5">
+        <h1 className="  text-center text-3xl font-bold font-sans bg-gradient-to-r from-white to-[#9d5ae3] inline-block text-transparent bg-clip-text mt-5">
           HAVE A SUGGESTION?
         </h1>
         <textarea

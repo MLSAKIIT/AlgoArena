@@ -24,6 +24,7 @@ model User {
   posts                   Post[]
   postLikes               PostLike[]
   savedPosts              SavedPost[]
+  learningPaths           LearningPath[]
 }
 
 model Post {
@@ -59,4 +60,53 @@ model SavedPost {
   postId    String   @db.ObjectId
 
   @@unique([userId, postId])
+}
+
+model LearningPath {
+  id          String      @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  description String
+  tags        String[]
+  domain      String
+  isPublished Boolean     @default(false)
+  createdAt   DateTime    @default(now())
+  authorId    String      @db.ObjectId
+  user        User        @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  sections   Section[]
+  isForked     Boolean?   @default(false)
+  forkedFromId String?    @db.ObjectId
+}
+
+model Section {
+  id           String      @id @default(auto()) @map("_id") @db.ObjectId
+  title        String
+  chapters     Chapter[]
+  learningPathId String    @db.ObjectId
+  learningPath   LearningPath @relation(fields: [learningPathId], references: [id], onDelete: Cascade)
+
+  @@unique([title, learningPathId])
+}
+
+model Chapter {
+  id           String      @id @default(auto()) @map("_id") @db.ObjectId
+  title        String
+  content      String
+  createdAt    DateTime    @default(now())
+  sectionId   String      @db.ObjectId
+  section     Section     @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  userProgress UserProgress[]
+
+  @@unique([id, sectionId])
+}
+
+model UserProgress {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt DateTime @default(now())
+  userId    String   @db.ObjectId
+  chapter   Chapter  @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+  chapterId String   @db.ObjectId
+  isCompleted Boolean @default(false)
+
+  @@index([chapterId])
+  @@unique([userId, chapterId])
 }

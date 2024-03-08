@@ -10,10 +10,9 @@ import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
 import { Loader2 } from "lucide-react";
 import SelectComponent from "./SelectComponent";
-import { domains, tags } from "@/app/constants";
+import { domains, tags } from "@/constants";
 import { postSchema } from "@/schemas/posts/new-post";
-import { createPost } from "@/app/actions/post";
-import { toast } from "sonner";
+import Link from "next/link";
 
 const CreatePostForm = () => {
   const {
@@ -50,43 +49,13 @@ const CreatePostForm = () => {
   });
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-8 md:min-w-96 max-w-96">
+    <form onSubmit={handleSubmit} className="space-y-8 p-4 ">
       <Card>
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl">Create Post</CardTitle>
+          <CardTitle className="text-3xl text-white">Create a Post</CardTitle>
         </CardHeader>
+        <hr class="border-t-3 border-color-2 mb-5"></hr>
         <CardContent className="grid gap-4">
-          <div className="grid gap-2">
-            <Label htmlFor="name">Name</Label>
-            <Input
-              name="title"
-              placeholder="Title"
-              type="text"
-              value={values.title}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              className={cn(errors.title && "border-red-500")}
-            />
-            {errors.title && (
-              <p className="text-red-500 text-sm">{errors.title}</p>
-            )}
-          </div>
-          <div className="grid gap-2">
-            <Label htmlFor="name">Content</Label>
-            <Textarea
-              name="content"
-              placeholder="Content"
-              rows={10}
-              type="text"
-              value={values.content}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              className={cn(errors.content && "border-red-500")}
-            />
-            {errors.content && (
-              <p className="text-red-500 text-sm">{errors.content}</p>
-            )}
-          </div>
           <div className="grid gap-2">
             <Label htmlFor="name">Domain</Label>
             <SelectComponent
@@ -102,25 +71,69 @@ const CreatePostForm = () => {
           </div>
           {values.domain && (
             <div className="grid gap-2">
-              <Label htmlFor="name">Tags</Label>
+              <Label htmlFor="name">Tech</Label>
               <SelectComponent
-                name="tags"
-                value={values.tags}
-                id="tags"
+                name="tech"
+                value={values.tech}
+                id="tech"
                 options={tags[values.domain]}
                 onChange={handleChange}
               />
-              {errors.tags && (
-                <p className="text-red-500 text-sm">{errors.tags}</p>
+              {errors.tech && (
+                <p className="text-red-500 text-sm">{errors.tech}</p>
               )}
             </div>
           )}
-          <Button className="w-full" type="submit" disabled={isSubmitting}>
-            Create Post
-            {isSubmitting && <Loader2 className="animate-spin h-4 w-4 ml-2" />}
-          </Button>
+          <div className="grid gap-2">
+            <Input
+              name="title"
+              placeholder="Title"
+              type="text"
+              value={values.title}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={cn(errors.title && "border-red-500")}
+            />
+            {errors.title && (
+              <p className="text-red-500 text-sm">{errors.title}</p>
+            )}
+          </div>
+          <div className="grid gap-2">
+            <Textarea
+              name="content"
+              placeholder="Content"
+              rows={10}
+              type="text"
+              value={values.content}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={cn(errors.content && "border-red-500")}
+            />
+            {errors.content && (
+              <p className="text-red-500 text-sm">{errors.content}</p>
+            )}
+          </div>
         </CardContent>
+        <hr class="border-t-3 border-color-2 mb-5"></hr>
       </Card>
+      <div className="flex justify-end pr-10 pt-3 ">
+        <Link href="/community">
+          <Button
+            className="bg-white text-purple-500 border-white border font-bold rounded-full shadow-[0_0_1rem_0px_#9d5ae3] p-5  transition-colors duration-300 hover:text-white"
+            type="submit"
+          >
+            Cancel
+          </Button>
+        </Link>
+        <Button
+          className="ml-10 hover:bg-purple-800 "
+          type="submit"
+          disabled={isSubmitting}
+        >
+          Create Post
+          {isSubmitting && <Loader2 className="animate-spin h-4 w-4 ml-2" />}
+        </Button>
+      </div>
     </form>
   );
 };
