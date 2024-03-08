@@ -9,10 +9,9 @@ const Features = () => {
         </div>
       </div>
 
-      <div className="pt-20 flex flex-col items-center gap-24 text-sm text-center md:text-left">
-     
-         <div className="flex flex-col gap-10 md:flex-row justify-center items-center w-[70%]">
-          <div className="md:pl-10 md:pr-10 md:order-2">
+      <div className="pt-20 flex flex-col items-center gap-24 text-sm text-center  md:text-left">
+        <div className="flex flex-col gap-10 md:flex-row justify-between  items-center w-[67%]">
+          <div className="md:pl-10  md:order-2">
             <Image
               src="/assets/features/learning.png"
               className="w-[257px]  md:w-[357px]"
@@ -22,13 +21,13 @@ const Features = () => {
             />
           </div>
 
-          <div className="md:ml-20">
+          <div>
             <div className="text-3xl font-poppins leading-7 tracking-tighter font-bold uppercase bg-gradient-to-r from-white to-purple-500 bg-clip-text text-transparent inline-block">
               <div className="text-white">Created learning path to</div>
               <div>make you learn what matters</div>
             </div>
             <p className="text-white font-poppins pt-5">
-            Embrace wisdom&apos;s compass, learn what truly holds value. In
+              Embrace wisdom&apos;s compass, learn what truly holds value. In
               the journey of knowledge, discern the essence, learn what matters.
             </p>
             <button
@@ -39,7 +38,7 @@ const Features = () => {
             </button>
           </div>
         </div>
-        <div className="flex flex-col-reverse md:flex-row gap-8  justify-center items-center w-[70%]  text-center md:text-left ">
+        <div className="flex flex-col-reverse md:flex-row gap-8  justify-center items-center w-[67%] text-center md:text-left ">
           <div className="md:order-2 ">
             <div className="text-3xl font-poppins leading-7 tracking-tighter font-bold uppercase bg-gradient-to-r from-white to-purple-500 bg-clip-text text-transparent inline-block">
               <div className="text-white">Build and interact with</div>{" "}
@@ -57,7 +56,7 @@ const Features = () => {
               Build Now
             </button>
           </div>
-          <div className=" md:pr-20  md:ml-20">
+          <div className=" md:pr-20  ">
             <Image
               src="/assets/features/communityy.png"
               className="w-[257px]  md:w-[600px]"
@@ -68,8 +67,8 @@ const Features = () => {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row  justify-center items-center gap-8 w-[70%] ">
-          <div className="md:pl-10 md:pr-10 md:order-2 ">
+        <div className="flex flex-col gap-10 md:flex-row justify-between  items-center w-[67%]">
+          <div className="md:pl-10  md:order-2">
             <Image
               src="/assets/features/progress.png"
               className="w-[257px]  md:w-[357px]"
@@ -79,7 +78,7 @@ const Features = () => {
             />
           </div>
 
-          <div className="md:ml-20">
+          <div>
             <div className="text-3xl font-poppins leading-7 tracking-tighter font-bold uppercase bg-gradient-to-r from-white to-purple-500 bg-clip-text text-transparent inline-block">
               <div className="text-white">track you progress</div>
               <div>while you learn</div>

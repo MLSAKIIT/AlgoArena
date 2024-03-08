@@ -25,6 +25,7 @@ model User {
   postLikes               PostLike[]
   savedPosts              SavedPost[]
   learningPaths           LearningPath[]
+  savedLearningPaths      SavedLearningPath[]
 }
 
 model Post {
@@ -75,6 +76,19 @@ model LearningPath {
   sections   Section[]
   isForked     Boolean?   @default(false)
   forkedFromId String?    @db.ObjectId
+  savedLearningPaths SavedLearningPath[]
+}
+
+model SavedLearningPath {
+  id        String        @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt DateTime      @default(now())
+  user      User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String        @db.ObjectId
+  learningPath LearningPath @relation(fields: [learningPathId], references: [id], onDelete: Cascade)
+  learningPathId String   @db.ObjectId
+
+  @@unique([userId, learningPathId])
+  @@index([learningPathId])
 }
 
 model Section {
