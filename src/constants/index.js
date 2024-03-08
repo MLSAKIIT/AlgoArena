@@ -11,7 +11,9 @@ export const ALLOWED_DOMAINS = {
     ai: 'ai-ml',
     cyber: 'cyber-security',
     ui: 'ui-ux',
-    dsa: 'dsa'
+    dsa: 'dsa',
+    devops: 'devops',
+    blockchain: 'blockchain',
 }
 
 export const MORE_COURSES = [
