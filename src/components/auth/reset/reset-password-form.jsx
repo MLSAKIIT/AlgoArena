@@ -19,7 +19,7 @@ import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
 import { resetSchema } from "@/schemas/auth/reset";
 import { useTransition } from "react";
-import { resetPassword } from "@/app/actions/reset-password";
+import { resetPassword } from "@/actions/reset-password";
 
 export function ResetPasswordForm() {
   const [isPending, startTransition] = useTransition()

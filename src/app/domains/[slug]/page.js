@@ -1,4 +1,7 @@
 import LearningPath from "@/components/learningPath/LearningPath";
+import Navbar from "@/components/ui/Navbar";
+import Socials from "@/components/footer/Socials";
+
 
 
 export default function page({params}){
@@ -7,7 +10,12 @@ export default function page({params}){
 
     return (
         <div>
-            <LearningPath slugId={id}/>   
+            <Navbar/>
+            <LearningPath slugId={id}/> 
+            <div className="overflow-hidden bottom-0">
+            <Socials/>
+            </div>
+            
         </div>
     )
 }

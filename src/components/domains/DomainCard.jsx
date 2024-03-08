@@ -14,6 +14,7 @@ const DomainCard = ({ title, img }) => {
           layout="fill"
           objectFit="cover"
           className="rounded-lg group-hover:scale-125 duration-500"
+          alt="domain images"
         />
       </div>
     </div>
