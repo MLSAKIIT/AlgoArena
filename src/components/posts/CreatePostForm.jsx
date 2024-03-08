@@ -13,6 +13,8 @@ import SelectComponent from "./SelectComponent";
 import { domains, tags } from "@/constants";
 import { postSchema } from "@/schemas/posts/new-post";
 import Link from "next/link";
+import { toast } from "sonner";
+import { createPost } from "@/actions/post";
 
 const CreatePostForm = () => {
   const {
@@ -27,9 +29,27 @@ const CreatePostForm = () => {
       title: "",
       content: "",
       domain: "",
-      tech: "",
+      tags: "",
     },
     validationSchema: postSchema,
+    onSubmit: async (values) => {
+      console.log("Submitting form...");
+      try {
+        const newPost = await createPost(values);
+        console.log(newPost);
+        if (newPost && !newPost.error) {
+          toast.success("Post created successfully");
+        } else {
+          const errorMessage = newPost
+            ? newPost.error
+            : "Something went wrong. Please try again.";
+          toast.error(errorMessage);
+        }
+      } catch (error) {
+        console.error(error);
+        toast.error(error.message);
+      }
+    },
   });
 
   return (
@@ -38,9 +58,9 @@ const CreatePostForm = () => {
         <CardHeader className="space-y-1">
           <CardTitle className="text-3xl text-white">Create a Post</CardTitle>
         </CardHeader>
-        <hr class="border-t-3 border-color-2 mb-5"></hr>
+        <hr className="border-t-3 border-color-2 mb-5"></hr>
         <CardContent className="grid gap-4">
-        <div className="grid gap-2">
+          <div className="grid gap-2">
             <Label htmlFor="name">Domain</Label>
             <SelectComponent
               name="domain"
@@ -98,21 +118,28 @@ const CreatePostForm = () => {
             )}
           </div>
         </CardContent>
-        <hr class="border-t-3 border-color-2 mb-5"></hr>
+        <hr className="border-t-3 border-color-2 mb-5"></hr>
       </Card>
       <div className="flex justify-end pr-10 pt-3 ">
-       <Link href="/community">
-         <Button className="bg-white text-purple-500 border-white border font-bold rounded-full shadow-[0_0_1rem_0px_#9d5ae3] p-5  transition-colors duration-300 hover:text-white" type="submit" >
+        <Link href="/community">
+          <Button
+            className="bg-white text-purple-500 border-white border font-bold rounded-full shadow-[0_0_1rem_0px_#9d5ae3] p-5  transition-colors duration-300 hover:text-white"
+            type="submit"
+          >
             Cancel
           </Button>
         </Link>
-        <Button className="ml-10 hover:bg-purple-800 " type="submit" disabled={isSubmitting}>
+        <Button
+          className="ml-10 hover:bg-purple-800 "
+          type="submit"
+          disabled={isSubmitting}
+        >
           Create Post
           {isSubmitting && <Loader2 className="animate-spin h-4 w-4 ml-2" />}
         </Button>
       </div>
     </form>
-  )
-}
+  );
+};
 
-export default CreatePostForm
+export default CreatePostForm;
