@@ -19,6 +19,9 @@ module.exports = {
       },
     },
     extend: {
+      fontSize: {
+        "xxs": "5px",
+      },
       colors: {
         "color-1": "#E1C3FF",
         "color-2": "#9D5AE3",
