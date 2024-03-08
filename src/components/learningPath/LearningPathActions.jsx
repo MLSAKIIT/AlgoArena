@@ -1,10 +1,9 @@
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
-import { forkLearningPathAction } from "@/actions/forklearningpath";
 import { cn } from "@/lib/utils";
-import { GitFork } from "lucide-react";
-import SubmitButton from "@/components/SubmitButton";
 import LearningPathForkForm from "./LearningPathForkForm";
+import { checkIfLearningPathIsSaved } from "@/data/learning-paths";
+import LearningPathSaveForm from "./LearningPathSaveForm";
 
 const getParentLearningPath = async (id) => {
   const data = await db.learningPath.findUnique({
@@ -21,13 +20,15 @@ const getParentLearningPath = async (id) => {
   return data;
 };
 
-async function LearningPathForkActions({ isForked, parentPathId, id }) {
+async function LearningPathActions({ isForked, parentPathId, id }) {
   const parentLearningPath = isForked
     ? await getParentLearningPath(parentPathId)
     : null;
 
+  const isSaved = await checkIfLearningPathIsSaved(id);
+
   return (
-    <div className="mx-10">
+    <div className="mx-10 flex items-center gap-2 mt-4">
       {isForked && (
         <div>
           <span className="text-muted-foreground text-sm">Forked from</span>
@@ -45,11 +46,11 @@ async function LearningPathForkActions({ isForked, parentPathId, id }) {
           </Link>
         </div>
       )}
-      {!isForked && (
-        <LearningPathForkForm id={id} />
-      )}
+      {!isForked && <LearningPathForkForm id={id} />}
+
+      <LearningPathSaveForm isSaved={isSaved} id={id} />
     </div>
   );
 }
 
-export default LearningPathForkActions;
+export default LearningPathActions;

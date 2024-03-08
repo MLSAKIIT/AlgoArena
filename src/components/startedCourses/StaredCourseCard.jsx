@@ -1,9 +1,10 @@
 import React from "react";
 import { Progress } from "@/components/ui/progress";
 import { FaArrowCircleRight } from "react-icons/fa";
+import Link from "next/link";
 
 const StaredCourseCard = ({ course }) => {
-  const { title, description, progress, hours, videos } = course;
+  const { id, title, description, progress, videos, domain } = course;
   return (
     <div className="border rounded-xl border-color-2 p-4 mb-5 backdrop-blur-[5px] hover:shadow-[0_0_10px_3px_#4a0f87] cursor-pointer">
       <div className=" flex gap-1">
@@ -15,7 +16,7 @@ const StaredCourseCard = ({ course }) => {
             {description}
           </div>
           <div className="text-xs text-[white] font-popins font-[300] my-4">
-            {videos} Videos | {hours} Hours
+            {videos} Videos
           </div>
           {progress == 0 ? (
             <div></div>
@@ -23,9 +24,12 @@ const StaredCourseCard = ({ course }) => {
             <Progress value={progress} className="my-2" />
           )}
         </div>
-        <div className="w-2/12 md:w-1/12 flex justify-center items-center hover:cursor-pointer">
+        <Link
+          href={`/learning-paths/${domain}/${id}`}
+          className="w-2/12 md:w-1/12 flex justify-center items-center hover:cursor-pointer"
+        >
           <FaArrowCircleRight className="text-3xl text-[white]" />
-        </div>
+        </Link>
       </div>
     </div>
   );
