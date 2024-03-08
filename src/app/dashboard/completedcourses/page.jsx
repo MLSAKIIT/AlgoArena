@@ -1,11 +1,11 @@
-import YourCourses from "@/components/dashboard/CompletedCourses";
+import CompletedCourses from "@/components/dashboard/CompletedCourses";
 import Navbar from "@/components/ui/Navbar";
 
 export default function dashboard() {
   return (
     <>
       <Navbar />
-      <YourCourses username="AYUSH RANJAN"></YourCourses>
+      <CompletedCourses username="AYUSH RANJAN"></CompletedCourses>
     </>
   );
 }

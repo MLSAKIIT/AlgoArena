@@ -6,15 +6,16 @@ import DashCoursesCard from "./Dashcard";
 import Title from "../ui/Title";
 import SortCourses from "./SortCourses";
 import MoreCourses from "./MoreCourses";
-import { useSession } from "next-auth/react";
+// import { useSession } from "next-auth/react";
 import CompletedCoursesList from "./CompletedCoursesList";
 // import Link from "next/link";
 import MoreCoursesSwiper from "./MoreCoursesSwiper";
 
-export default function YourCourses() {
-  const { data: session } = useSession();
+export default function CompletedCourses({user}) {
+  // const { data: session } = useSession();
   return (
     <div className="overflow-hidden min-h-screen top-auto flex-auto xl:max-w-full  px-5 lg:max-w-7xl md:max-w-5xl">
+      <p>{user}</p>
       <div className="relative">
         <div className="absolute md:h-[75rem] md:w-[75rem] sm:h-[67rem] sm:w-[47rem] lg:top-[-180px] md:top-0 sm:top-[-20px] 2xl:left-[-80px] lg:left-[-250px] left-[-270px] overflow-hidden lg:rotate-[0deg] md:rotate-[10deg] sm:rotate-[-20deg] rotate-0 lg:block h-[60rem] w-[40rem]">
           <Image
