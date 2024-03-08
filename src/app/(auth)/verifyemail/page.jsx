@@ -12,10 +12,9 @@ const EmailVerificationPage = async (props) => {
           <>
             <h1 className="text-white text-2xl font-bold">Email Verified!</h1>
             <p className="text-white">You may now login.</p>
-            {/* TODO: LINK TO SIGN IN ROUTE */}
             <Link
               className=" box-border mt-8 grid place-items-center py-1 px-1 bg-[#9d5ae3] text-white w-40 h-14 rounded-full shadow-[0_0_1rem_0px_#9d5ae3] text-xl  outline-none border-none [text-shadow:_0px_0px_5px_rgb(0_0_0)] cursor-pointer hover:bg-[#7f3dbf] active:scale-95 transition duration-200"
-              href="/"
+              href="/sign-in"
             >
               Login
             </Link>

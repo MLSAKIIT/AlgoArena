@@ -5,6 +5,7 @@ import profile from "@/app/images/asset/profile.png";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
+import { siteConfig } from "@/constants/siteConfig";
 
 const Navbar = () => {
   const [open, setOpen] = React.useState(false);
@@ -18,14 +19,14 @@ const Navbar = () => {
       <div className="2xl:px-20 lg:flex justify-between min-w-screen max-w-[120rem] lg:p-6 hidden z-10">
         <div className="gap-10  top-0  min-w-[800px] w-full justify-between flex g-8 pr-1.5  items-baseline text-sm ">
           <Link
-            href="/"
+            href={siteConfig.navBarLinks.home}
             className="text-white  font-extrabold flex text-xl p-0 m-0  "
           >
             AlgoArena
           </Link>
           <div className="gap-10  top-0 flex g-8 pr-1.5  items-baseline text-sm ">
             <Link
-              href="/"
+              href={siteConfig.navBarLinks.home}
               className={`flex 2xl:ml-auto justify-center text-white  gap-2 pr-2 pl-2  pt-2 pb-2 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
                 usePathname() === "/"
                   ? "border-2 border-color-3 shadow-[0_0_1rem_0px_#9d5ae3]  rounded bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
@@ -42,7 +43,7 @@ const Navbar = () => {
               Home
             </Link>
             <Link
-              href="/dashboard"
+              href={siteConfig.navBarLinks.learningPath}
               className={`flex justify-center text-white  pr-2 pl-2 gap-2 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
                 usePathname() === "/dashboard"
                   ? "border-2 border-color-3 shadow-[0_0_1rem_0px_#9d5ae3] pt-2 pb-2 rounded bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
@@ -59,7 +60,7 @@ const Navbar = () => {
             </Link>
 
             <Link
-              href="/community"
+              href={siteConfig.navBarLinks.community}
               className={`flex justify-center text-white pr-2 pl-2 gap-2 z-10 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
                 usePathname() === "/community"
                   ? "border-2 border-color-3  shadow-[0_0_1rem_0px_#9d5ae3] rounded pt-2 pb-2  bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
@@ -75,7 +76,7 @@ const Navbar = () => {
               Community
             </Link>
             <Link
-              href="/aboutUs"
+              href={siteConfig.navBarLinks.aboutUs}
               className={`flex 2xl:mr-auto justify-center text-white pr-2 pl-2  gap-2 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
                 usePathname() === "/aboutUs"
                   ? "border-2 border-color-3 pt-2 pb-2 rounded shadow-[0_0_1rem_0px_#9d5ae3]  bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
@@ -94,7 +95,7 @@ const Navbar = () => {
 
           {session ? (
             <Link
-              href="/dashboard"
+              href={siteConfig.navBarLinks.dashboard}
               className="bg-color-2 grid place-items-center  text-white pr-5 shadow-[0_0_1rem_0px_#9d5ae3] pl-5 pt-1 pb-1 rounded-xl hover:bg-gradient-to-r from-color-2 to-color-3 transition-all duration-200"
             >
               <Image
@@ -126,7 +127,7 @@ const Navbar = () => {
           className="text-[white]"
           onClick={onClick}
         />
-        <Link href="/" className="text-[white] font-extrabold flex text-xl ">
+        <Link href={siteConfig.navBarLinks.home} className="text-[white] font-extrabold flex text-xl ">
           AlgoArena
         </Link>
       </div>
@@ -148,7 +149,7 @@ const Navbar = () => {
           <div className="my-4 border-t border-[#939393] mr-6 ml-6"></div>
 
           <Link
-            href="/"
+            href={siteConfig.navBarLinks.home}
             className="flex  text-[white] rounded-xl gap-2 px-4 py-2 mr-6 ml-6 hover:bg-color-3"
           >
             <Image
@@ -161,7 +162,7 @@ const Navbar = () => {
           </Link>
           <div className="my-4 border-t border-[#939393] mr-6 ml-6"></div>
           <Link
-            href="/"
+            href={siteConfig.navBarLinks.learningPath}
             className="flex  text-[white] rounded-xl  gap-2 px-4 py-2 mr-6 ml-6 hover:bg-color-3"
           >
             <Image
@@ -174,7 +175,7 @@ const Navbar = () => {
           </Link>
           <div className="my-4 border-t border-[#939393] mr-6 ml-6"></div>
           <Link
-            href="/about-us"
+            href={siteConfig.navBarLinks.community}
             className="flex  text-[white]  gap-2 px-4 py-2 mr-6 ml-6 rounded-xl hover:bg-color-3"
           >
             <Image
@@ -187,7 +188,7 @@ const Navbar = () => {
           </Link>
           <div className="my-4 border-t border-[#939393] mr-6 ml-6"></div>
           <Link
-            href="/about-us"
+            href={siteConfig.navBarLinks.aboutUs}
             className="flex  text-white gap-2 px-4 py-2 mr-6 ml-6 rounded-xl hover:bg-color-3"
           >
             <Image
@@ -201,7 +202,7 @@ const Navbar = () => {
           <div className="my-4 border-t border-[#939393] mr-6 ml-6"></div>
           {session ? (
             <Link
-              href="/dashboard"
+              href={siteConfig.navBarLinks.dashboard}
               className="bg-color-2 text-[white] pr-5 pl-5 pt-2 pb-2 mr-6 ml-10 rounded-xl  hover:bg-gradient-to-r from-color-2 to-color-4"
             >
               Dashboard
