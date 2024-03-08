@@ -32,6 +32,23 @@ const handleForkLearningPathCreation = async (id,userId) => {
       },
     });
 
+    if (!originalLearningPath) {
+      return { error: "Learning path not found" };
+    }
+
+    const existingFork = await db.learningPath.findFirst({
+      where: {
+        forkedFromId: id,
+        user: {
+          id: userId
+        },
+      },
+    });
+
+    if (existingFork) {
+      return { error: "You can't fork the same learning path twice" };
+    }
+
     const forkedLearningPath = await db.learningPath.create({
       data: {
         title: originalLearningPath.title,

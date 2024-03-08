@@ -1,9 +1,9 @@
-"use client"
-import React,{useState} from "react";
+"use client";
+import React, { useState } from "react";
 import LearningPathSectionCard from "./LearningPathSectionCard";
 
-const LearningPathSection = ({ sections }) => {
-    const [showIndex, setShowIndex]=useState(0);
+const LearningPathSection = ({ sections, teacher, completedChapters }) => {
+  const [showIndex, setShowIndex] = useState(0);
   // console.log(sections);
   return (
     <div className="max-w-7xl mx-auto mb-60">
@@ -12,7 +12,16 @@ const LearningPathSection = ({ sections }) => {
       </div>
       {sections &&
         sections.map((section, i) => (
-          <LearningPathSectionCard key={section.id} section={section} showItem={i===showIndex?true:false} setShowIndex={showIndex===i?()=>setShowIndex(null):()=>setShowIndex(i)}/>
+          <LearningPathSectionCard
+            key={section.id}
+            section={section}
+            showItem={i === showIndex ? true : false}
+            setShowIndex={
+              showIndex === i ? () => setShowIndex(null) : () => setShowIndex(i)
+            }
+            teacher={teacher}
+            completedChapters={completedChapters}
+          />
         ))}
     </div>
   );
