@@ -22,7 +22,7 @@ const LearningPathForkForm = ({ id }) => {
   };
   return (
     <form onSubmit={handleSubmit}>
-      <Button type="submit" className="mt-4 flex gap-2">
+      <Button type="submit" className="flex gap-2">
         {pending ? (
           <Loader2 className="h-4 w-4 animate-spin" />
         ) : (
