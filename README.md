@@ -42,7 +42,7 @@ Introducing Domain Groups, a power-packed addition that supercharges AlgoArena's
 | Soumyadeep Mitra  |                 |             |                 |
 |  Akangkha Sarkar  |                 |             |                 |
 |      Shruti       |                 |             |                 |
-|  Adarsh Upadhyay  |                 |             |                 |
 |   Maanas Sehgal   |                 |             |                 |
+|  Adarsh Upadhyay  |                 |             |                 |
 | Nitin Kumar Singh |                 |             |                 |
 | Shahan Ali Anwar  |                 |             |                 |
