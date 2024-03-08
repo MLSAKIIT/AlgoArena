@@ -3,7 +3,13 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import React from "react";
 import LearningPathSectionItem from "./LearningPathSectionItem";
 
-const LearningPathSectionCard = ({ section, showItem, setShowIndex, teacher, completedChapters }) => {
+const LearningPathSectionCard = ({
+  section,
+  showItem,
+  setShowIndex,
+  teacher,
+  completedChapters,
+}) => {
   const handleClick = () => {
     setShowIndex();
   };
@@ -32,7 +38,8 @@ const LearningPathSectionCard = ({ section, showItem, setShowIndex, teacher, com
           )}
         </div>
       </div>
-      {showItem && chapters &&
+      {showItem &&
+        chapters &&
         chapters.map((chapter) => (
           <LearningPathSectionItem
             key={chapter.id}
