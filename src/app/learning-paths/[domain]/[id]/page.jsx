@@ -51,9 +51,9 @@ const page = async ({ params }) => {
   let completedChapters = session
     ? await getCurrentUserProgress(session.user.id, params.id)
     : null;
-  
+
   if (completedChapters) {
-    completedChapters = completedChapters.map((chapter) => chapter.chapterId)
+    completedChapters = completedChapters.map((chapter) => chapter.chapterId);
   }
 
   console.log(completedChapters);
@@ -62,10 +62,7 @@ const page = async ({ params }) => {
     .map((section) => section.chapters.length)
     .reduce((a, b) => a + b, 0);
 
-  const progress = completedChapters
-    ? Math.floor((completedChapters.length / chaptersCount) * 100)
-    : 0;
-
+  const progress = completedChapters.length > 0 ? (completedChapters.length / chaptersCount) * 100 : 0;
   return (
     <>
       <LearningPathHeader
