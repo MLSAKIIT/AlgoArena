@@ -7,6 +7,7 @@ import { CgProfile } from "react-icons/cg";
 import { VscTriangleUp } from "react-icons/vsc";
 import { RxCaretDown } from "react-icons/rx";
 import { RxCaretUp } from "react-icons/rx";
+import Link from 'next/link';
 
 const Community = () => {
 
@@ -108,9 +109,8 @@ const Community = () => {
 
             <hr class="mt-4 border-t border-purple-500"></hr>
 
-            <div
-              className="mt-4 py-2 text-center bg-purple-500 text-white border-white border font-bold rounded-full shadow-[0_0_1rem_0px_#9d5ae3]">
-                Create Post
+            <div className="mt-4 py-2 text-center bg-purple-500 text-white border-white border font-bold rounded-full shadow-[0_0_1rem_0px_#9d5ae3]">
+            <Link href="/create-post">Create Post</Link>
             </div>
                     
             <div
