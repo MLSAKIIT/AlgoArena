@@ -23,7 +23,7 @@ const Navbar = () => {
           >
             AlgoArena
           </Link>
-          <div className="gap-10  top-0 flex g-8 pr-1.5  items-baseline text-sm ">
+          <div className="gap-10  top-0 flex g-8 pr-1.5  items-baseline text-sm z-10">
             <Link
               href="/"
               className={`flex 2xl:ml-auto justify-center text-white  gap-2 pr-2 pl-2  pt-2 pb-2 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
@@ -76,7 +76,7 @@ const Navbar = () => {
             </Link>
             <Link
               href="/aboutUs"
-              className={`flex 2xl:mr-auto justify-center text-white pr-2 pl-2  gap-2 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
+              className={`flex 2xl:mr-auto z- 100 justify-center text-white pr-2 pl-2  gap-2 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
                 usePathname() === "/aboutUs"
                   ? "border-2 border-color-3 pt-2 pb-2 rounded shadow-[0_0_1rem_0px_#9d5ae3]  bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
                   : ""
@@ -87,6 +87,7 @@ const Navbar = () => {
                 alt="AlgoArena"
                 width={18}
                 height={18}
+                className="z-10"
               />
               About US
             </Link>

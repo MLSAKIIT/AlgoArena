@@ -44,12 +44,20 @@ const page = () => {
           />
         </div>
 
-        <div className="flex flex-col gap-6 text-wrap m-auto h-[40rem] max-w-[120rem] justify-center items-center">
-          {" "}
-          <h1 className="  text-6xl font-bold font-sans bg-gradient-to-r from-white to-[#9d5ae3] inline-block text-transparent bg-clip-text mt-5">
+        <div className="relative flex flex-col gap-6 text-wrap m-auto h-[40rem] max-w-[120rem] justify-center items-center">
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/assets/about/gradient.png"
+              alt="gradient"
+              layout="fill"
+              objectFit="cover"
+              className="w-full h-full"
+            />
+          </div>
+          <h1 className="z-10 text-6xl font-bold font-sans bg-gradient-to-r from-white to-[#9d5ae3] inline-block text-transparent bg-clip-text mt-5 relative">
             ABOUT US
           </h1>
-          <p className="w-[70vw] max-w-[90%] text-md text-wrap">
+          <p className="w-[70vw] max-w-[90%] text-md text-wrap relative z-10">
             At MLSA (Microsoft Learning Student Ambassador), our mission is
             simple: “Tech for All.” We believe in empowering individuals to
             embrace the digital world with confidence through engaging events,
@@ -58,6 +66,7 @@ const page = () => {
             behind.
           </p>
         </div>
+
         <div className="flex flex-col md:gap-52 gap-20  max-w-[120rem] justify-around items-center">
           <InfoCard
             title="OUR VISION"
