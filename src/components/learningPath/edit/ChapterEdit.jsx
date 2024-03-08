@@ -12,12 +12,15 @@ const ChapterEdit = ({ index, chapter, handleChange }) => {
       {!editing ? (
         <div className="flex w-full justify-evenly items-center border-dotted border-2 border-color-2 rounded-xl py-2 gap-4">
           <h1>{chapter.title}</h1>
-          <Button onClick={() => setEditing(true)}>Edit</Button>
+          <Button type="button" onClick={() => setEditing(true)}>
+            Edit
+          </Button>
         </div>
       ) : (
         <div className=" border-dotted border-2 p-2 border-color-2 w-full rounded-xl pt-2 pb-10">
           <div className="w-full flex justify-end">
             <button
+              type="button"
               onClick={() => setEditing(false)}
               className="text-color-2 transition-colors hover:text-white text-4xl"
             >

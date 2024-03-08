@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import { IoIosClose } from "react-icons/io";
 import ChapterEdit from "./ChapterEdit";
 
-const EditSectionForm = ({ section, handleChange }) => {
+const EditSectionForm = ({ section, addChapter, handleChange }) => {
   // const handleSectionChange = (section) => {
   //   section.
   // }
@@ -27,7 +27,13 @@ const EditSectionForm = ({ section, handleChange }) => {
                   chapter={chapter}
                 />
               ))}
-            <Button className="max-w-[12rem]">Add Chapter</Button>
+            <Button
+              type="button"
+              onClick={addChapter}
+              className="max-w-[12rem]"
+            >
+              Add Chapter
+            </Button>
           </CardContent>
         </Card>
       </div>
