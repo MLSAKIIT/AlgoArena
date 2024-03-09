@@ -14,8 +14,14 @@ export const getPopularPaths = async () => {
       take: 10,
       include: {
         savedLearningPaths: true,
+        sections: {
+          include: {
+            chapters: true,
+          },
+        },
       },
     });
+
     return learningPaths;
   } catch (error) {
     console.error("Error fetching learning paths:", error);
