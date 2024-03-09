@@ -49,7 +49,7 @@ const EmailVerificationPage = async (props) => {
                   className="w-full font-bold text-md max-w-72"
                   type="submit"
                 >
-                  <Link href="/">CONTINUE</Link>
+                  <Link href="/sign-in">CONTINUE</Link>
                 </Button>
               </div>
             </CardContent>
