@@ -15,6 +15,7 @@ const SearchBar = ({ query, domain }) => {
           defaultValue={query}
           className="border-none active:border-none focus-visible:ring-0 "
         />
+        <Input name="domain" value={domain} type="hidden" />
       </div>
     </form>
   );
