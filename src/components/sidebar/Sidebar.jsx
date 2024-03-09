@@ -13,30 +13,33 @@ import { IoMenuOutline } from "react-icons/io5";
 import Image from "next/image";
 import vector from "../../../public/assets/icons/Vector.svg";
 import { useState } from "react";
+import { useSession } from "next-auth/react";
 
 const Sidebar = ({ name }) => {
   const [open, setOpen] = useState(false);
   const onClick = () => {
     setOpen(!open);
   };
+  const { data: session } = useSession();
+
   return (
     <>
         <div className="flex justify-between p-6 w-screen lg:hidden ">
           <IoMenuOutline onClick={onClick} className={`left-0 z-50`} size={50} />
         </div>
       <div
-        className={`fixed top-0 left-0 w-full overflow-hidden md:w-[35%] lg:w-[27%] xl:w-1/4 h-full z-50 bg-[#161a33] sm:px-2 px-10 text-transparent border-r-2 border-color-3  border transform duration-300 translate-x-0 md:visible inl ${
+        className={`fixed top-0 left-0 w-full overflow-hidden md:w-[35%] lg:w-[27%] xl:w-1/4 h-full z-50 bg-[#161a33] sm:px-2 px-10 text-transparent border-r-2 border-color-3 min-h-max border transform duration-300 translate-x-0 md:visible inl ${
             // open ? "translate-x-0" : "-translate-x-full"
             open ? "visible" : "invisible"
           }`}
       >
 
-        <div className="sm:mt-16 overflow-hidden mt-16">
+        <div className="sm:mt-16  mt-16">
           {/* NAME  */}
           <div
             className={`${
               open ? "" : "invisible"
-            } sm:hidden overflow-hidden flex visible mt-12 mb-7 px-5`}
+            } md:hidden overflow-hidden flex visible mt-12 mb-7 px-5`}
           >
             <h2
               className={` font-semibold font-popins self-center text-[30px] text-white`}
@@ -111,7 +114,7 @@ const Sidebar = ({ name }) => {
           </Link>
 
           <Link
-            href="/ dashboard/your-posts"
+            href="/dashboard/your-posts"
             onClick={onClick}
             className={`flex items-center text-nowrap font-medium gap-2 sm:-px-4 px-4 sm:px-[9px] md:px-4 py-2 md:mx-4 sm:mx-2 mx-4  hover:bg-color-2 hover:text-white sm:text-[14px] xl:text-xl lg:text-[16px] text-[20px] rounded-xl my-8
                 ${
@@ -126,7 +129,7 @@ const Sidebar = ({ name }) => {
           </Link>
 
           <Link
-            href="/ dashboard/create-path"
+            href="/dashboard/create-path"
             onClick={onClick}
             className={`flex items-center text-nowrap font-medium gap-2 sm:-px-4 px-4 sm:px-[9px] md:px-4 py-2 md:mx-4 sm:mx-2 mx-4  hover:bg-color-2 hover:text-white sm:text-[14px] xl:text-xl lg:text-[16px] text-[20px] rounded-xl my-8
                 ${
@@ -139,6 +142,17 @@ const Sidebar = ({ name }) => {
             <PiPath />
             Create Your Own Path
           </Link>
+
+          {/* sign out  */}
+            
+          <Link
+            href="/sign-out"
+            className={`rounded-xl bg-color-3 text-white hover:bg-color-2 px-4 py-3 my-6 md:mx-6 sm:mx-4 mx-6`}
+          >
+            Sign Out
+          </Link>
+          
+           
         </div>
       </div>
     </>
