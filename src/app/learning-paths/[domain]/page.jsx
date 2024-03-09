@@ -76,7 +76,7 @@ const LearningPathsPage = async ({ params: { domain }, searchParams }) => {
   return (
     <Fragment>
       <Navbar />
-      <div className="container flex flex-col justify-center items-center gap-10 max-w-[90rem]">
+      <div className="container relative flex flex-col justify-center items-center gap-10 max-w-[120rem]">
         <SearchBar domain={domain} query={searchParams.q} />
         <div className="absolute lg:h-[80rem] lg:w-[78rem] lg:top-[-180px] lg:left-[-250px] lg:block hidden -z-10">
           <Image
@@ -120,9 +120,9 @@ const LearningPathsPage = async ({ params: { domain }, searchParams }) => {
           )}
         </div>
       </div>
-      {/* <div className="absolute -z-10 right-0  w-[55rem] h-[40rem]  overflow-hidden lg:block hidden pointer-events-none" style={{bottom:"0px !important"}} suppressHydrationWarning>
+      <div className="absolute -z-10 right-0 bottom-[15rem] w-[55rem] h-[40rem]  overflow-hidden lg:block hidden pointer-events-none" style={{bottom:"0px !important"}} suppressHydrationWarning>
         <Image src="/dashboard-ellipse2.svg" alt="Ellipse" fill />
-      </div> */}
+      </div>
     </Fragment>
   );
 };
@@ -130,6 +130,8 @@ const LearningPathsPage = async ({ params: { domain }, searchParams }) => {
 export default LearningPathsPage;
 
 const LearningPathCard = ({ data }) => {
+  const totalChapters = data.sections.reduce((acc, section) => acc + section.chapters.length, 0);
+  
   return (
     <Card suppressHydrationWarning>
       <CardHeader>
@@ -157,7 +159,7 @@ const LearningPathCard = ({ data }) => {
               width={15}
               height={15}
             />
-            <div>30 videos</div>
+            <div>{totalChapters} videos</div>
           </div>
           <div className="flex items-center gap-2">
             <Image

@@ -1,7 +1,7 @@
 import React from "react";
-
+import Navbar from "@/components/ui/Navbar";
 const LearningPathPage = () => {
-  return <div>Learning Paths</div>;
+  return <div><Navbar/></div>;
 };
 
 export default LearningPathPage;
