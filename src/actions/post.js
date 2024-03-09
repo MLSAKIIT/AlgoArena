@@ -2,16 +2,15 @@
 
 import { db } from "@/server/db";
 
-export const createPost = async (data) => {
-  const { title, content, domain, tags } = data;
+export const createPost = async (data, userId) => {
+  const { title, content, domain, tech } = data;
   const newPost = await db.post.create({
     data: {
       title: title,
       content: content,
       domain: domain,
-      tags: tags,
-      // TODO: Replace with the user's id ( get from the session )
-      user: { connect: { id: "65e6261cbf92a412117be2ab" } },
+      tags: tech,
+      user: { connect: { id: userId } },
     },
   });
   if (!newPost) return { error: "Post not created" };
@@ -26,26 +25,34 @@ export const getPosts = async () => {
   return posts;
 };
 
-export const likePost = async (postId, state, postLikeId) => {
-  // state = 1 : Like Post
-  // state = 0 : Dislike Post
-  console.log("Like Post Executed");
+export const likePost = async (postId, state, userId) => {
   try {
-    if (state === 1 && postId && "65e6261cbf92a412117be2ab") {
-      const postLike = await db.postLike.create({
-        data: {
-          user: { connect: { id: "65e6261cbf92a412117be2ab" } },
-          post: { connect: { id: postId } },
+    if (postId && userId) {
+      const existingPostLike = await db.postLike.findFirst({
+        where: {
+          userId: userId,
+          postId: postId,
         },
       });
-      return { message: "Liked Post" };
-    } else if (state === 0 && postLikeId) {
-      const postLike = await db.postLike.delete({
-        where: { id: postLikeId },
-      });
-      return { message: "UnLiked Post" };
+
+      if (existingPostLike) {
+        await db.postLike.update({
+          where: { id: existingPostLike.id },
+          data: { type: state === 1 ? "LIKE" : "DISLIKE" },
+        });
+        return { message: state === 1 ? "Liked Post" : "Disliked Post" };
+      } else {
+        const postLike = await db.postLike.create({
+          data: {
+            user: { connect: { id: userId } },
+            post: { connect: { id: postId } },
+            type: state === 1 ? "LIKE" : "DISLIKE",
+          },
+        });
+        return { message: state === 1 ? "Liked Post" : "Disliked Post" };
+      }
     } else {
-      throw new Error("Unknown error occured");
+      throw new Error("Unknown error occurred");
     }
   } catch (error) {
     console.log(error);
@@ -53,27 +60,28 @@ export const likePost = async (postId, state, postLikeId) => {
   }
 };
 
-export const savePost = async (postId, state, savePostId) => {
-  // state = 1 : Save a Post
-  // state = 0 : Un Save a Post
-  console.log("Save Post Executed");
+export const savePost = async (postId, userId) => {
   try {
-    if (state === 1) {
-      const savePost = await db.savedPost.create({
+    const existingSavedPost = await db.savedPost.findFirst({
+      where: { postId_userId: { postId: postId, userId: userId } },
+    });
+
+    if (!existingSavedPost) {
+      const newSavedPost = await db.savedPost.create({
         data: {
-          user: { connect: { id: "65e6261cbf92a412117be2ab" } },
+          user: { connect: { id: userId } },
           post: { connect: { id: postId } },
         },
       });
-      return { message: "Saved a Post" };
-    } else if (state === 0) {
-      const savePost = await db.savedPost.delete({
-        where: { id: savePostId },
-      });
-      return { message: "UnSaved a Post" };
+      return { message: "Saved a Post", savedPostId: newSavedPost.id };
+    } else {
+      await db.savedPost.delete({ where: { id: existingSavedPost.id } });
+      return { message: "Unsaved a Post" };
     }
   } catch (error) {
-    console.log(error);
-    return { error: error.message };
+    console.error("Error saving post:", error);
+    return {
+      error: error.message || "An error occurred while saving the post",
+    };
   }
 };

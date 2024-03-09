@@ -70,7 +70,7 @@ export default function CompletedCourses({user}) {
 
         <SortCourses/>
 
-        <div className=" box-border lg:w-4/5  m-auto sm:auto-cols-max mt-12 sm:gap-6 gap-3 sm:grid sm:grid-cols-3 lg:px-auto md:px-auto sm:overflow-visible  overflow-scroll whitespace-nowrap no-scrollbar py-4 sm:w-11/12 w-screen hidden">
+        <div className=" box-border lg:w-[95%] xl:w-4/5  m-auto sm:auto-cols-max mt-12 sm:gap-6 gap-3 sm:grid sm:grid-cols-3 lg:px-auto md:px-auto sm:overflow-visible  overflow-scroll whitespace-nowrap no-scrollbar py-4 sm:w-11/12 w-screen hidden">
           <MoreCourses/>
           <div className="absolute w-[55rem] h-[40rem] right-0 overflow-hidden block">
               <Image src="/dashboard-ellipse2.svg" alt="Ellipse" fill />

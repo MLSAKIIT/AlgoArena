@@ -15,8 +15,10 @@ import { postSchema } from "@/schemas/posts/new-post";
 import Link from "next/link";
 import { toast } from "sonner";
 import { createPost } from "@/actions/post";
+import { useSession } from "next-auth/react";
 
 const CreatePostForm = () => {
+  const session = useSession();
   const {
     values,
     errors,
@@ -29,14 +31,12 @@ const CreatePostForm = () => {
       title: "",
       content: "",
       domain: "",
-      tags: "",
+      tech: "",
     },
     validationSchema: postSchema,
-    onSubmit: async (values) => {
-      console.log("Submitting form...");
+    onSubmit: async (values, { resetForm }) => {
       try {
-        const newPost = await createPost(values);
-        console.log(newPost);
+        const newPost = await createPost(values, session.data.user.id);
         if (newPost && !newPost.error) {
           toast.success("Post created successfully");
         } else {
@@ -45,6 +45,7 @@ const CreatePostForm = () => {
             : "Something went wrong. Please try again.";
           toast.error(errorMessage);
         }
+        resetForm({ title: "", content: "", domain: "", tech: "" });
       } catch (error) {
         console.error(error);
         toast.error(error.message);

@@ -3,12 +3,11 @@ import { getPosts, likePost, savePost } from "@/actions/post";
 import SoloPost from "@/components/posts/SoloPost";
 import React, { useEffect } from "react";
 
-const CreatePost = () => {
+const AllPosts = () => {
   const [posts, setPosts] = React.useState([]);
   useEffect(() => {
     getPosts()
       .then((res) => {
-        console.log(res);
         setPosts(res);
       })
       .catch((err) => {
@@ -23,16 +22,28 @@ const CreatePost = () => {
             {<SoloPost post={post} />}{" "}
             <div className="flex gap-5 justify-evenly p-3">
               <button
-                onClick={() => likePost(post.id, 1, null)}
+                onClick={() => likePost(post.id, 1)}
                 className="border p-3 rounded-md"
               >
-                Like a post
+                UpVote
+              </button>
+              <button
+                onClick={() => likePost(post.id, 0)}
+                className="border p-3 rounded-md"
+              >
+                DownVote
               </button>
               <button
                 className="border p-3 rounded-md"
                 onClick={() => savePost(post.id, 1, null)}
               >
-                Save a Post
+                Star
+              </button>
+              <button
+                className="border p-3 rounded-md"
+                onClick={() => savePost(post.id, 1, null)}
+              >
+                UnStar
               </button>
             </div>
           </div>
@@ -42,4 +53,4 @@ const CreatePost = () => {
   );
 };
 
-export default CreatePost;
+export default AllPosts;
