@@ -24,7 +24,7 @@ const Navbar = () => {
           >
             AlgoArena
           </Link>
-          <div className="gap-10  top-0 flex g-8 pr-1.5  items-baseline text-sm ">
+          <div className="gap-10  top-0 flex g-8 pr-1.5  items-baseline text-sm z-10">
             <Link
               href={siteConfig.navBarLinks.home}
               className={`flex 2xl:ml-auto justify-center text-white  gap-2 pr-2 pl-2  pt-2 pb-2 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
@@ -88,6 +88,7 @@ const Navbar = () => {
                 alt="AlgoArena"
                 width={18}
                 height={18}
+                className="z-10"
               />
               About US
             </Link>
