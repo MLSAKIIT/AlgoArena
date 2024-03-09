@@ -136,7 +136,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div
-        className={`fixed top-0 left-0 w-3/5 h-full z-10  lg:hidden bg-[#161A33]  border-white border-opacity-25 border transform duration-300 ${
+        className={`fixed top-0 left-0 w-3/5 h-full z-30  lg:hidden bg-[#161A33]  border-white border-opacity-25 border transform duration-300 ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -149,12 +149,12 @@ const Navbar = () => {
           className="absolute top-0 right-0 m-4"
         />
 
-        <div className="mt-40 flex flex-col justify-center">
-          <div className="my-4 border-t border-[#939393] mr-6 ml-6"></div>
+        <div className="mt-40 flex flex-col justify-center bg-[#161A33]">
+          <div className="my-4 border-t border-[#939393] mr-6 ml-6 bg-[#161A33]"></div>
 
           <Link
             href={siteConfig.navBarLinks.home}
-            className="flex  text-[white] rounded-xl gap-2 px-4 py-2 mr-6 ml-6 hover:bg-color-3"
+            className="flex  text-[white] rounded-xl gap-2 px-4 py-2 mr-6 ml-6 bg-[#161A33] hover:bg-color-3"
           >
             <Image
               src="/assets/icons/home_fill.png"
