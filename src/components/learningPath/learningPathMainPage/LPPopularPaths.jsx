@@ -5,8 +5,6 @@ import { getPopularPaths } from "@/actions/get-popular-paths";
 
 const LPPopularPaths = async () => {
   const popularPaths = await getPopularPaths();
-  console.log(popularPaths);
-
   return (
     <div className="max-w-6xl mx-auto m-5 w-screen">
       <div className="flex items-end justify-between my-2 md:my-5 m-3">
