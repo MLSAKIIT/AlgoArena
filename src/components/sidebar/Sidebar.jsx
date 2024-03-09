@@ -10,6 +10,8 @@ import { IoBookmarkOutline } from "react-icons/io5";
 import { PiPath } from "react-icons/pi";
 import { IoMdClose } from "react-icons/io";
 import { IoMenuOutline } from "react-icons/io5";
+import { IoHomeOutline } from "react-icons/io5";
+
 import Image from "next/image";
 import vector from "../../../public/assets/icons/Vector.svg";
 import { useState } from "react";
@@ -29,13 +31,13 @@ const Sidebar = () => {
           <IoMenuOutline onClick={onClick} className={`left-0 z-50`} size={50} />
         </div>
       <div
-        className={`fixed top-0 left-0 w-full overflow-hidden md:w-[38%] lg:w-[20%] xl:w-1/5 2xl:1/4 h-full z-50 bg-[#161a33] sm:px-2 px-10 text-transparent border-r-2 border-color-3 min-h-max border transform duration-300 translate-x-0 lg:visible  ${
+        className={`fixed top-0 left-0 overflow-hidden w-4/5 md:w-[38%] lg:w-[20%] xl:w-1/5 2xl:w-1/5 h-full z-[99] bg-[#161a33] sm:px-2 px-10 text-transparent border-r-2 border-color-3 min-h-max border transform duration-300 translate-x-0 lg:visible ${
             // open ? "translate-x-0" : "-translate-x-full"
             open ? "visible" : "invisible"
           }`}
       >
 
-        <div className="sm:mt-16  mt-16">
+        <div className="sm:mt-6  mt-7">
           {/* NAME  */}
           <div
             className={`${
@@ -53,11 +55,25 @@ const Sidebar = () => {
           <div className="absolute top-0 right-0 z-30 text-slate-600 m-4">
             <IoMdClose onClick={onClick} className="h-[40px] w-[40px] z-50 lg:hidden" />
           </div>
+          <Link
+            href="/"
+            onClick={onClick}
+            className={`flex items-center text-nowrap font-bold gap-2 sm:-px-4 px-4 sm:px-[9px] md:px-4 py-2 md:mx-4 sm:mx-2 mx-4  hover:bg-color-2 hover:text-white sm:text-[14px] 2xl:text-xl lg:text-[15px] text-[15px]  rounded-xl my-6
+                ${
+                  usePathname() === "/"
+                    ? "border-2  border-color-2 text-color-2"
+                    : "text-white"
+                } 
+            `}
+          >
+            <IoHomeOutline />
+            AlgoArena
+          </Link>
 
           <Link
             href="/dashboard"
             onClick={onClick}
-            className={`flex items-center text-nowrap font-medium gap-2 sm:-px-4 px-4 sm:px-[9px] md:px-4 py-2 md:mx-4 sm:mx-2 mx-4  hover:bg-color-2 hover:text-white sm:text-[14px] 2xl:text-xl lg:text-[14px] text-[20px] rounded-xl my-4
+            className={`flex items-center text-nowrap font-medium gap-2 sm:-px-4 px-4 sm:px-[9px] md:px-4 py-2 md:mx-4 sm:mx-2 mx-4  hover:bg-color-2 hover:text-white sm:text-[14px] 2xl:text-xl lg:text-[14px] text-[15px] rounded-xl my-6
                 ${
                   usePathname() === "/dashboard"
                     ? "border-2  border-color-2 text-color-2"
@@ -72,7 +88,7 @@ const Sidebar = () => {
           <Link
             href="/create-post"
             onClick={onClick}
-            className={`flex items-center text-nowrap font-medium gap-2 sm:-px-4 px-4 sm:px-[9px] md:px-4 py-2 md:mx-4 sm:mx-2 mx-4  hover:bg-color-2 hover:text-white sm:text-[14px] 2xl:text-xl lg:text-[14px] text-[20px] rounded-xl my-8
+            className={`flex items-center text-nowrap font-medium gap-2 sm:-px-4 px-4 sm:px-[9px] md:px-4 py-2 md:mx-4 sm:mx-2 mx-4  hover:bg-color-2 hover:text-white sm:text-[14px] 2xl:text-xl lg:text-[14px] text-[15px] rounded-xl my-6
                 ${
                   usePathname() === "/create-post"
                     ? "border-2  border-color-2 text-color-2"
@@ -87,7 +103,7 @@ const Sidebar = () => {
           <Link
             href="/dashboard/completed-courses"
             onClick={onClick}
-            className={`flex items-center text-nowrap font-medium gap-2 sm:-px-4 px-4 sm:px-[9px] md:px-4 py-2 md:mx-4 sm:mx-2 mx-4  hover:bg-color-2 hover:text-white sm:text-[14px] 2xl:text-xl lg:text-[14px] text-[20px]  rounded-xl my-8
+            className={`flex items-center text-nowrap font-medium gap-2 sm:-px-4 px-4 sm:px-[9px] md:px-4 py-2 md:mx-4 sm:mx-2 mx-4  hover:bg-color-2 hover:text-white sm:text-[14px] 2xl:text-xl lg:text-[14px] text-[15px]  rounded-xl my-6
                 ${
                   usePathname() === "/dashboard/completed-courses"
                     ? "border-2  border-color-2 text-color-2"
@@ -102,7 +118,7 @@ const Sidebar = () => {
           <Link
             href="/dashboard/saved-courses"
             onClick={onClick}
-            className={`flex items-center text-nowrap font-medium gap-2 sm:-px-4 px-4 sm:px-[9px] md:px-4 py-2 md:mx-4 sm:mx-2 mx-4  hover:bg-color-2 hover:text-white sm:text-[14px] 2xl:text-xl lg:text-[14px] text-[20px] rounded-xl my-8
+            className={`flex items-center text-nowrap font-medium gap-2 sm:-px-4 px-4 sm:px-[9px] md:px-4 py-2 md:mx-4 sm:mx-2 mx-4  hover:bg-color-2 hover:text-white sm:text-[14px] 2xl:text-xl lg:text-[14px] text-[15px] rounded-xl my-6
                 ${
                   usePathname() === "/dashboard/saved-courses"
                     ? "border-2  border-color-2 text-color-2"
@@ -117,7 +133,7 @@ const Sidebar = () => {
           <Link
             href="/community"
             onClick={onClick}
-            className={`flex items-center text-nowrap font-medium gap-2 sm:-px-4 px-4 sm:px-[9px] md:px-4 py-2 md:mx-4 sm:mx-2 mx-4  hover:bg-color-2 hover:text-white sm:text-[14px] 2xl:text-xl lg:text-[14px] text-[20px] rounded-xl my-8
+            className={`flex items-center text-nowrap font-medium gap-2 sm:-px-4 px-4 sm:px-[9px] md:px-4 py-2 md:mx-4 sm:mx-2 mx-4  hover:bg-color-2 hover:text-white sm:text-[14px] 2xl:text-xl lg:text-[14px] text-[15px] rounded-xl my-6
                 ${
                   usePathname() === "/community"
                     ? "border-2  border-color-2 text-color-2"
@@ -132,7 +148,7 @@ const Sidebar = () => {
           <Link
             href="/dashboard/create-path"
             onClick={onClick}
-            className={`flex items-center text-nowrap font-medium gap-2 sm:-px-4 px-4 sm:px-[9px] md:pl-4 md:pr-2 py-2 md:mx-4 sm:mx-2 mx-4  hover:bg-color-2 hover:text-white sm:text-[14px] 2xl:text-xl lg:text-[14px] text-[20px] rounded-xl my-8
+            className={`flex items-center text-nowrap font-medium gap-2 sm:-px-4 px-4 sm:px-[9px] md:pl-4 md:pr-2 py-2 md:mx-4 sm:mx-2 mx-4  hover:bg-color-2 hover:text-white sm:text-[14px] 2xl:text-xl lg:text-[14px] text-[15px] rounded-xl my-6
                 ${
                   usePathname() === "/dashboard/create-path"
                     ? "border-2  border-color-2 text-color-2"

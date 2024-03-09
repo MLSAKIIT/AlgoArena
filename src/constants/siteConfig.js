@@ -7,7 +7,7 @@ export const siteConfig = {
         dashboard: "/dashboard",
     },
     socials: {
-        gtihub: 'https://github.com/MLSAKIIT',
+        github: 'https://github.com/MLSAKIIT',
         discord: 'https://discord.gg/BW28wXGfsZ',
         instagram: 'https://www.instagram.com/mlsakiit/',
         facebook: 'https://www.facebook.com/msakiit'

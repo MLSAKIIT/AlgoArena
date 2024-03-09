@@ -13,6 +13,9 @@ export default async function dashboard() {
       <div className="md:absolute xl:w-[80%] overflow-hidden md:w-[96%] lg:left-[24%] xl:left-[20%] 2xl:left-[20%] mt-20 sm:mt-12">
       <Dashboard data={currentlyWatchingLearningPaths} />
       </div>
+
+      {/* <Sidebar></Sidebar>
+      <Dashboard data={currentlyWatchingLearningPaths}></Dashboard> */}
     </div>
   );
 }

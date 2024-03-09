@@ -4,42 +4,15 @@ import SortBox from "./SortBox"
 import { MORE_COURSES } from "@/constants";
 
 
-const COURSES = [
-  {
-    id: 1,
-    course:"APP DEVELOPMENT",
-  },
-  {
-    id: 2,
-    course:"UI/UX",
-  },
-  {
-    id: 3,
-    course:"CYBER SECURITY",
-  },
-  {
-    id: 4,
-    course:"AI ML",
-  },
-  {
-    id: 5,
-    course:"WEB DEVELOPMENT",
-  },
-  {
-    id: 6,
-    course:"CLOUD",
-  },
-]
-
 export default function SortCourses() {
   return (
     <div className="sm:hidden flex items-center  whitespace-nowrap max-w-screen-sm mx-auto ml-[40px] mt-16 z-30">
             <h3 className="text-white font-medium mr-3 ">Sort By: </h3>
 
-            <div className="SORT DOMAINS DIV flex overflow-scroll  justify-between whitespace-nowrap  no-scrollbar">
+            <div className="SORT DOMAINS DIV flex flex-wrap justify-start whitespace-nowrap gap-4">
               {MORE_COURSES.map(({id, course}) => {
                 return (
-                    <SortBox key={id} CourseName={course}></SortBox>
+                    <SortBox key={id} CourseName={course.trimEnd()}></SortBox>
                 )
               })}
             </div>

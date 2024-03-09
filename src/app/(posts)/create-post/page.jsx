@@ -7,6 +7,8 @@ import Image from "next/image";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/footer/Footer";
 
+export const dynamic = "force-dynamic"
+
 const CreatePost = () => {
   return (
     <div>
