@@ -10,7 +10,7 @@ export default async function dashboard() {
   const savedLearningPaths = await getSavedLearningPathsWithProgress();
   return (
     <div className="flex">
-      <Sidebar name="Ayush Ranjan"></Sidebar>
+      <Sidebar></Sidebar>
       <DashboardStaredCourses data={savedLearningPaths} />
     </div>
   );
