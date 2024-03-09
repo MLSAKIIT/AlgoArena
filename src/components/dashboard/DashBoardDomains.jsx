@@ -8,7 +8,7 @@ const DashBoardDomains = ({data}) => {
     const username = session.data ? session.data.user.name : "User";
 
     return (
-        <div className="ml-10">
+        <div className="sm:ml-10 ml-0">
             <div className="absolute lg:h-[80rem] lg:w-[78rem] lg:top-[-180px] lg:left-[-250px] lg:block hidden -z-10">
                 <Image src="/dashboard-ellipse1.svg" alt="Ellipse" height={100} width={80} className="absolute w-[80rem] h-[75rem] left-[13rem] top-[15rem] overflow-hidden lg:block hidden" />
             </div>
