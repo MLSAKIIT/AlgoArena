@@ -13,8 +13,10 @@ const SearchBar = ({ query, domain }) => {
           placeholder="Search for videos, tags"
           type="search"
           defaultValue={query}
-          className="border-none active:border-none focus-visible:ring-0 "
+          className="border-none outline-none focus:border-none focus:outline-none"
+         
         />
+        <Input name="domain" type="hidden" value={domain} />
       </div>
     </form>
   );
