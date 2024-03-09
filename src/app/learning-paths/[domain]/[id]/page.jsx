@@ -1,5 +1,4 @@
 import React from "react";
-import { db } from "@/server/db";
 import LearningPathSection from "@/components/learningPath/LearningPathSection";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/server/auth/options";
