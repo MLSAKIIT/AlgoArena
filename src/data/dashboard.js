@@ -1,3 +1,4 @@
+import { ALLOWED_DOMAINS } from "@/constants";
 import { authOptions } from "@/server/auth/options";
 import { db } from "@/server/db";
 import { getServerSession } from "next-auth";
@@ -28,7 +29,11 @@ export const calculateProgress = async (learningPath, session) => {
       ? (completedChapters.length / totalChaptersInLearningPath) * 100
       : 0;
 
-  return { progress, totalChapters: totalChaptersInLearningPath, completedChapters };
+  return {
+    progress,
+    totalChapters: totalChaptersInLearningPath,
+    completedChapters,
+  };
 };
 
 export const getAllLearningPathsWithProgress = async () => {
@@ -63,7 +68,7 @@ export const getAllLearningPathsWithProgress = async () => {
     });
     const progressInEachLearningPath = await Promise.all(
       learningPathsWithSomeProgress.map(async (learningPath) => {
-        const { progress } = await calculateProgress(learningPath, session); 
+        const { progress } = await calculateProgress(learningPath, session);
 
         // remove unnecessary data
         const { sections, authorId, isForked, forkedFromId, ...rest } =
@@ -144,4 +149,32 @@ export const getCompletedLearningPaths = async () => {
   const data = await getAllLearningPathsWithProgress();
   if (!data) return null;
   return data.filter((learningPath) => learningPath.progress === 100);
+};
+
+export const getMoreCoursesData = async () => {
+  try {
+    const session = await getServerSession(authOptions);
+    if (!session) return {};
+
+    const domains = Object.values(ALLOWED_DOMAINS);
+    const data = await Promise.all(
+      domains.map(async (domain) => {
+        const data = await db.savedLearningPath.count({
+          where: {
+            learningPath: {
+              domain,
+            },
+          },
+        });
+        return {
+          domain,
+          stars: data,
+        };
+      })
+    );
+    return data;
+  } catch (error) {
+    console.log(error);
+    return {};
+  }
 };

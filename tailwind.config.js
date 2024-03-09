@@ -20,7 +20,7 @@ module.exports = {
     },
     extend: {
       fontSize: {
-        "xxs": "5px",
+        xxs: "5px",
       },
       colors: {
         "color-1": "#E1C3FF",
@@ -99,6 +99,7 @@ module.exports = {
       },
       screens: {
         mid: "439px",
+        mdxs: "950px",
       },
     },
   },

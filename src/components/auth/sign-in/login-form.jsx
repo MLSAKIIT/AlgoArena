@@ -76,17 +76,14 @@ export function LoginForm({ callbackUrl }) {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="space-y-8 w-full flex justify-center max-w-[120rem]"
-    >
-      <Card className="sm:bg-color-6 w-full sm:w-96 sm:rounded-2xl rounded-none sm:border-solid border-none h-[25rem]">
+    <form onSubmit={handleSubmit} className="space-y-8 flex justify-center">
+      <Card className="sm:bg-color-6  sm:w-96 sm:rounded-2xl rounded-none sm:border-solid border-none w-full">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl">LOGIN</CardTitle>
+          <CardTitle className="text-2xl flex justify-center">LOGIN</CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="grid gap-4">
           <div className="flex flex-col space-y-4">
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-col  space-y-2">
               <Input
                 name="email"
                 placeholder="Email"
@@ -97,7 +94,7 @@ export function LoginForm({ callbackUrl }) {
                 className={cn(
                   `bg-[url('/assets/auth/email.svg')] ${
                     errors.email && "border-red-500"
-                  }`
+                  } text-xs sm:text-sm `
                 )}
               />
               {errors.email && (
@@ -115,7 +112,7 @@ export function LoginForm({ callbackUrl }) {
                 className={cn(
                   `bg-[url('/assets/auth/eye.svg')] ${
                     errors.password && "border-red-500"
-                  }`
+                  } text-xs sm:text-sm `
                 )}
               />
               {errors.password && (
