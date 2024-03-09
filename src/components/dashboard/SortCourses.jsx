@@ -33,7 +33,7 @@ const COURSES = [
 
 export default function SortCourses() {
   return (
-    <div className="sm:hidden flex items-center  whitespace-nowrap max-w-screen-sm mx-auto mt-16 z-30">
+    <div className="sm:hidden flex items-center  whitespace-nowrap max-w-screen-sm mx-auto ml-[40px] mt-16 z-30">
             <h3 className="text-white font-medium mr-3 ">Sort By: </h3>
 
             <div className="SORT DOMAINS DIV flex overflow-scroll  justify-between whitespace-nowrap  no-scrollbar">
