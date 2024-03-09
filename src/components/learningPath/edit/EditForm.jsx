@@ -99,7 +99,7 @@ const EditForm = ({ learningPathData }) => {
             className="space-y-2 w-full sm:w-96 sm:rounded-2xl rounded-none sm:border-solid border-none"
             onSubmit={handleSubmit}
           >
-            <Card className="sm:bg-color-6 w-full sm:w-96 sm:rounded-2xl rounded-none sm:border-solid border-none">
+            <Card className="sm:bg-color-6 w-full flexy sm:w-96 sm:rounded-2xl rounded-none sm:border-solid border-none">
               <CardHeader className="space-y-1">
                 <Input
                   name="title"

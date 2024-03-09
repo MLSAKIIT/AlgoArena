@@ -127,6 +127,8 @@ export const getRecommendedPaths = async () => {
     });
 
     if (learningPathDomains.length === 0) {
+      const learningPath = await getRandomPaths();
+      return learningPath;
     }
     const domainArray = getDomainArray(learningPathDomains);
 
