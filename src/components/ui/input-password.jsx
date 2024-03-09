@@ -16,6 +16,7 @@ const PasswordInput = React.forwardRef(
           {...props}
         />
         <button
+          type="button"
           onClick={showPassword}
           className="absolute z-20 bottom-0 top-0 right-4"
         >

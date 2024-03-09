@@ -110,6 +110,7 @@ export function LoginForm({ callbackUrl }) {
                 type={showPassword ? "text" : "password"}
                 value={values.password}
                 onChange={handleChange}
+                showPassword={() => setShowPassword((prev) => !prev)}
                 onBlur={handleBlur}
                 className={cn(
                   ` ${errors.password && "border-red-500"} text-xs sm:text-sm `

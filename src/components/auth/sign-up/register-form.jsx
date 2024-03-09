@@ -17,8 +17,13 @@ import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
 import { registerSchema } from "@/schemas/auth/register";
 import { createUser } from "@/actions/register";
+import { PasswordInput } from "@/components/ui/input-password";
+import { useState } from "react";
 
 export default function RegisterForm() {
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
   const router = useRouter();
   const {
     values,
@@ -99,36 +104,30 @@ export default function RegisterForm() {
             )}
           </div>
           <div className="grid gap-2">
-            <Input
+            <PasswordInput
               name="password"
+              showPassword={() => setShowPassword((prev) => !prev)}
               placeholder="Password"
-              type="password"
+              type={showPassword ? "text" : "password"}
               value={values.password}
               onChange={handleChange}
               onBlur={handleBlur}
-              className={cn(
-                `bg-[url('/assets/auth/eye.svg')] ${
-                  errors.password && "border-red-500"
-                }`
-              )}
+              className={cn(`${errors.password && "border-red-500"}`)}
             />
             {errors.password && (
               <p className="text-red-500 text-sm">{errors.password}</p>
             )}
           </div>
           <div className="grid gap-2">
-            <Input
+            <PasswordInput
               name="confirmPassword"
               placeholder="Confirm Password"
-              type="password"
+              type={showConfirmPassword ? "text" : "password"}
+              showPassword={() => setShowConfirmPassword((prev) => !prev)}
               value={values.confirmPassword}
               onChange={handleChange}
               onBlur={handleBlur}
-              className={cn(
-                `bg-[url('/assets/auth/eye.svg')] ${
-                  errors.confirmPassword && "border-red-500"
-                }`
-              )}
+              className={cn(`${errors.confirmPassword && "border-red-500"}`)}
             />
             {errors.confirmPassword && (
               <p className="text-red-500 text-sm">{errors.confirmPassword}</p>
