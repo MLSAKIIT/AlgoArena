@@ -19,7 +19,7 @@ export default function dashboard({ data }) {
                   {/* <div className="HEADING DIV md:mt-12 mt-6 overflow-hidden relative">
                         <Title text="MORE COURSES FOR YOU" />
                     </div> */}
-                  <div className="text-4xl flex bg-gradient-videos text-transparent bg-clip-text font-popins font-[700] mt-10 ml-10 w-[350px]">MORE COURSES FOR YOU</div>
+                  <div className="text-4xl flex bg-gradient-videos text-transparent bg-clip-text font-popins font-[700] mt-10 lg:ml-[69px] w-[350px]">MORE COURSES FOR YOU</div>
 
                   {/* Sort courses for mobile devices */}
                   <SortCourses />
@@ -27,7 +27,7 @@ export default function dashboard({ data }) {
                   {/* Dashboard lower part */}
                   {/* <div className=" box-border m-auto sm:auto-cols-max mt-12 gap-60 sm:grid sm:grid-cols-3 lg:px-auto md:px-auto flex sm:overflow-visible overflow-scroll whitespace-nowrap no-scrollbar py-4  "> */}
                   <div
-                      className="z-1 flex flex-wrap md:flex-nowrap items-center justify-center gap-[30px] xl:gap-[60px] mt-16 sm:overflow-visible overflow-scroll whitespace-nowrap no-scrollbar py-4  "
+                      className="z-1 flex flex-wrap sm:auto-cols-max md:flex-nowrap items-center justify-start gap-[30px] xl:gap-[20px] mt-16 sm:overflow-hidden overflow-scroll md:ml-2 whitespace-nowrap no-scrollbar py-4  "
                       style={{flexWrap: "wrap"}}>
                       <MoreCourses />
                       {/* eclipse image */}
