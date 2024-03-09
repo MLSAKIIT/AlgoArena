@@ -15,8 +15,10 @@ import { postSchema } from "@/schemas/posts/new-post";
 import Link from "next/link";
 import { toast } from "sonner";
 import { createPost } from "@/actions/post";
+import { useSession } from "next-auth/react";
 
 const CreatePostForm = () => {
+  const session = useSession();
   const {
     values,
     errors,
@@ -34,7 +36,7 @@ const CreatePostForm = () => {
     validationSchema: postSchema,
     onSubmit: async (values, { resetForm }) => {
       try {
-        const newPost = await createPost(values);
+        const newPost = await createPost(values, session.data.user.id);
         if (newPost && !newPost.error) {
           toast.success("Post created successfully");
         } else {

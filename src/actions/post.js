@@ -2,7 +2,7 @@
 
 import { db } from "@/server/db";
 
-export const createPost = async (data) => {
+export const createPost = async (data, userId) => {
   const { title, content, domain, tech } = data;
   const newPost = await db.post.create({
     data: {
@@ -10,8 +10,7 @@ export const createPost = async (data) => {
       content: content,
       domain: domain,
       tags: tech,
-      // TODO: Replace with the user's id ( get from the session )
-      user: { connect: { id: "65e6261cbf92a412117be2ab" } },
+      user: { connect: { id: userId } },
     },
   });
   if (!newPost) return { error: "Post not created" };
@@ -26,9 +25,7 @@ export const getPosts = async () => {
   return posts;
 };
 
-export const likePost = async (postId, state) => {
-  const userId = "65e6261cbf92a412117be2ab";
-  console.log("Like Post Executed");
+export const likePost = async (postId, state, userId) => {
   try {
     if (postId && userId) {
       const existingPostLike = await db.postLike.findFirst({
@@ -63,18 +60,16 @@ export const likePost = async (postId, state) => {
   }
 };
 
-export const savePost = async (postId) => {
+export const savePost = async (postId, userId) => {
   try {
     const existingSavedPost = await db.savedPost.findFirst({
-      where: {
-        postId_userId: { postId: postId, userId: "65e6261cbf92a412117be2ab" },
-      },
+      where: { postId_userId: { postId: postId, userId: userId } },
     });
 
     if (!existingSavedPost) {
       const newSavedPost = await db.savedPost.create({
         data: {
-          user: { connect: { id: "65e6261cbf92a412117be2ab" } },
+          user: { connect: { id: userId } },
           post: { connect: { id: postId } },
         },
       });
