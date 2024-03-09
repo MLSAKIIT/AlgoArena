@@ -27,7 +27,7 @@ export default function dashboard({ data }) {
                   {/* Dashboard lower part */}
                   {/* <div className=" box-border m-auto sm:auto-cols-max mt-12 gap-60 sm:grid sm:grid-cols-3 lg:px-auto md:px-auto flex sm:overflow-visible overflow-scroll whitespace-nowrap no-scrollbar py-4  "> */}
                   <div
-                      className="z-1 flex flex-wrap sm:auto-cols-max md:flex-nowrap items-center justify-start gap-[30px] xl:gap-[20px] mt-16 sm:overflow-hidden overflow-scroll md:ml-2 whitespace-nowrap no-scrollbar py-4  "
+                      className="z-1 flex flex-wrap sm:auto-cols-max md:flex-nowrap items-center justify-start gap-[30px] xl:gap-[20px] mt-16 sm:overflow-hidden overflow-scroll md:ml-10 whitespace-nowrap no-scrollbar py-4  "
                       style={{flexWrap: "wrap"}}>
                       <MoreCourses />
                       {/* eclipse image */}

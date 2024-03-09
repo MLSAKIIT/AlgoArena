@@ -6,7 +6,7 @@ export default function DashCoursesCard({title, members, href}) {
         <>
             <Link
                 href={href}
-                className="hover:shadow-[0_0_16px_3px_#4a0f87] hover:scale-105 hover:backdrop-blur-[10px] transition-all backdrop-blur-sm border-[1.5px] border-purple-500 rounded-xl cursor-pointer h-[50px] sm:h-[100px] md:h-[100px] lg:h-[100px] max-w-[400px] md:w-[250px] relative flex flex-col justify-start group object-cover overflow-hidden sm: basis-1/3 mx-3 my-3 z-20">
+                className="hover:shadow-[0_0_16px_3px_#4a0f87] hover:scale-105 hover:backdrop-blur-[10px] transition-all backdrop-blur-sm border-[1.5px] border-purple-500 rounded-xl cursor-pointer h-[50px] sm:h-[100px] md:h-[100px] lg:h-[100px] max-w-[330px]2xl:max-w-[400px] md:w-[250px] relative flex flex-col justify-start group object-cover overflow-hidden sm: basis-1/3 mx-3 my-3 z-20">
                 <div className="relative flex flex-col items-center">
                     {/* title div */}
                     <h2 className="sm:text-xl lg:text-2xl font-sans font-bold bg-gradient-to-r from-white to-purple-500 inline-block text-transparent bg-clip-text p-3">{title}</h2>
