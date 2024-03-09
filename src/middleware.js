@@ -18,7 +18,9 @@ export default async function middleware(req) {
   //Protected Routes
   if (
     req.nextUrl.pathname.startsWith("/create-post") ||
-    req.nextUrl.pathname.startsWith("/dashboard")
+    req.nextUrl.pathname.startsWith("/dashboard") ||
+    (req.nextUrl.pathname.startsWith("/learning-paths/") &&
+      req.nextUrl.pathname.startsWith !== "/learning-paths")
   ) {
     if (!isAuthenticated)
       return NextResponse.redirect(new URL("/sign-in", req.url));
@@ -26,5 +28,11 @@ export default async function middleware(req) {
 }
 
 export const config = {
-  matcher: ["/create-post", "/sign-in", "/sign-up", "/dashboard"],
+  matcher: [
+    "/create-post",
+    "/sign-in",
+    "/sign-up",
+    "/dashboard",
+    "/learning-paths/:path*",
+  ],
 };

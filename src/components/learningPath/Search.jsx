@@ -16,7 +16,7 @@ const SearchBar = ({ query, domain }) => {
           className="border-none outline-none focus:border-none focus:outline-none"
          
         />
-        <Input name="domain" type="hidden" value={domain} />
+        <Input name="domain" value={domain} type="hidden" />
       </div>
     </form>
   );
