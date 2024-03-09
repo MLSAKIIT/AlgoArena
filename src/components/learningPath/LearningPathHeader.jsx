@@ -14,7 +14,7 @@ const LearningPathHeader = ({
 }) => {
   return (
     <>
-      <div className="relative h-full min-w-screen max-w-[180rem] ">
+      <div className="relative h-full min-w-screen max-w-[180rem] mt-2 mx-2 ">
         <div
           className="absolute inset-0 h-[40rem] bg-left-top -top-20  bg-no-repeat bg-blend-normal -z-10"
           style={{
