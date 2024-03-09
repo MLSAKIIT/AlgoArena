@@ -13,10 +13,10 @@ const Navbar = () => {
     setOpen(!open);
   };
   const { data: session } = useSession();
-
+  const pathname=usePathname();
   return (
     <>
-      <div className="2xl:px-20 lg:flex justify-between   max-w-[120rem] lg:p-6 hidden z-10">
+      <div className="2xl:px-20 lg:flex justify-between  w-full  max-w-[120rem] lg:p-6 hidden z-10">
         <div className="gap-10  top-0  min-w-[800px] w-full justify-between flex g-8 pr-1.5  items-baseline text-sm ">
           <Link
             href={siteConfig.navBarLinks.home}
@@ -45,7 +45,7 @@ const Navbar = () => {
             <Link
               href={siteConfig.navBarLinks.learningPath}
               className={`flex justify-center text-white  pr-2 pl-2 gap-2 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
-                usePathname() === "/dashboard"
+                pathname.startsWith(siteConfig.navBarLinks.learningPath)
                   ? "border-2 border-color-3 shadow-[0_0_1rem_0px_#9d5ae3] pt-2 pb-2 rounded bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
                   : ""
               }`}
@@ -62,7 +62,7 @@ const Navbar = () => {
             <Link
               href={siteConfig.navBarLinks.community}
               className={`flex justify-center text-white pr-2 pl-2 gap-2 z-10 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
-                usePathname() === "/community"
+               pathname.startsWith(siteConfig.navBarLinks.community)
                   ? "border-2 border-color-3  shadow-[0_0_1rem_0px_#9d5ae3] rounded pt-2 pb-2  bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
                   : ""
               }`}
@@ -97,7 +97,7 @@ const Navbar = () => {
           {session ? (
             <Link
               href={siteConfig.navBarLinks.dashboard}
-              className="bg-color-2 grid place-items-center  text-white pr-5 shadow-[0_0_1rem_0px_#9d5ae3] pl-5 pt-1 pb-1 rounded-xl hover:bg-gradient-to-r from-color-2 to-color-3 transition-all duration-200"
+              className="bg-color-2 grid place-items-center  text-white  shadow-[0_0_1rem_0px_#9d5ae3] p-2 rounded-full hover:bg-gradient-to-r from-color-2 to-color-3 transition-all duration-200"
             >
               <Image
                 src="/assets/icons/user-dashboard.svg"
@@ -119,7 +119,7 @@ const Navbar = () => {
           <Image src={profile} alt="User" width={30} height={30} />
         </div> */}
       </div>
-      <div className="flex justify-between p-6  w-[95%]  lg:hidden ">
+      <div className="flex justify-between p-6 w-[95%]  lg:hidden ">
         <Image
           src="/assets/icons/menu.svg"
           alt="Ellipse"
@@ -128,12 +128,15 @@ const Navbar = () => {
           className="text-[white]"
           onClick={onClick}
         />
-        <Link href={siteConfig.navBarLinks.home} className="text-[white] font-extrabold flex text-xl ">
+        <Link
+          href={siteConfig.navBarLinks.home}
+          className="text-[white] font-extrabold flex text-xl "
+        >
           AlgoArena
         </Link>
       </div>
       <div
-        className={`fixed top-0 left-0 w-3/5 h-full z-10  lg:hidden bg-[#161A33]  text-transparent  backdrop-blur-sm border-white border-opacity-25 border transform duration-300 ${
+        className={`fixed top-0 left-0 w-3/5 h-full z-10  lg:hidden bg-[#161A33]  border-white border-opacity-25 border transform duration-300 ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >

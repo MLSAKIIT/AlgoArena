@@ -1,18 +1,15 @@
 import Dashboard from "@/components/dashboard/Dashboard";
-import Sidebar from "@/components/sidebar/Sidebar";
+import Navbar from "@/components/ui/Navbar";
 import { getAllLearningPathsWithProgress } from "@/data/dashboard";
-
-export const dynamic = "force-dynamic"
 
 export default async function dashboard() {
   const data = await getAllLearningPathsWithProgress()
   const currentlyWatchingLearningPaths = data.filter((learningPath) => learningPath.progress < 100);
+  const completedLearningPaths = data.filter((learningPath) => learningPath.progress === 100);
   return (
-    <div className="flex ">
-      <Sidebar></Sidebar>
-      <div className="md:absolute xl:w-[80%] md:w-[96%] lg:left-[24%] xl:left-[20%] 2xl:left-[20%] mt-20 sm:mt-12">
+    <div className="flex flex-col justify-center items-center">
+      <Navbar />
       <Dashboard data={currentlyWatchingLearningPaths} />
-      </div>
     </div>
   );
 }
