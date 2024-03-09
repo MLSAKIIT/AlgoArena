@@ -1,7 +1,6 @@
 "use server";
 
 import { db } from "@/server/db";
-import { type } from "os";
 
 export const createPost = async (data) => {
   const { title, content, domain, tech } = data;
@@ -64,27 +63,30 @@ export const likePost = async (postId, state) => {
   }
 };
 
-export const savePost = async (postId, state, savePostId) => {
-  // state = 1 : Save a Post
-  // state = 0 : Un Save a Post
-  console.log("Save Post Executed");
+export const savePost = async (postId) => {
   try {
-    if (state === 1) {
-      const savePost = await db.savedPost.create({
+    const existingSavedPost = await db.savedPost.findFirst({
+      where: {
+        postId_userId: { postId: postId, userId: "65e6261cbf92a412117be2ab" },
+      },
+    });
+
+    if (!existingSavedPost) {
+      const newSavedPost = await db.savedPost.create({
         data: {
           user: { connect: { id: "65e6261cbf92a412117be2ab" } },
           post: { connect: { id: postId } },
         },
       });
-      return { message: "Saved a Post" };
-    } else if (state === 0) {
-      const savePost = await db.savedPost.delete({
-        where: { id: savePostId },
-      });
-      return { message: "UnSaved a Post" };
+      return { message: "Saved a Post", savedPostId: newSavedPost.id };
+    } else {
+      await db.savedPost.delete({ where: { id: existingSavedPost.id } });
+      return { message: "Unsaved a Post" };
     }
   } catch (error) {
-    console.log(error);
-    return { error: error.message };
+    console.error("Error saving post:", error);
+    return {
+      error: error.message || "An error occurred while saving the post",
+    };
   }
 };
