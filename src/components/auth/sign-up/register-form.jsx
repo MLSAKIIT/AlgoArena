@@ -62,81 +62,85 @@ export default function RegisterForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-8">
-      <Card className="sm:bg-color-6 w-full sm:w-96 sm:rounded-2xl rounded-none sm:border-solid border-none ">
+      <Card className="sm:bg-color-6 bg-color-6 w-full sm:w-96 sm:rounded-2xl rounded-none sm:border-solid border-none ">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl">Create Account</CardTitle>
+          <CardTitle className=" flex justify-center text-2xl">
+            REGISTER
+          </CardTitle>
         </CardHeader>
         <CardContent className="grid gap-4">
-          <div className="grid gap-2">
-            <Input
-              name="name"
-              placeholder="Name"
-              type="text"
-              value={values.name}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              className={cn(
-                `bg-[url('/assets/auth/user.svg')] ${
-                  errors.name && "border-red-500"
-                }`
+          <div className="flex flex-col space-y-4">
+            <div className="flex flex-col  space-y-2">
+              <Input
+                name="name"
+                placeholder="Name"
+                type="text"
+                value={values.name}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={cn(
+                  `bg-[url('/assets/auth/user.svg')] ${
+                    errors.name && "border-red-500"
+                  }`
+                )}
+              />
+              {errors.name && (
+                <p className="text-red-500 text-sm">{errors.name}</p>
               )}
-            />
-            {errors.name && (
-              <p className="text-red-500 text-sm">{errors.name}</p>
-            )}
-          </div>
-          <div className="grid gap-2">
-            <Input
-              name="email"
-              placeholder="Email"
-              type="email"
-              value={values.email}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              className={cn(
-                `bg-[url('/assets/auth/email.svg')] ${
-                  errors.email && "border-red-500"
-                }`
+            </div>
+            <div className="flex flex-col  space-y-2">
+              <Input
+                name="email"
+                placeholder="Email"
+                type="email"
+                value={values.email}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={cn(
+                  `bg-[url('/assets/auth/email.svg')] ${
+                    errors.email && "border-red-500"
+                  }`
+                )}
+              />
+              {errors.email && (
+                <p className="text-red-500 text-sm">{errors.email}</p>
               )}
-            />
-            {errors.email && (
-              <p className="text-red-500 text-sm">{errors.email}</p>
-            )}
-          </div>
-          <div className="grid gap-2">
-            <PasswordInput
-              name="password"
-              showPassword={() => setShowPassword((prev) => !prev)}
-              placeholder="Password"
-              type={showPassword ? "text" : "password"}
-              value={values.password}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              className={cn(`${errors.password && "border-red-500"}`)}
-            />
-            {errors.password && (
-              <p className="text-red-500 text-sm">{errors.password}</p>
-            )}
-          </div>
-          <div className="grid gap-2">
-            <PasswordInput
-              name="confirmPassword"
-              placeholder="Confirm Password"
-              type={showConfirmPassword ? "text" : "password"}
-              showPassword={() => setShowConfirmPassword((prev) => !prev)}
-              value={values.confirmPassword}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              className={cn(`${errors.confirmPassword && "border-red-500"}`)}
-            />
-            {errors.confirmPassword && (
-              <p className="text-red-500 text-sm">{errors.confirmPassword}</p>
-            )}
+            </div>
+            <div className="flex flex-col  space-y-2">
+              <PasswordInput
+                name="password"
+                showPassword={() => setShowPassword((prev) => !prev)}
+                placeholder="Password"
+                type={showPassword ? "text" : "password"}
+                value={values.password}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={cn(`${errors.password && "border-red-500"}`)}
+              />
+              {errors.password && (
+                <p className="text-red-500 text-sm">{errors.password}</p>
+              )}
+            </div>
+            <div className="flex flex-col  space-y-2">
+              <PasswordInput
+                name="confirmPassword"
+                placeholder="Confirm Password"
+                type={showConfirmPassword ? "text" : "password"}
+                showPassword={() => setShowConfirmPassword((prev) => !prev)}
+                value={values.confirmPassword}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={cn(`${errors.confirmPassword && "border-red-500"}`)}
+              />
+              {errors.confirmPassword && (
+                <p className="text-red-500 text-sm">{errors.confirmPassword}</p>
+              )}
+            </div>
           </div>
         </CardContent>
         <CardFooter className="flex flex-col items-start gap-5">
           <Button className="w-full" type="submit" disabled={isSubmitting}>
-            Create Account
+            REGISTER
             {isSubmitting && <Loader2 className="animate-spin h-4 w-4 ml-2" />}
           </Button>
           <div className="text-xs text-gray-300 text-center w-full">

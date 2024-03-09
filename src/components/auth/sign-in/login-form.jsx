@@ -79,7 +79,7 @@ export function LoginForm({ callbackUrl }) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-8 flex justify-center">
-      <Card className="sm:bg-color-6  sm:w-96 sm:rounded-2xl rounded-none sm:border-solid border-none w-full">
+      <Card className="sm:bg-color-6  bg-color-6 sm:w-96 sm:rounded-2xl rounded-none sm:border-solid border-none w-full">
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl flex justify-center">LOGIN</CardTitle>
         </CardHeader>

@@ -82,7 +82,7 @@ const EmailVerificationPage = async (props) => {
       ) : (
         <>
           <div className="fixed min-[1536px]:hidden -z-10 w-[15rem] mdxs:block h-[15rem] left-[5rem] bg-color-2 rounded-full blur-2xl bottom-[-10rem] opacity-50 lg:block hidden" />
-          <Card className="sm:bg-color-6 w-full sm:w-96 sm:rounded-2xl rounded-none sm:border-solid border-none">
+          <Card className="sm:bg-color-6 w-full h-auto sm:w-96 sm:rounded-2xl rounded-none sm:border-solid border-none">
             <CardHeader className="space-y-1">
               <CardTitle className="text-2xl text-center flex-col justify-center items-center  sm:text-left">
                 Opps.. Something Went Wrong!
