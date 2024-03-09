@@ -15,10 +15,10 @@ import { postSchema } from "@/schemas/posts/new-post";
 import Link from "next/link";
 import { toast } from "sonner";
 import { createPost } from "@/actions/post";
-import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 const CreatePostForm = () => {
-  const router = useRouter()
+  const session = useSession();
   const {
     values,
     errors,
@@ -36,10 +36,9 @@ const CreatePostForm = () => {
     validationSchema: postSchema,
     onSubmit: async (values, { resetForm }) => {
       try {
-        const newPost = await createPost(values);
+        const newPost = await createPost(values, session.data.user.id);
         if (newPost && !newPost.error) {
-          toast.success("Post created successfully")
-          router.push("/community")
+          toast.success("Post created successfully");
         } else {
           const errorMessage = newPost
             ? newPost.error
@@ -125,18 +124,18 @@ const CreatePostForm = () => {
       <div className="flex justify-end pr-10 pt-3 ">
         <Link href="/community">
           <Button
-            className="bg-white pl-6 pr-6  text-purple-500 border-white border font-bold rounded-full shadow-[0_0_1rem_0px_#9d5ae3] p-  transition-colors duration-300 hover:text-white"
+            className="bg-white text-purple-500 border-white border font-bold rounded-full shadow-[0_0_1rem_0px_#9d5ae3] p-5  transition-colors duration-300 hover:text-white"
             type="submit"
           >
             Cancel
           </Button>
         </Link>
         <Button
-          className="ml-10 pl-8 pr-8  hover:bg-purple-800 "
+          className="ml-10 hover:bg-purple-800 "
           type="submit"
           disabled={isSubmitting}
         >
-          Post
+          Create Post
           {isSubmitting && <Loader2 className="animate-spin h-4 w-4 ml-2" />}
         </Button>
       </div>
