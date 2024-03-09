@@ -22,10 +22,14 @@ const Community = () => {
   }, []);
   const buttonNames = ["Recent", "Popularity", "Upvotes", "Domain"];
   const [isOpen, setIsOpen] = useState(false);
+  const [isFunnel, setFunnel] = useState(false);
+  useEffect(() => {
+    isFunnel ? "" : setCondition(null);
+  }, [isFunnel]);
 
   return (
-    <section className="flex flex-col md:flex-row">
-      <div className="w-full md:w-3/5 m-4 md:m-8">
+    <section className="flex flex-col md:flex-row p-4 md:gap-5">
+      <div className="w-full md:w-3/5">
         <div className="flex">
           <div
             className="flex w-10/12 items-center mb-8 mr-6 bg-purple-500 text-white
@@ -47,62 +51,67 @@ const Community = () => {
             />
           </div>
 
-          <div className="w-24 h-10 mb-8 flex justify-center items-center bg-purple-500 text-white border-white border font-bold rounded-lg shadow-[0_0_1rem_0px_#9d5ae3]">
-            <PiFunnel className="text-3xl " />
-          </div>
+          <button
+            className="w-24 h-10 mb-8 flex justify-center items-center bg-purple-500 text-white border-white border font-bold rounded-lg shadow-[0_0_1rem_0px_#9d5ae3]"
+            onClick={() => setFunnel(!isFunnel)}
+          >
+            <PiFunnel className="text-3xl" />
+          </button>
         </div>
-        <div>
-          <div className="relative inline-block text-left md:hidden">
-            <div>
-              <button
-                onClick={() => setIsOpen(!prev)}
-                className="flex items-center justify-center p-4 w-[150px] h-[40px] font-bold border-2 border-purple-500 text-white rounded-lg absolute bottom-0"
-              >
-                SORT BY
-                {!isOpen ? (
-                  <RxCaretDown className="h-14 text-4xl" />
-                ) : (
-                  <RxCaretUp className="h-14 text-4xl" />
+        {isFunnel && (
+          <div>
+            <div className="relative inline-block text-left md:hidden">
+              <div>
+                <button
+                  onClick={() => setIsOpen(!isOpen)}
+                  className="flex items-center justify-center p-4 w-[150px] h-[40px] font-bold border-2 border-purple-500 text-white rounded-lg absolute bottom-0"
+                >
+                  SORT BY
+                  {!isOpen ? (
+                    <RxCaretDown className="h-14 text-4xl" />
+                  ) : (
+                    <RxCaretUp className="h-14 text-4xl" />
+                  )}
+                </button>
+                {isOpen && (
+                  <div className="absolute w-[150px]">
+                    {buttonNames.map((name, index) => (
+                      <a
+                        key={index}
+                        href="#"
+                        className="transition duration-300 block px-4 py-2 border rounded-sm text-white bg-purple-500 hover:bg-white hover:text-purple-500 active:bg-white active:text-purple-500"
+                        onClick={() => {
+                          console.log(condition);
+                          setCondition(name);
+                        }}
+                        onBlur={() => setCondition(null)}
+                      >
+                        {name}
+                      </a>
+                    ))}
+                  </div>
                 )}
-              </button>
-              {isOpen && (
-                <div className="absolute w-[150px]">
-                  {buttonNames.map((name, index) => (
-                    <a
-                      key={index}
-                      href="#"
-                      className="block px-4 py-2 border rounded-sm text-white bg-purple-500 hover:bg-white hover:text-purple-500 active:bg-white active:text-purple-500"
-                      onClick={() => {
-                        console.log(condition);
-                        setCondition(name);
-                      }}
-                      onBlur={() => setCondition(null)}
-                    >
-                      {name}
-                    </a>
-                  ))}
-                </div>
-              )}
+              </div>
+            </div>
+
+            <div className="font-bold text-white py-1 p-4 h-20 mb-4 border-solid border-purple-500 rounded-lg border-2 hidden md:flex items-center justify-center">
+              SORT BY:
+              {buttonNames.map((name, index) => (
+                <button
+                  key={index}
+                  onClick={() => {
+                    console.log(condition);
+                    setCondition(name);
+                  }}
+                  onBlur={() => setCondition(null)}
+                  className="transition duration-300 w-22 h-10 md:w-24 ml-2 md:ml-4 text-center bg-white text-purple-500 border-white border font-bold rounded-full shadow-[0_0_1rem_0px_#9d5ae3] hover:text-white hover:bg-purple-500 focus:bg-purple-500 focus:text-white"
+                >
+                  {name}
+                </button>
+              ))}
             </div>
           </div>
-
-          <div className="font-bold text-white py-1 p-4 h-20 mb-4 border-solid border-purple-500 rounded-lg border-2 hidden md:flex items-center justify-center">
-            SORT BY:
-            {buttonNames.map((name, index) => (
-              <button
-                key={index}
-                onClick={() => {
-                  console.log(condition);
-                  setCondition(name);
-                }}
-                onBlur={() => setCondition(null)}
-                className="w-22 h-10 md:w-24 ml-2 md:ml-4 text-center bg-white text-purple-500 border-white border font-bold rounded-full shadow-[0_0_1rem_0px_#9d5ae3]hover:bg-purple-500 hover:text-white focus:bg-purple-500 focus:text-white"
-              >
-                {name}
-              </button>
-            ))}
-          </div>
-        </div>
+        )}
         {postFilter(searchFilter(posts, search), condition).map(
           (post, index) => (
             <CommunityPosts key={index} post={post} />
@@ -110,8 +119,8 @@ const Community = () => {
         )}
       </div>
 
-      <div className="w-full md:w-5/12 m-4 md:m-8">
-        <div className="w-656 h-300 p-4 border-solid border-purple-500 rounded-lg border-2">
+      <div className="w-full md:w-5/12">
+        <div className="h-300 p-4 border-solid border-purple-500 rounded-lg border-2">
           <p className="font-bold text-white">Welcome, tech enthusiast!</p>
 
           <p className="text-white">
@@ -123,20 +132,21 @@ const Community = () => {
 
           <hr className="mt-4 border-t border-purple-500"></hr>
 
-          <div className="mt-4 py-2 text-center bg-purple-500 text-white border-white border font-bold rounded-full shadow-[0_0_1rem_0px_#9d5ae3]">
-            <Link href="/create-post">Create Post</Link>
-          </div>
+          <Link
+            href="/create-post"
+            className="mt-4 py-2 block text-center bg-purple-500 text-white border-white border font-bold rounded-full shadow-[0_0_1rem_0px_#9d5ae3]"
+          >
+            Create Post
+          </Link>
 
           <div className="mt-4 py-2 text-center bg-white text-purple-500 border-white border font-bold rounded-full shadow-[0_0_1rem_0px_#9d5ae3]">
             Create Community
           </div>
         </div>
 
-        <div className="w-656 h-300 p-4 mt-8 border-solid border-purple-500 rounded-lg border-2">
+        <div className="h-300 p-4 mt-8 border-solid border-purple-500 rounded-lg border-2">
           <p className="text-white text-3xl font-bold">Recently Viewed Posts</p>
-
           <p className="text-white font-bold pt-4">Heading of recent post</p>
-
           <p className="text-white">
             Glad you&apos;ve found a way to our community page. It&apos;s a
             vibrant space filled with passionate people just like you, all eager

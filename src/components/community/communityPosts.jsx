@@ -7,9 +7,11 @@ import { VscTriangleDown } from "react-icons/vsc";
 import { FaShare } from "react-icons/fa";
 import { TfiCommentAlt } from "react-icons/tfi";
 import CommunityComment from "./communityComment";
-import { likePost } from "@/actions/post";
+import { likePost, savePost } from "@/actions/post";
+import { useSession } from "next-auth/react";
 
 const CommunityPosts = ({ post }) => {
+  const session = useSession();
   return (
     <section className="my-4">
       <div className=" border-solid border-purple-500 rounded-lg border-2 p-6 text-white">
@@ -28,22 +30,31 @@ const CommunityPosts = ({ post }) => {
         <p className="font-bold text-3xl my-4">{post.title}</p>
         <CommunityContent content={post.content} />
         <div className="flex justify-between">
-          <button onClick={() => likePost(post.id, 0)} className="flex">
+          <button
+            onClick={() => likePost(post.id, 0, session.data.user.id)}
+            className="flex"
+          >
             <VscTriangleDown className="mr-2 text-5xl" />
             <p className="pt-3">
               {post.postLikes.filter((like) => like.type === "DISLIKE").length}
             </p>
           </button>
-          <button onClick={() => likePost(post.id, 1)} className="flex">
+          <button
+            onClick={() => likePost(post.id, 1, session.data.user.id)}
+            className="flex"
+          >
             <VscTriangleUp className="mr-2 text-5xl" />
             <p className="pt-3">
               {post.postLikes.filter((like) => like.type === "LIKE").length}
             </p>
           </button>
-          <div className="flex pt-3">
+          <button
+            className="flex pt-3"
+            onClick={() => savePost(post.id, session.data.user.id)}
+          >
             <FaShare className="mr-2 text-3xl" />
             <p>{post.savedPosts.length}</p>
-          </div>
+          </button>
 
           {/* <div className="flex pt-3">
             <TfiCommentAlt className="mr-2 text-3xl" />
