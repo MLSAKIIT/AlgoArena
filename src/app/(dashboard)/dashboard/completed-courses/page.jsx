@@ -1,12 +1,14 @@
 import CompletedCourses from "@/components/dashboard/CompletedCourses";
 import Sidebar from "@/components/sidebar/Sidebar";
+import { getCompletedLearningPaths } from "@/data/dashboard";
 
-export default function dashboard() {
+export default async function dashboard() {
+  const data = await getCompletedLearningPaths()
   return (
     <div className="flex w-screen">
-      <Sidebar></Sidebar>
-      <div className="md:absolute xl:w-[80%] lg:w-[70%]  md:w-[96%] lg:left-[20%] 2xl:left-[14%] mt-20 sm:mt-12 lg:mt-1">
-      <CompletedCourses username="AYUSH RANJAN"></CompletedCourses>
+      <Sidebar/>
+      <div className="md:absolute xl:w-[80%] lg:w-[70%]  md:w-[96%] lg:left-[20%] 2xl:left-[14%] mt-20 sm:mt-12">
+      <CompletedCourses data={data}></CompletedCourses>
       </div>
     </div>
   );
