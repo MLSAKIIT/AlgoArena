@@ -4,7 +4,7 @@ import { db } from "@/server/db";
 import { getServerSession } from "next-auth";
 
 export const calculateProgress = async (learningPath, session) => {
-  const data = await db.userProgress.findMany({
+  const data = session ? await db.userProgress.findMany({
     where: {
       userId: session.user.id,
       chapter: {
@@ -14,7 +14,8 @@ export const calculateProgress = async (learningPath, session) => {
       },
       isCompleted: true,
     },
-  });
+  }) : null;
+  
   let completedChapters = [];
   if (data) {
     completedChapters = data.map((chapter) => chapter.chapterId);

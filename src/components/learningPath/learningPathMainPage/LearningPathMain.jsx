@@ -1,14 +1,14 @@
-import React from 'react'
-import LearningPathRecommended from './LearningPathRecommended'
-import LPCategories from './LPCategories'
-import LPPopularPaths from './LPPopularPaths'
-import Image from 'next/image'
-import Socials from '@/components/footer/Socials'
+import React from "react";
+import LearningPathRecommended from "./LearningPathRecommended";
+import LPCategories from "./LPCategories";
+import LPPopularPaths from "./LPPopularPaths";
+import Image from "next/image";
+import Socials from "@/components/footer/Socials";
 
-const LearningPathMain = () => {
+const LearningPathMain = async () => {
   return (
-    <div className='overflow-hidden'>
-        <div className="relative">
+    <div className="overflow-hidden">
+      <div className="relative">
         <div className="absolute md:h-[75rem] md:w-[75rem] sm:h-[67rem] sm:w-[47rem] lg:top-[-180px] md:top-0 sm:top-[-20px] 2xl:left-[-80px] lg:left-[-250px] left-[-270px] overflow-hidden lg:rotate-[0deg] md:rotate-[10deg] sm:rotate-[-20deg] rotate-0 lg:block h-[60rem] w-[40rem]">
           <Image
             src="/assets/icons/Ellipse3.svg"
@@ -37,20 +37,18 @@ const LearningPathMain = () => {
           />
         </div>
       </div>
-    
-    <div className='mx-auto max-w-7xl flex flex-col gap-6'>
-        
-        <LearningPathRecommended/>
-        <LPCategories/>
-        <LPPopularPaths/>
-        
-    </div>
 
-        <div className="overflow-hidden pt-32 sm:mb-[-25px] mb-5 w-screen max-w-full z-30">
-          <Socials/>
-        </div>
-    </div>
-  )
-}
+      <div className="mx-auto max-w-7xl flex flex-col gap-6">
+        <LearningPathRecommended />
+        <LPCategories />
+        <LPPopularPaths />
+      </div>
 
-export default LearningPathMain
+      <div className="overflow-hidden pt-32 sm:mb-[-25px] mb-5 w-screen max-w-full z-30">
+        <Socials />
+      </div>
+    </div>
+  );
+};
+
+export default LearningPathMain;

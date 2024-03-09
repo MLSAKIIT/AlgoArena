@@ -31,7 +31,7 @@ const SectionComponent = ({ data, handleChange, index, deleteSection }) => {
   return (
     <>
       <div className=" border-dotted border-2 border-color-2 w-full rounded-xl p-6 my-4">
-        <div className="flex flex-col space-y-2 gap-4">
+        <div className="flex flex-col space-y-2 text-md gap-4">
           <Input
             name="title"
             placeholder="title"
@@ -39,7 +39,7 @@ const SectionComponent = ({ data, handleChange, index, deleteSection }) => {
             required
             type="text"
             value={data.title}
-            className="text-center font-bold p-0"
+            className="text-center  font-bold p-0"
             onChange={handleSectionChange}
           />
           {editing && (
