@@ -58,7 +58,7 @@ const CreatePostForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-8 p-4 ">
-      <div>
+      <Card>
         <CardHeader className="space-y-1">
           <CardTitle className="text-3xl text-white">Create a Post</CardTitle>
         </CardHeader>
@@ -123,7 +123,7 @@ const CreatePostForm = () => {
           </div>
         </CardContent>
         <hr className="border-t-3 border-color-2 mb-5"></hr>
-      </div>
+      </Card>
       <div className="flex justify-end pr-10 pt-3 ">
         <Link href="/community">
           <Button
