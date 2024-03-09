@@ -21,7 +21,6 @@ const CreatePathForm = () => {
   const [sections, setSection] = useState([]);
   const [showingSection, setShowingSection] = useState(false);
   const router = useRouter();
-
   const addSection = () => {
     setSection((oldSection) => [
       ...oldSection,
@@ -33,25 +32,18 @@ const CreatePathForm = () => {
   };
 
   const deleteSection = (index) => {
-    console.log(index);
     setSection((oldSection) => oldSection.filter((_, i) => i !== index));
   };
   const handleSectionChange = (index, updatedSection) => {
     setSection((oldSections) => {
-      const newSection = JSON.parse(JSON.stringify(oldSections));
-      newSection[index] = updatedSection;
-      return newSection;
+      const newSections = [...oldSections];
+      newSections[index] = updatedSection;
+      return newSections;
     });
-    console.log(sections);
   };
 
   const handleSectionVisibility = () => {
     setShowingSection((prev) => !prev);
-  };
-
-  const editCurrentSelection = (selection) => {
-    setCurrentSelection(selection);
-    setEditForm(true);
   };
 
   const {
@@ -73,6 +65,7 @@ const CreatePathForm = () => {
     onSubmit: async (values) => {
       if (sections.length <= 0) {
         toast.error("Please add a section");
+        return;
       }
 
       const data = {
@@ -179,11 +172,11 @@ const CreatePathForm = () => {
                         {sections.map((section, index) => (
                           <SectionComponent
                             index={index}
-                            editCurrentSelection={editCurrentSelection}
                             key={index}
                             data={section}
                             deleteSection={deleteSection}
                             handleChange={handleSectionChange}
+                            setSection={setSection}
                           />
                         ))}
                         <Button

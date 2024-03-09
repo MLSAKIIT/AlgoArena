@@ -3,31 +3,58 @@ import { Input } from "@/components/ui/input";
 import React, { useState } from "react";
 import EditSectionForm from "./EditSectionForm";
 
-const SectionComponent = ({ data, handleChange, index, deleteSection }) => {
+const SectionComponent = ({
+  data,
+  handleChange,
+  index,
+  deleteSection,
+  setSection,
+}) => {
   const [editing, setEditing] = useState(false);
 
-  const handleChapterChange = (index, e) => {
-    const newData = JSON.parse(JSON.stringify(data));
-    const { name, value } = e.target;
-    newData.chapters[index][name] = value;
-    handleChange(index, newData);
+  const addChapter = () => {
+    setSection((prev) =>
+      prev.map((section, i) => {
+        if (index === i) {
+          return {
+            ...section,
+            chapters: [
+              ...section.chapters,
+              { title: "untitled", content: "Content" },
+            ],
+          };
+        }
+        return section;
+      })
+    );
   };
 
-  const addChapter = () => {
-    const newData = JSON.parse(JSON.stringify(data));
-    newData.chapters.push({
-      title: "untitled",
-      content: "Content",
-      // sectionId: data.id,
-    });
-    handleChange(index, newData);
+  const handleChapterChange = (Cindex, e) => {
+    setSection((prev) =>
+      prev.map((section, i) => {
+        if (index === i) {
+          return {
+            ...section,
+            chapters: section.chapters.map((c, j) => {
+              if (j === Cindex) {
+                return { ...c, [e.target.name]: e.target.value };
+              }
+              return c;
+            }),
+          };
+        }
+        return section;
+      })
+    );
   };
+
   const handleSectionChange = (e) => {
     // setSection((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     const newData = JSON.parse(JSON.stringify(data));
     newData[e.target.name] = e.target.value;
     handleChange(index, newData);
   };
+
   return (
     <>
       <div className=" border-dotted border-2 border-color-2 w-full rounded-xl p-6 my-4">
@@ -47,7 +74,7 @@ const SectionComponent = ({ data, handleChange, index, deleteSection }) => {
               addChapter={addChapter}
               closeSelection={() => setEditForm(false)}
               handleChange={handleChapterChange}
-              section={data}
+              chapters={data.chapters}
             />
           )}
           <Button

@@ -12,7 +12,7 @@ const LearningPathForkForm = ({ id }) => {
     e.preventDefault();
     startTransition(() => {
       forkLearningPathActionWithId().then((data) => {
-        if (data.error) {
+        if (data?.error) {
           toast.error(data.error);
         } else {
           toast.success("Learning path forked successfully");

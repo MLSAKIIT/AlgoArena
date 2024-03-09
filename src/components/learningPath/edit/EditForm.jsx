@@ -50,11 +50,6 @@ const EditForm = ({ learningPathData }) => {
     setShowingSection((prev) => !prev);
   };
 
-  const editCurrentSelection = (selection) => {
-    setCurrentSelection(selection);
-    setEditForm(true);
-  };
-
   const {
     values,
     errors,
@@ -74,6 +69,7 @@ const EditForm = ({ learningPathData }) => {
     onSubmit: async (values) => {
       if (sections.length <= 0) {
         toast.error("Please add a section");
+        return;
       }
 
       const data = {
@@ -180,8 +176,8 @@ const EditForm = ({ learningPathData }) => {
                         {sections.map((section, index) => (
                           <SectionComponent
                             index={index}
-                            editCurrentSelection={editCurrentSelection}
                             key={index}
+                            setSection={setSection}
                             data={section}
                             deleteSection={deleteSection}
                             handleChange={handleSectionChange}
