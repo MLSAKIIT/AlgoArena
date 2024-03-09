@@ -15,7 +15,7 @@ const page = () => {
   return (
     <div className="max-w-[120rem] relative">
       <Navbar />
-      <div className="flex flex-col md:gap-34 gap-24 items-center justify-center relative">
+      <div className="flex flex-col md:gap-34 gap-24 items-center justify-center relative overflow-hidden">
         <div className="absolute h-[50rem] w-[71.5rem] -z-10 top-[180px] left-[-30px] overflow-hidden rotate-[-5deg] z-1 lg:block hidden">
           <Image
             src={ecllipse3}
@@ -51,10 +51,10 @@ const page = () => {
               alt="gradient"
               layout="fill"
               objectFit="cover"
-              className="w-full h-full relative z-5"
+              className="w-full h-full relative z-5 rounded-full"
             />
           </div>
-          <h1 className="z-10 text-6xl font-bold font-sans bg-gradient-to-r from-white to-[#9d5ae3] inline-block text-transparent bg-clip-text mt-5 relative">
+          <h1 className="z-10 md:text-6xl text-5xl font-bold font-sans bg-gradient-to-r from-white to-[#9d5ae3] inline-block text-transparent bg-clip-text mt-5 relative">
             ABOUT US
           </h1>
           <p className="w-[70vw] max-w-[90%] text-md text-wrap relative z-10 text-center ">
@@ -68,9 +68,11 @@ const page = () => {
         </div>
 
         <div className="flex flex-col md:gap-52 gap-20  max-w-[120rem] justify-around items-center">
+          
           <InfoCard
             title="OUR VISION"
             img={about1}
+            link="https://www.mlsakiit.com/"
             layout="lg:flex-row "
             text="MLSA envisions a world where everyone has access to the benefits of
           technology. We believe that technology has the potential to be an
@@ -81,12 +83,14 @@ const page = () => {
           <InfoCard
             img={about2}
             title="OUR GOAL"
+            link="https://www.mlsakiit.com/"
             layout="lg:flex-row-reverse "
             text="Connecting people with technology and assisting them in using it to enhance their lives are the two main objectives of MLSA. In order to achieve this, we organize events, work on projects, and educate everyone on various tech stacks."
             button="Explore Now"
           />
           <InfoCard
             title="OUR MISSION"
+            link="https://www.mlsakiit.com/"
             img={about3}
             layout="lg:flex-row"
             text="The mission of MLSA is Tech for All. We empower individuals to embrace the digital world with confidence through engaging events, innovative projects, and meaningful connections. We are dedicated to bridging the technological divides, ensuring that no one is left behind."

@@ -93,4 +93,13 @@ export const data = [
     instagram: "https://www.instagram.com/nitintwt27/",
     imageUrl: "/members/member10.png",
   },
+  {
+    id: 11,
+    name: "Shahan Ali Anwer",
+    designation: "member",
+    github: "https://github.com/Shahan-nub",
+    linkedIn: "https://www.linkedin.com/in/shahan-ali-anwer-5465972a2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    instagram: "https://www.instagram.com/_.shxhxn._._?igsh=MzE4dXZ4dHFvMmJp",
+    imageUrl: "/members/member11.png",
+  },
 ];

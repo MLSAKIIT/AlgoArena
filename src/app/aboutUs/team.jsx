@@ -11,18 +11,18 @@ import TeamCard from "@/components/about/TeamCard";
 const teamdata = data;
 const Team = () => {
   return (
-    <div className="flex flex-col justify-center items-center gap-4 mt-32 md:mt-0 ">
+    <div className="flex flex-col justify-center items-center gap-4 md:mt-32  mt-20 ">
       <h1 className="  text-4xl mb-6 font-bold font-sans w-50 bg-gradient-to-r text-center from-white to-[#9d5ae3] inline-block text-transparent bg-clip-text mt-5">
         OUR SPECIAL TEAM
       </h1>
-      <p className="text-center">
+      <p className="text-center mx-12 ">
         <q>
           Meet Our Team: The dedicated individuals driving <br />
           MLSA &apos;s mission forward with passion and expertise.
         </q>
       </p>
 
-      <div className="lg:max-w-[65rem] xl:max-w-[92rem] md:max-w-[45rem] h-fit  flex  mt-10 p-0 max-w-[90vw] sm:max-w-[45rem]">
+      <div className="lg:max-w-[70rem] xl:max-w-[82rem] md:max-w-[45rem] h-fit  flex  mt-10 p-0 max-w-[90vw] sm:max-w-[45rem]">
         <Swiper
           slidesPerView="auto"
           spaceBetween={30}

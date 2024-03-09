@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 const infoCard = ({ title, text, button, link, layout, img }) => {
   return (
     <div
@@ -14,9 +15,11 @@ const infoCard = ({ title, text, button, link, layout, img }) => {
           {title}
         </h1>
         <p className="mb-6 text-center md:text-left">{text}</p>
+        <Link href={link} target="_blank">
         <button className="bg-color-2  text-white pr-5 shadow-[0_0_1rem_0px_#9d5ae3] pl-5 pt-2 pb-2 rounded-full hover:bg-gradient-to-r from-color-2 to-color-3 transition-all duration-200">
           {button}
         </button>
+        </Link>
       </div>
     </div>
   );
