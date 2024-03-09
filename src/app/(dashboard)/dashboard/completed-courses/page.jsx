@@ -2,6 +2,8 @@ import CompletedCourses from "@/components/dashboard/CompletedCourses";
 import Sidebar from "@/components/sidebar/Sidebar";
 import { getCompletedLearningPaths } from "@/data/dashboard";
 
+export const dynamic = "force-dynamic"
+
 export default async function dashboard() {
   const data = await getCompletedLearningPaths()
   return (
