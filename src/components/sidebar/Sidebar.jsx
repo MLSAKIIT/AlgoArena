@@ -15,16 +15,17 @@ import vector from "../../../public/assets/icons/Vector.svg";
 import { useState } from "react";
 import { useSession } from "next-auth/react";
 
-const Sidebar = ({ name }) => {
+const Sidebar = () => {
   const [open, setOpen] = useState(false);
   const onClick = () => {
     setOpen(!open);
   };
-  const { data: session } = useSession();
+  const session = useSession();
+    const username = session.data ? session.data.user.name : "User";
 
   return (
     <>
-        <div className="flex justify-between p-6 w-screen lg:hidden ">
+        <div className="absolute md:static flex justify-between p-6 w-screen lg:hidden ">
           <IoMenuOutline onClick={onClick} className={`left-0 z-50`} size={50} />
         </div>
       <div
@@ -44,7 +45,7 @@ const Sidebar = ({ name }) => {
             <h2
               className={` font-semibold font-popins self-center text-[30px] text-white`}
             >
-              {name}
+              {username}
             </h2>
             <Image src={vector} className="ml-3 self-center w-[100px]  " />
           </div>

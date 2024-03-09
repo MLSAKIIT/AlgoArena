@@ -3,9 +3,9 @@ import Sidebar from "@/components/sidebar/Sidebar";
 
 export default function dashboard() {
   return (
-    <div className="flex">
-      <Sidebar name="Ayush Ranjan"></Sidebar>
-      <div className="absolute md:w-70% right-0">
+    <div className="flex w-screen">
+      <Sidebar></Sidebar>
+      <div className="md:absolute md:w-75% right-10 mt-20 sm:mt-12">
       <CompletedCourses username="AYUSH RANJAN"></CompletedCourses>
       </div>
     </div>

@@ -9,7 +9,7 @@ export default async function dashboard() {
   const completedLearningPaths = data.filter((learningPath) => learningPath.progress === 100);
   return (
     <div className="flex ">
-      <Sidebar name="Ayush Ranjan"></Sidebar>
+      <Sidebar></Sidebar>
       <Dashboard data={currentlyWatchingLearningPaths} />
     </div>
   );
