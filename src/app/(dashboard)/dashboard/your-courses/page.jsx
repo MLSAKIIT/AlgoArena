@@ -10,7 +10,7 @@ export default async function dashboard() {
   return (
     <div className="flex ">
       <Sidebar></Sidebar>
-      <div className="lg:absolute overflow-hidden xl:w-[80%] 2xl:right-12  lg:w-[70%] sm:right-10 mt-16 sm:mt-12">
+      <div className="md:absolute xl:w-[80%] md:w-[96%] lg:left-[24%] xl:left-[20%] 2xl:left-[20%] mt-20 sm:mt-12">
       <Dashboard data={currentlyWatchingLearningPaths} />
       </div>
     </div>
