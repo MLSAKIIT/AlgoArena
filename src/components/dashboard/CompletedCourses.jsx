@@ -86,8 +86,12 @@ export default function CompletedCourses({data}) {
         {/* <div className="overflow-hidden pt-32 sm:mb-[-25px] mb-5 w-screen min-w-[100vw] max-w-full z-30">
           <Socials/>
         </div> */}
+        <div className="sm:hidden visible overflow-hidden pt-32 sm:mb-[-25px] mb-4 w-screen min-w-[100vw] self-center justify-self-center max-w-full z-30">
+                      <Socials />
+        </div>
       </div>
          
     </div>
   );
 }
+
