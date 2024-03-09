@@ -25,7 +25,7 @@ export const Tags = ({ setFieldValue, value }) => {
         {value.map((tag, index) => (
           <div
             key={index}
-            className="bg-color-2 flex flex-row text-white gap-2 w-min  rounded-lg p-1  "
+            className="bg-color-2  text-xs  flex flex-row text-white gap-2 w-min  rounded-lg p-1  "
           >
             {tag}
             <button onClick={() => removeTag(index)}>
@@ -37,6 +37,7 @@ export const Tags = ({ setFieldValue, value }) => {
       <div className="flex mt-4 items-center justify-center gap-2 flex-row">
         <Input
           placeholder="Enter Tag"
+          className="text-sm md:text-md"
           value={currentTag}
           onChange={(e) => {
             e.preventDefault();
