@@ -31,10 +31,10 @@ const PopularCard = ({ course }) => {
           <div className="font-poppins text-xl md:text-2xl mb-4 md:mb-2 font-[900] bg-clip-text bg-gradient-course text-transparent w-[250px] line-clamp-1">
             {title}
           </div>
-          <div className="text-xs text-[white] font-popins font-[500] line-clamp-2">
+          <div className="text-xs text-[white] font-popins font-[500] line-clamp-3 h-12">
             {description}
           </div>
-          <div className="text-xs text-[white] font-popins font-[300] mt-4 mb-2 flex gap-2">
+          <div className="text-xs text-[white] font-popins font-[300] mt-4 mb-1 flex gap-2">
             <CiPlay1 className="text-sm" />
             <div>{videos} Videos</div>
           </div>

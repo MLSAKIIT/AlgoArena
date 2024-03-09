@@ -1,17 +1,15 @@
 "use client";
 
-import Socials from "@/components/footer/Socials";
 import Image from "next/image";
 import SortCourses from "../dashboard/SortCourses";
 import MoreCourses from "../dashboard/MoreCourses";
 import MoreCoursesSwiper from "../dashboard/MoreCoursesSwiper";
 import StaredCourse from "./StaredCourse";
+import DashboradSocial from "../footer/DashboradSocial";
 
-export default function DashboardStaredCourses({data}) {
-  
+export default function DashboardStaredCourses({ data }) {
   return (
-    <div className="overflow-hidden min-h-screen top-auto flex-auto xl:max-w-full  px-5 lg:max-w-7xl md:max-w-5xl">
-
+    <div className="mx-auto overflow-hidden min-h-screen top-auto flex-auto xl:max-w-7xl  px-5 lg:max-w-7xl md:max-w-5xl">
       <div className="relative">
         <div className="absolute md:h-[75rem] md:w-[75rem] sm:h-[67rem] sm:w-[47rem] lg:top-[-180px] md:top-0 sm:top-[-20px] 2xl:left-[-80px] lg:left-[-250px] left-[-270px] overflow-hidden lg:rotate-[0deg] md:rotate-[10deg] sm:rotate-[-20deg] rotate-0 lg:block h-[60rem] w-[40rem]">
           <Image
@@ -41,33 +39,29 @@ export default function DashboardStaredCourses({data}) {
           />
         </div>
       </div>
-     
-        <StaredCourse data={data}/>
 
- 
-        <div>
+      <StaredCourse data={data} />
 
-        <div className="max-w-7xl mx-auto flex justify-start font-popins text-4xl font-[900] bg-gradient-course bg-clip-text text-transparent">MORE COURSES FOR YOU</div>
+      <div>
+        <div className="max-w-7xl mx-auto flex justify-start font-popins text-4xl font-[900] bg-gradient-course bg-clip-text text-transparent">
+          MORE COURSES FOR YOU
         </div>
+      </div>
 
+      <SortCourses />
 
-        <SortCourses/>
-
-        <div className=" box-border lg:w-4/5  m-auto sm:auto-cols-max mt-12 sm:gap-6 gap-3 sm:grid sm:grid-cols-3 lg:px-auto md:px-auto sm:overflow-visible  overflow-scroll whitespace-nowrap no-scrollbar py-4 sm:w-11/12 w-screen hidden">
-          <MoreCourses/>
-          <div className="absolute w-[55rem] h-[40rem] right-0 overflow-hidden block">
-              <Image src="/dashboard-ellipse2.svg" alt="Ellipse" fill />
-            </div>
+      <div className=" box-border lg:w-4/5  m-auto sm:auto-cols-max mt-12 sm:gap-6 gap-3 sm:grid sm:grid-cols-3 lg:px-auto md:px-auto sm:overflow-visible  overflow-scroll whitespace-nowrap no-scrollbar py-4 sm:w-11/12 w-screen hidden">
+        <MoreCourses />
+        <div className="absolute w-[55rem] h-[40rem] right-0 overflow-hidden block z-[-1]">
+          <Image src="/dashboard-ellipse2.svg" alt="Ellipse" fill />
         </div>
-        <div className="z-50 w-screen sm:hidden my-5">
-        <MoreCoursesSwiper/>
+      </div>
+      <div className="z-50 w-screen sm:hidden my-5">
+        <MoreCoursesSwiper />
+      </div>
+
+      <DashboradSocial/>
       
-        </div>
-
-        {/* <div className="overflow-hidden pt-32 sm:mb-[-25px] mb-5 w-screen min-w-[100vw] max-w-full z-30">
-          <Socials/>
-        </div> */}
-
     </div>
   );
 }
