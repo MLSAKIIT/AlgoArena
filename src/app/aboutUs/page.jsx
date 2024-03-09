@@ -13,9 +13,9 @@ import Image from "next/image";
 import Navbar from "@/components/ui/Navbar";
 const page = () => {
   return (
-    <div className="max-w-[120rem]">
+    <div className="max-w-[120rem] relative">
       <Navbar />
-      <div className="flex flex-col md:gap-44 gap-24 items-center justify-center">
+      <div className="flex flex-col md:gap-34 gap-24 items-center justify-center relative">
         <div className="absolute h-[50rem] w-[71.5rem] -z-10 top-[180px] left-[-30px] overflow-hidden rotate-[-5deg] z-1 lg:block hidden">
           <Image
             src={ecllipse3}
@@ -44,20 +44,20 @@ const page = () => {
           />
         </div>
 
-        <div className="relative flex flex-col gap-6 text-wrap m-auto h-[40rem] max-w-[120rem] justify-center items-center">
-          <div className="absolute inset-0 z-0">
+        <div className="relative flex  z-10 flex-col gap-6 text-wrap m-auto h-[40rem] max-w-[120rem] justify-center items-center">
+          <div className="absolute inset-0  ">
             <Image
               src="/assets/about/gradient.png"
               alt="gradient"
               layout="fill"
               objectFit="cover"
-              className="w-full h-full"
+              className="w-full h-full relative z-5"
             />
           </div>
           <h1 className="z-10 text-6xl font-bold font-sans bg-gradient-to-r from-white to-[#9d5ae3] inline-block text-transparent bg-clip-text mt-5 relative">
             ABOUT US
           </h1>
-          <p className="w-[70vw] max-w-[90%] text-md text-wrap relative z-10">
+          <p className="w-[70vw] max-w-[90%] text-md text-wrap relative z-10 text-center ">
             At MLSA (Microsoft Learning Student Ambassador), our mission is
             simple: “Tech for All.” We believe in empowering individuals to
             embrace the digital world with confidence through engaging events,

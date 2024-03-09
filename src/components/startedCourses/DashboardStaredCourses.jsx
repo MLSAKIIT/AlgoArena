@@ -64,9 +64,9 @@ export default function DashboardStaredCourses({data}) {
       
         </div>
 
-        <div className="overflow-hidden pt-32 sm:mb-[-25px] mb-5 w-screen min-w-[100vw] max-w-full z-30">
+        {/* <div className="overflow-hidden pt-32 sm:mb-[-25px] mb-5 w-screen min-w-[100vw] max-w-full z-30">
           <Socials/>
-        </div>
+        </div> */}
 
     </div>
   );

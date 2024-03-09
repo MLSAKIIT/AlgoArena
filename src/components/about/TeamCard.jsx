@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 const TeamCard = ({
   imageUrl,
   name,
@@ -15,6 +16,7 @@ const TeamCard = ({
   const onHoverHide = (e) => {
     setLink(false);
   };
+
   return (
     <div
       className="flex flex-col w-fit "
@@ -27,7 +29,7 @@ const TeamCard = ({
         onMouseLeave={onHoverHide}
       >
         <div className="relative z-10"></div>
-        <Image src={imageUrl} alt="member picture" height={380} width={300} />
+        <Image src={imageUrl} alt="member picture" height={380} width={300} className="rounded-xl" />
         <div className="absolute top-0 left-0 z-20 w-full h-full flex flex-col justify-end items-center">
           <div className="z-100 font-bold text-center pb-3">
             <div className="text-lg">{name}</div>
@@ -42,27 +44,34 @@ const TeamCard = ({
         onMouseEnter={onHoverShow}
         onMouseLeave={onHoverHide}
       >
-        <Image
-          src="/assets/icons/github.svg"
-          alt="GitHub link"
-          width={50}
-          height={50}
-          className="w-8 h-8"
-        />
-        <Image
-          src="/assets/icons/linkedin.svg"
-          alt="LinkedIn link"
-          width={50}
-          height={50}
-          className="w-8 h-8"
-        />
-        <Image
-          src="/assets/icons/instagram.svg"
-          alt="Instagram link"
-          width={50}
-          height={50}
-          className="w-8 h-8"
-        />
+        <Link href={github} target="_blank">
+          {" "}
+          <Image
+            src="/assets/icons/github.svg"
+            alt="GitHub link"
+            width={50}
+            height={50}
+            className="w-8 h-8"
+          />
+        </Link>
+        <Link href={linkedIn} target="_blank">
+          <Image
+            src="/assets/icons/linkedin.svg"
+            alt="LinkedIn link"
+            width={50}
+            height={50}
+            className="w-8 h-8"
+          />
+        </Link>
+        <Link href={instagram} target="_blank">
+          <Image
+            src="/assets/icons/instagram.svg"
+            alt="Instagram link"
+            width={50}
+            height={50}
+            className="w-8 h-8"
+          />
+        </Link>
       </div>
     </div>
   );
