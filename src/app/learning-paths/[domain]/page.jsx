@@ -134,6 +134,7 @@ const LearningPathCard = ({ data }) => {
   
   return (
     <Card suppressHydrationWarning>
+      <div className="h-[320px]">
       <CardHeader>
         <CardTitle className="font-bold text-lg">{data.title}</CardTitle>
         <CardDescription>
@@ -187,6 +188,7 @@ const LearningPathCard = ({ data }) => {
           height={25}
           
         />
+      </div>
       </div>
     </Card>
   );

@@ -6,7 +6,7 @@ const Card = React.forwardRef(({ className, ...props }, ref) => (
   <div
     ref={ref}
     className={cn(
-      "rounded-3xl h-[350px] p-4  bg-opacity-20 backdrop-blur-sm bg-black shadow border-2 border-card-border ",
+      "rounded-3xl  p-4  bg-opacity-20 backdrop-blur-sm bg-black shadow border-2 border-card-border ",
       className
     )}
     {...props} suppressHydrationWarning
