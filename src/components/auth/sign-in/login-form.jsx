@@ -19,9 +19,11 @@ import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
 import { useState, useTransition } from "react";
 import { resendVerificationEmail } from "@/actions/resend-verification-email";
+import { PasswordInput } from "@/components/ui/input-password";
 
 export function LoginForm({ callbackUrl }) {
   const [isPending, startTransition] = useTransition();
+  const [showPassword, setShowPassword] = useState(false);
   const [showResendEmailOption, setShowResendEmailOption] = useState(false);
   const router = useRouter();
   const {
@@ -102,17 +104,15 @@ export function LoginForm({ callbackUrl }) {
               )}
             </div>
             <div className="flex flex-col space-y-2">
-              <Input
+              <PasswordInput
                 name="password"
                 placeholder="Password"
-                type="password"
+                type={showPassword ? "text" : "password"}
                 value={values.password}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 className={cn(
-                  `bg-[url('/assets/auth/eye.svg')] ${
-                    errors.password && "border-red-500"
-                  } text-xs sm:text-sm `
+                  ` ${errors.password && "border-red-500"} text-xs sm:text-sm `
                 )}
               />
               {errors.password && (
