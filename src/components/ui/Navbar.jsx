@@ -207,14 +207,14 @@ const Navbar = () => {
           {session ? (
             <Link
               href={siteConfig.navBarLinks.dashboard}
-              className="bg-color-2 text-[white] absolute bottom-40 pr-8 pl-8 pt-2 pb-2 mr-6 ml-10 rounded-xl  hover:bg-gradient-to-r from-color-2 to-color-4"
+              className="bg-color-2 text-[white] pr-8 pl-8 pt-2 pb-2 mr-6 ml-10  min-w-32 mb-5 max-w-[40px] flex items-center justify-center rounded-xl  hover:bg-gradient-to-r from-color-2 to-color-4"
             >
               Dashboard
             </Link>
           ) : (
             <Link
               href="/sign-in"
-              className="bg-color-2 text-[white] flex absolute bottom-32  mr-8 ml-8 mt-3 justify-center pt-2 pb-2    rounded-xl hover:bg-gradient-to-r from-color-2 to-color-4"
+              className="bg-color-2 text-[white] flex  mr-8 ml-8 mt-3 justify-center pt-2 pb-2 min-w-32 max-w-[60px]  items-center  rounded-xl hover:bg-gradient-to-r from-color-2 to-color-4"
             >
               Login
             </Link>
@@ -222,7 +222,7 @@ const Navbar = () => {
           {session && (
             <Link
               href="/sign-out"
-              className="bg-color-2 text-[white] absolute bottom-24 pr-11 pl-11 pt-2 pb-2 mr-6 ml-10 rounded-xl  hover:bg-gradient-to-r from-color-2 to-color-4"
+              className="bg-color-2 text-[white]  pt-2 pb-2 mr-6 ml-10 rounded-xl mb-10 min-w-32  flex max-w-[60px]   justify-center hover:bg-gradient-to-r from-color-2 to-color-4"
             >
               Sign out
             </Link>
