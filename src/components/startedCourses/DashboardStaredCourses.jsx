@@ -2,20 +2,16 @@
 
 import Socials from "@/components/footer/Socials";
 import Image from "next/image";
-import DashCoursesCard from "./Dashcard";
-import Title from "../ui/Title";
-import SortCourses from "./SortCourses";
-import MoreCourses from "./MoreCourses";
-// import { useSession } from "next-auth/react";
-import CompletedCoursesList from "./CompletedCoursesList";
-// import Link from "next/link";
-import MoreCoursesSwiper from "./MoreCoursesSwiper";
+import SortCourses from "../dashboard/SortCourses";
+import MoreCourses from "../dashboard/MoreCourses";
+import MoreCoursesSwiper from "../dashboard/MoreCoursesSwiper";
+import StaredCourse from "./StaredCourse";
 
-export default function CompletedCourses({user}) {
-  // const { data: session } = useSession();
+export default function DashboardStaredCourses({data}) {
+  
   return (
     <div className="overflow-hidden min-h-screen top-auto flex-auto xl:max-w-full  px-5 lg:max-w-7xl md:max-w-5xl">
-      <p>{user}</p>
+
       <div className="relative">
         <div className="absolute md:h-[75rem] md:w-[75rem] sm:h-[67rem] sm:w-[47rem] lg:top-[-180px] md:top-0 sm:top-[-20px] 2xl:left-[-80px] lg:left-[-250px] left-[-270px] overflow-hidden lg:rotate-[0deg] md:rotate-[10deg] sm:rotate-[-20deg] rotate-0 lg:block h-[60rem] w-[40rem]">
           <Image
@@ -45,28 +41,15 @@ export default function CompletedCourses({user}) {
           />
         </div>
       </div>
-      <div className="CONTENT DIV flex flex-col mx-auto justify-between  xl:max-w-7xl md:max-w-5xl sm:max-w-4xl max-w-screen items-center">
-        {/* {session && (
-          <Link
-            href="/sign-out"
-            className="bg-color-2 z-20 mt-2 text-[white] pr-5 pl-5 pt-2 pb-2 mr-6 ml-10 rounded-xl  hover:bg-gradient-to-r from-color-2 to-color-4"
-          >
-            Sign out
-          </Link>
-        )} */}
-        <div className="flex w-full lg:ml-80 md:mt-12 mt-6 overflow-hidden relative pl-6">
-          <Title text="COMPLETED COURSES" />
+     
+        <StaredCourse data={data}/>
+
+ 
+        <div>
+
+        <div className="max-w-7xl mx-auto flex justify-start font-popins text-4xl font-[900] bg-gradient-course bg-clip-text text-transparent">MORE COURSES FOR YOU</div>
         </div>
 
-        
-        <div className="flex flex-col mt-5">
-          <CompletedCoursesList/>
-
-          </div>
-        
-        <div className="HEADING DIV md:mt-12 mt-6 overflow-hidden relative flex w-full lg:ml-80 md:ml-60">
-          <Title text="MORE COURSES FOR YOU" />
-        </div>
 
         <SortCourses/>
 
@@ -78,17 +61,13 @@ export default function CompletedCourses({user}) {
         </div>
         <div className="z-50 w-screen sm:hidden my-5">
         <MoreCoursesSwiper/>
-        {/* <div className="absolute w-[55rem] h-[40rem] right-0 overflow-hidden block -z-20">
-              <Image src="/dashboard-ellipse2.svg" alt="Ellipse" fill />
-            </div> */}
+      
         </div>
-    
 
-        {/* <div className="overflow-hidden pt-32 sm:mb-[-25px] mb-5 w-screen min-w-[100vw] max-w-full z-30">
+        <div className="overflow-hidden pt-32 sm:mb-[-25px] mb-5 w-screen min-w-[100vw] max-w-full z-30">
           <Socials/>
-        </div> */}
-      </div>
-         
+        </div>
+
     </div>
   );
 }
