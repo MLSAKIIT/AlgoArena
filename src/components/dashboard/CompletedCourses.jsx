@@ -63,7 +63,7 @@ export default function CompletedCourses({data}) {
 
           </div>
         
-        <div className="HEADING DIV md:mt-12 mt-6 overflow-hidden relative flex w-full lg:ml-80 md:ml-60">
+        <div className="HEADING DIV md:mt-12 mt-6 overflow-hidden relative flex w-full lg:ml-80 md:ml-12 sm:ml-16 ml-10">
           <Title text="MORE COURSES FOR YOU" />
         </div>
 

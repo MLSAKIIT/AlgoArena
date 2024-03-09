@@ -9,7 +9,7 @@ export default async function dashboard() {
   return (
     <div className="flex w-screen">
       <Sidebar/>
-      <div className="md:absolute xl:w-[80%] lg:w-[70%]  md:w-[96%] lg:left-[20%] 2xl:left-[14%] mt-20 sm:mt-12">
+      <div className="md:absolute xl:w-[80%] lg:w-[70%]  md:w-[96%] lg:left-[20%] 2xl:left-[14%] mt-20 sm:mt-12 ">
       <CompletedCourses data={data}></CompletedCourses>
       </div>
     </div>
