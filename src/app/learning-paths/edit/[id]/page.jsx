@@ -27,7 +27,7 @@ const getLearningPathData = async (id) => {
 const EditPage = async ({ params }) => {
   const learningPathData = await getLearningPathData(params.id);
   return (
-    <div className="h-auto flex justify-center   items-centers mt-10 ">
+    <div className="h-screen flex justify-center   items-centers mt-10 ">
       <EditForm learningPathData={learningPathData} />
       {/* Background */}
       <Image

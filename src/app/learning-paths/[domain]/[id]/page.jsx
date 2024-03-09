@@ -6,6 +6,7 @@ import LearningPathHeader from "@/components/learningPath/LearningPathHeader";
 import LearningPathActions from "@/components/learningPath/LearningPathActions";
 import { calculateProgress } from "@/data/dashboard";
 import { getLearningPathData } from "@/data/learning-paths";
+import Navbar from "@/components/ui/Navbar";
 
 const page = async ({ params }) => {
   const session = await getServerSession(authOptions);
@@ -17,6 +18,7 @@ const page = async ({ params }) => {
     await calculateProgress(learningPathData, session);
   return (
     <>
+      <Navbar />
       <LearningPathHeader
         title={title}
         description={description}
