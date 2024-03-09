@@ -1,6 +1,7 @@
 import EditForm from "@/components/learningPath/edit/EditForm";
 import React from "react";
 import Image from "next/image";
+import { db } from "@/server/db";
 
 const getLearningPathData = async (id) => {
   const data = await db.learningPath.findUnique({

@@ -25,7 +25,7 @@ export const Tags = ({ setFieldValue, value }) => {
         {value.map((tag, index) => (
           <div
             key={index}
-            className="bg-color-2  text-xs  flex flex-row text-white gap-2 w-min  rounded-lg p-1  "
+            className="bg-color-2 text-nowrap text-xs  flex flex-row text-white gap-2 w-min  rounded-lg p-1  "
           >
             {tag}
             <button onClick={() => removeTag(index)}>
