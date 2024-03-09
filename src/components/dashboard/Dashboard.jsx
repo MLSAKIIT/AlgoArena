@@ -18,7 +18,7 @@ export default function dashboard({ data }) {
               <DashBoardDomains data={data} />
               <div className="flex flex-col  xl:max-w-7xl md:max-w-5xl sm:max-w-4xl max-w-screen">
                   
-                  <div className="text-4xl flex bg-gradient-videos text-transparent bg-clip-text font-popins font-[700] mt-10 lg:ml-[69px] sm:ml-[60px] ml-[40px] w-[350px]">MORE COURSES FOR YOU</div>
+                  <div className="md:text-4xl text-[30px] text-wrap flex bg-gradient-videos text-transparent bg-clip-text font-popins font-[700] mt-10 lg:ml-[69px] sm:ml-[60px] ml-[40px] sm:w-[350px]">MORE COURSES <br /> FOR YOU</div>
 
                   {/* Sort courses for mobile devices */}
                   <SortCourses />

@@ -14,11 +14,11 @@ import { CgChevronDown, CgChevronUp } from "react-icons/cg";
 import SectionComponent from "./SectionComponent";
 import { Tags } from "./Tags";
 import { editFormSchema } from "@/schemas/editForm/edit-form";
-import { SubmitEditedFork } from "@/actions/edit-fork-path";
 import { useRouter } from "next/navigation";
+import { CreatePath } from "@/actions/create-path";
 
-const EditForm = ({ learningPathData }) => {
-  const [sections, setSection] = useState(learningPathData.sections);
+const CreatePathForm = () => {
+  const [sections, setSection] = useState([]);
   const [showingSection, setShowingSection] = useState(false);
   const router = useRouter();
 
@@ -28,7 +28,6 @@ const EditForm = ({ learningPathData }) => {
       {
         title: "Untitled",
         chapters: [],
-        learningPathId: learningPathData.id,
       },
     ]);
   };
@@ -65,10 +64,10 @@ const EditForm = ({ learningPathData }) => {
     setFieldValue,
   } = useFormik({
     initialValues: {
-      title: learningPathData.title,
-      description: learningPathData.description,
-      domain: learningPathData.domain,
-      tags: learningPathData.tags,
+      title: "",
+      description: "",
+      domain: "",
+      tags: [],
     },
     validationSchema: editFormSchema,
     onSubmit: async (values) => {
@@ -77,14 +76,13 @@ const EditForm = ({ learningPathData }) => {
       }
 
       const data = {
-        id: learningPathData.id,
         ...values,
         sections,
       };
 
-      const status = await SubmitEditedFork(data);
+      const status = await CreatePath(data);
       if (status.success) {
-        toast.success("Path Updated!");
+        toast.success("Path Created!");
         router.push("/");
       } else {
         toast.error("Something went wrong...");
@@ -99,10 +97,11 @@ const EditForm = ({ learningPathData }) => {
             className="space-y-2 w-full sm:w-96 sm:rounded-2xl rounded-none sm:border-solid border-none"
             onSubmit={handleSubmit}
           >
-            <Card className="sm:bg-color-6 w-full flexy sm:w-96 sm:rounded-2xl rounded-none sm:border-solid border-none">
+            <Card className="sm:bg-color-6 w-full  sm:rounded-2xl rounded-none sm:border-solid border-none">
               <CardHeader className="space-y-1">
                 <Input
                   name="title"
+                  placeholder="Title"
                   id="title"
                   required
                   value={values.title}
@@ -209,4 +208,4 @@ const EditForm = ({ learningPathData }) => {
   );
 };
 
-export default EditForm;
+export default CreatePathForm;

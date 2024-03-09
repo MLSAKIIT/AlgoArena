@@ -6,12 +6,12 @@ import { siteConfig } from "@/constants/siteConfig";
 
 const Socials = () => {
     return (
-        <div className="relative flex flex-col max-w-[120rem] bottom-0 sm:flex-row justify-between w-screen items-center box-border mt-24 -z-10 ">
+        <div className="relative flex flex-col max-w-[120rem] bottom-0 sm:flex-row justify-between w-screen items-center box-border mt-24 ">
             <GradientImg />
-            <div className="mb-4 sm:mb-10 sm:pl-8 text-white sm:text-3xl text-xl z-10 text-center font-semibold">AlgoArena x MLSA</div>
+            <div className="mb-4 sm:mb-10 sm:pl-8 text-white sm:text-3xl text-xl -z-10 text-center font-semibold">AlgoArena x MLSA</div>
             <div className="flex text-[#9747ff] sm:mb-10 sm:mr-10 mr-4 mb-10">
                 <div className="icons mx-2 hover:text-white cursor-pointer active:scale-95">
-                    <a href={siteConfig.socials.gtihub}>
+                    <a href={siteConfig.socials.github}>
                         <FaGithubSquare size={30} />
                     </a>
                 </div>
