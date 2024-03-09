@@ -19,7 +19,7 @@ const LPCategories = () => {
     <div className='max-w-6xl mx-auto m-5'>
         <div className='flex items-end justify-between my-2 md:my-5 m-3'>
         <div className='text-xl md:text-3xl font-popins bg-gradient-course bg-clip-text text-transparent w-[250px] font-bold'>Categories</div>
-        <div className='text-[10px] sm:text-xs text-color-2 underline cursor-pointer cat:hidden' onClick={handleClick}>{value}</div>
+        <div className='text-[10px] sm:text-xs text-color-2 underline cursor-pointer backdrop-blur-[5px] z-2' onClick={handleClick}>{value}</div>
         </div>
         <div className={`flex flex-wrap justify-center overflow-hidden ${seeAll?'h-auto':'h-20 md:h-40'}`}>
         {categories.map((category,i)=><CategoryCard key={i} category={category}/>)}

@@ -99,7 +99,6 @@ module.exports = {
       },
       screens: {
         mid: "439px",
-        cat: "1080px"
       },
     },
   },
