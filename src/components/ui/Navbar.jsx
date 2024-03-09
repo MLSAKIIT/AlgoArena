@@ -13,7 +13,7 @@ const Navbar = () => {
     setOpen(!open);
   };
   const { data: session } = useSession();
-  const pathname=usePathname();
+  const pathname = usePathname();
   return (
     <>
       <div className="2xl:px-20 lg:flex justify-between  w-full  max-w-[120rem] lg:p-6 hidden z-10">
@@ -62,7 +62,7 @@ const Navbar = () => {
             <Link
               href={siteConfig.navBarLinks.community}
               className={`flex justify-center text-white pr-2 pl-2 gap-2 z-10 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
-               pathname.startsWith(siteConfig.navBarLinks.community)
+                pathname.startsWith(siteConfig.navBarLinks.community)
                   ? "border-2 border-color-3  shadow-[0_0_1rem_0px_#9d5ae3] rounded pt-2 pb-2  bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
                   : ""
               }`}
@@ -207,14 +207,14 @@ const Navbar = () => {
           {session ? (
             <Link
               href={siteConfig.navBarLinks.dashboard}
-              className="bg-color-2 text-[white] pr-5 pl-5 pt-2 pb-2 mr-6 ml-10 rounded-xl  hover:bg-gradient-to-r from-color-2 to-color-4"
+              className="bg-color-2 text-[white] absolute bottom-40 pr-8 pl-8 pt-2 pb-2 mr-6 ml-10 rounded-xl  hover:bg-gradient-to-r from-color-2 to-color-4"
             >
               Dashboard
             </Link>
           ) : (
             <Link
               href="/sign-in"
-              className="bg-color-2 text-[white] flex  mr-8 ml-8 mt-3 justify-center pt-2 pb-2    rounded-xl hover:bg-gradient-to-r from-color-2 to-color-4"
+              className="bg-color-2 text-[white] flex absolute bottom-32  mr-8 ml-8 mt-3 justify-center pt-2 pb-2    rounded-xl hover:bg-gradient-to-r from-color-2 to-color-4"
             >
               Login
             </Link>
@@ -222,7 +222,7 @@ const Navbar = () => {
           {session && (
             <Link
               href="/sign-out"
-              className="bg-color-2 mt-2 text-[white] pr-5 pl-5 pt-2 pb-2 mr-6 ml-10 rounded-xl  hover:bg-gradient-to-r from-color-2 to-color-4"
+              className="bg-color-2 text-[white] absolute bottom-24 pr-11 pl-11 pt-2 pb-2 mr-6 ml-10 rounded-xl  hover:bg-gradient-to-r from-color-2 to-color-4"
             >
               Sign out
             </Link>
