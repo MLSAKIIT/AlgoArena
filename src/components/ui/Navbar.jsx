@@ -13,7 +13,7 @@ const Navbar = () => {
     setOpen(!open);
   };
   const { data: session } = useSession();
-  const pathname=usePathname();
+  const pathname = usePathname();
   return (
     <>
       <div className="2xl:px-20 lg:flex justify-between  w-full  max-w-[120rem] lg:p-6 hidden z-10">
@@ -62,7 +62,7 @@ const Navbar = () => {
             <Link
               href={siteConfig.navBarLinks.community}
               className={`flex justify-center text-white pr-2 pl-2 gap-2 z-10 hover:bg-gradient-horizon hover:bg-clip-text hover:text-transparent ${
-               pathname.startsWith(siteConfig.navBarLinks.community)
+                pathname.startsWith(siteConfig.navBarLinks.community)
                   ? "border-2 border-color-3  shadow-[0_0_1rem_0px_#9d5ae3] rounded pt-2 pb-2  bg-color-4 bg-opacity-25 text-transparent backdrop-blur-sm"
                   : ""
               }`}
@@ -136,7 +136,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div
-        className={`fixed top-0 left-0 w-3/5 h-full z-10  lg:hidden bg-[#161A33]  border-white border-opacity-25 border transform duration-300 ${
+        className={`fixed top-0 left-0 w-3/5 h-full z-30  lg:hidden bg-[#161A33]  border-white border-opacity-25 border transform duration-300 ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -149,12 +149,12 @@ const Navbar = () => {
           className="absolute top-0 right-0 m-4"
         />
 
-        <div className="mt-40 flex flex-col justify-center">
-          <div className="my-4 border-t border-[#939393] mr-6 ml-6"></div>
+        <div className="mt-40 flex flex-col justify-center bg-[#161A33]">
+          <div className="my-4 border-t border-[#939393] mr-6 ml-6 bg-[#161A33]"></div>
 
           <Link
             href={siteConfig.navBarLinks.home}
-            className="flex  text-[white] rounded-xl gap-2 px-4 py-2 mr-6 ml-6 hover:bg-color-3"
+            className="flex  text-[white] rounded-xl gap-2 px-4 py-2 mr-6 ml-6 bg-[#161A33] hover:bg-color-3"
           >
             <Image
               src="/assets/icons/home_fill.png"
@@ -207,14 +207,14 @@ const Navbar = () => {
           {session ? (
             <Link
               href={siteConfig.navBarLinks.dashboard}
-              className="bg-color-2 text-[white] pr-5 pl-5 pt-2 pb-2 mr-6 ml-10 rounded-xl  hover:bg-gradient-to-r from-color-2 to-color-4"
+              className="bg-color-2 text-[white] pr-8 pl-8 pt-2 pb-2 mr-6 ml-10  min-w-32 mb-5 max-w-[40px] flex items-center justify-center rounded-xl  hover:bg-gradient-to-r from-color-2 to-color-4"
             >
               Dashboard
             </Link>
           ) : (
             <Link
               href="/sign-in"
-              className="bg-color-2 text-[white] flex  mr-8 ml-8 mt-3 justify-center pt-2 pb-2    rounded-xl hover:bg-gradient-to-r from-color-2 to-color-4"
+              className="bg-color-2 text-[white] flex  mr-8 ml-8 mt-3 justify-center pt-2 pb-2 min-w-32 max-w-[60px]  items-center  rounded-xl hover:bg-gradient-to-r from-color-2 to-color-4"
             >
               Login
             </Link>
@@ -222,7 +222,7 @@ const Navbar = () => {
           {session && (
             <Link
               href="/sign-out"
-              className="bg-color-2 mt-2 text-[white] pr-5 pl-5 pt-2 pb-2 mr-6 ml-10 rounded-xl  hover:bg-gradient-to-r from-color-2 to-color-4"
+              className="bg-color-2 text-[white]  pt-2 pb-2 mr-6 ml-10 rounded-xl mb-10 min-w-32  flex max-w-[60px]   justify-center hover:bg-gradient-to-r from-color-2 to-color-4"
             >
               Sign out
             </Link>
