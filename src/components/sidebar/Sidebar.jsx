@@ -55,11 +55,11 @@ const Sidebar = () => {
           </div>
 
           <Link
-            href="/dashboard/your-courses"
+            href="/dashboard"
             onClick={onClick}
             className={`flex items-center text-nowrap font-medium gap-2 sm:-px-4 px-4 sm:px-[9px] md:px-4 py-2 md:mx-4 sm:mx-2 mx-4  hover:bg-color-2 hover:text-white sm:text-[14px] 2xl:text-xl lg:text-[14px] text-[20px] rounded-xl my-4
                 ${
-                  usePathname() === "/dashboard/your-courses"
+                  usePathname() === "/dashboard"
                     ? "border-2  border-color-2 text-color-2"
                     : "text-white "
                 } 
