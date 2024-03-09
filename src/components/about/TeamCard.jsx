@@ -43,21 +43,21 @@ const TeamCard = ({
         onMouseLeave={onHoverHide}
       >
         <Image
-          src="/assets/icons/GitHub.png"
+          src="/assets/icons/github.svg"
           alt="GitHub link"
           width={50}
           height={50}
           className="w-8 h-8"
         />
         <Image
-          src="/assets/icons/LinkedIn.png"
+          src="/assets/icons/linkedin.svg"
           alt="LinkedIn link"
           width={50}
           height={50}
           className="w-8 h-8"
         />
         <Image
-          src="/assets/icons/Instagram.png"
+          src="/assets/icons/instagram.svg"
           alt="Instagram link"
           width={50}
           height={50}
