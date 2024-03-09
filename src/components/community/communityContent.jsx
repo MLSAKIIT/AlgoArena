@@ -1,28 +1,24 @@
-"use client"
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
 
-const Content = () => {
+const Content = ({ content }) => {
   const [expanded, setExpanded] = useState(false);
-
-  const handleReadMore = () => {
-    setExpanded(!expanded);
-  };
-
   return (
-    <div className={`${expanded ? 'h-auto' : 'h-full'} md:h-auto`}>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque illum numquam corrupti quasi maiores laboriosam neque repudiandae quibusdam, quam ipsam tempore itaque obcaecati et ratione debitis, unde iusto omnis id unde iusto omnis id omnis id
-      </p>
-      {!expanded && (
-        <a href="#" onClick={handleReadMore} className="text-purple-500 underline underline-offset-4">
-          read more
-        </a>
+    <div className={`${expanded ? "h-auto" : "h-full"} md:h-auto my-2`}>
+      {expanded ? (
+        <span className="break-words">{content}</span>
+      ) : (
+        <span className="break-words">{content.substring(0, 100)}</span>
       )}
-      {expanded && (
-        <div>
-          <p>Lorem ipsum dolor amet consectetur adipisicing elit. Doloremque illum numquam corrupti quasi maiores laboriosam neque repudiandae quibusdam, quam ipsam tempore itaque obcaecati et ratione debitis, unde iusto omnis id unde iusto omnis id omnis id
-            </p>  
-            
-        </div>
+      <br />
+      {content.length > 101 && (
+        <a
+          href="#"
+          onClick={() => setExpanded(!expanded)}
+          className="text-purple-500 underline underline-offset-4"
+        >
+          read {expanded ? "less" : "more"}
+        </a>
       )}
     </div>
   );
