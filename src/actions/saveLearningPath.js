@@ -3,6 +3,7 @@
 import { authOptions } from "@/server/auth/options";
 import { getServerSession } from "next-auth";
 import { revalidatePath } from "next/cache";
+import { db } from "@/server/db";
 
 export const saveLearningPathAction = async (id, domain) => {
   try {
@@ -44,6 +45,7 @@ export const saveLearningPathAction = async (id, domain) => {
     });
     return { success: "Learning path saved successfully" };
   } catch (error) {
+    console.error("Error saving learning path", error);
     return { error: "Something went wrong" };
   } finally {
     revalidatePath(`/learning-paths/${domain}/${id}`);

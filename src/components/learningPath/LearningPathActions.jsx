@@ -2,23 +2,8 @@ import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import LearningPathForkForm from "./LearningPathForkForm";
-import { checkIfLearningPathIsSaved } from "@/data/learning-paths";
+import { checkIfLearningPathIsSaved, getParentLearningPath } from "@/data/learning-paths";
 import LearningPathSaveForm from "./LearningPathSaveForm";
-
-const getParentLearningPath = async (id) => {
-  const data = await db.learningPath.findUnique({
-    where: {
-      id,
-      isPublished: true,
-    },
-    include: {
-      user: {
-        select: { name: true },
-      },
-    },
-  });
-  return data;
-};
 
 async function LearningPathActions({ isForked, parentPathId, id }) {
   const parentLearningPath = isForked
