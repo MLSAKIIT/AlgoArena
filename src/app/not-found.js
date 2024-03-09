@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function NotFound() {
-    const [countdown, setCountdown] = useState(9);
+    const [countdown, setCountdown] = useState(6);
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -44,7 +44,7 @@ export default function NotFound() {
                             <div className="text-2xl sm:text-center mt-8 text-[#E1C3FF]">
                                 PAGE NOT FOUND <br />
                                 <div className="flex justify-center py-3 items-center">
-                                    <Image src={"Error.svg"} alt="error" height={100} width={100} />
+                                    <Image src={"/Error.svg"} alt="error" height={100} width={100} />
                                 </div>
                             </div>
                         </div>
