@@ -45,7 +45,7 @@ const page = () => {
         </div>
 
         <div className="relative flex  z-10 flex-col gap-6 text-wrap m-auto h-[40rem] max-w-[120rem] justify-center items-center">
-          <div className="absolute inset-0  ">
+          <div className="absolute inset-0 hidden md:block">
             <Image
               src="/assets/about/gradient.png"
               alt="gradient"
