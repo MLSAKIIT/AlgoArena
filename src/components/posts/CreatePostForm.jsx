@@ -16,9 +16,11 @@ import Link from "next/link";
 import { toast } from "sonner";
 import { createPost } from "@/actions/post";
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const CreatePostForm = () => {
-  const session = useSession();
+  const session = useSession()
+  const router = useRouter()
   const {
     values,
     errors,
@@ -39,6 +41,7 @@ const CreatePostForm = () => {
         const newPost = await createPost(values, session.data.user.id);
         if (newPost && !newPost.error) {
           toast.success("Post created successfully");
+          router.push("/community")
         } else {
           const errorMessage = newPost
             ? newPost.error
@@ -55,7 +58,7 @@ const CreatePostForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-8 p-4 ">
-      <Card>
+      <div>
         <CardHeader className="space-y-1">
           <CardTitle className="text-3xl text-white">Create a Post</CardTitle>
         </CardHeader>
@@ -120,7 +123,7 @@ const CreatePostForm = () => {
           </div>
         </CardContent>
         <hr className="border-t-3 border-color-2 mb-5"></hr>
-      </Card>
+      </div>
       <div className="flex justify-end pr-10 pt-3 ">
         <Link href="/community">
           <Button
