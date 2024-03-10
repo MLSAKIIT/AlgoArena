@@ -108,6 +108,7 @@ export function LoginForm({ callbackUrl }) {
                 name="password"
                 placeholder="Password"
                 type={showPassword ? "text" : "password"}
+                passwordState={showPassword}
                 value={values.password}
                 onChange={handleChange}
                 showPassword={() => setShowPassword((prev) => !prev)}
