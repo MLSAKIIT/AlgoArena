@@ -14,9 +14,8 @@ import MoreCoursesSwiper from "./MoreCoursesSwiper";
 export default function CompletedCourses({data}) {
     // const { data: session } = useSession();
     return (
-        <div className="overflow-hidden min-h-screen top-auto flex-auto xl:max-w-full  px-5 lg:max-w-7xl md:max-w-5xl">
-            <div className="relative">
-                <div className="absolute md:h-[75rem] md:w-[75rem] sm:h-[67rem] sm:w-[47rem] lg:top-[-180px] md:top-0 sm:top-[-20px] 2xl:left-[-80px] lg:left-[-250px] left-[-270px] overflow-hidden lg:rotate-[0deg] md:rotate-[10deg] sm:rotate-[-20deg] rotate-0 lg:block h-[60rem] w-[40rem]">
+        <div className="overflow-hidden min-h-screen top-auto flex-auto xl:max-w-full px-5 lg:max-w-7xl md:max-w-5xl items-center">
+                {/* <div className="absolute md:h-[75rem] md:w-[75rem] sm:h-[67rem] sm:w-[47rem] lg:top-[-180px] md:top-0 sm:top-[-20px] 2xl:left-[-80px] lg:left-[-250px] left-[-270px] overflow-hidden lg:rotate-[0deg] md:rotate-[10deg] sm:rotate-[-20deg] rotate-0 lg:block h-[60rem] w-[40rem]">
                     <Image
                         src="/assets/icons/Ellipse3.svg"
                         alt="Ellipse"
@@ -52,42 +51,40 @@ export default function CompletedCourses({data}) {
           >
             Sign out
           </Link>
-        )} */}
-                <div className="flex w-full lg:ml-80 md:mt-12 mt-6 overflow-hidden relative pl-6">
+                )} */}
+                {/* <div className="flex w-full lg:ml-80 md:mt-12 mt-6 overflow-hidden relative pl-6">
                     <Title text="COMPLETED COURSES" />
+                </div> */} 
+
+                <div className="flex flex-col mt-5 mb-[20px]">
+                    <CompletedCoursesList data={data}  className="mb-[50px]"/>
                 </div>
 
-                <div className="flex flex-col mt-5">
-                    <CompletedCoursesList data={data} />
-                </div>
+                <div className="flex flex-col  xl:max-w-7xl md:max-w-5xl sm:max-w-4xl max-w-screen">
+                  
+                  <div className="md:text-4xl text-[30px] text-wrap flex bg-gradient-videos text-transparent bg-clip-text font-popins font-[700] mt-10 lg:ml-[69px] sm:ml-[60px] ml-[40px] sm:w-[350px]">MORE COURSES <br /> FOR YOU</div>
 
-                <div className="HEADING DIV md:mt-12 mt-6 overflow-hidden relative flex w-full lg:ml-80 md:ml-60">
-                    <Title text="MORE COURSES FOR YOU" />
-                </div>
+                  {/* Sort courses for mobile devices */}
+                  <SortCourses />
 
-                <SortCourses />
+                  {/* Dashboard lower part */}
+                  {/* <div className=" box-border m-auto sm:auto-cols-max mt-12 gap-60 sm:grid sm:grid-cols-3 lg:px-auto md:px-auto flex sm:overflow-visible overflow-scroll whitespace-nowrap no-scrollbar py-4  "> */}
+                  <div
+                      className="z-1 flex flex-wrap sm:auto-cols-max md:flex-nowrap items-center justify-start gap-[30px] xl:gap-[20px] mt-16 sm:overflow-hidden overflow-scroll md:ml-10 sm:ml-[45px] ml-[40px] whitespace-nowrap no-scrollbar py-4  "
+                      style={{flexWrap: "wrap"}}>
+                        <MoreCourses/>
+                      {/* eclipse image */}
+                      <div className=" -z-10 absolute w-[55rem] h-[40rem] right-0 overflow-hidden lg:block hidden pointer-events-none">
+                          <Image src="/dashboard-ellipse2.svg" alt="Ellipse" fill />
+                      </div>
+                  </div>
 
-                <div className=" box-border lg:w-[95%] xl:w-4/5  m-auto sm:auto-cols-max mt-12 sm:gap-6 gap-3 sm:grid sm:grid-cols-3 lg:px-auto md:px-auto sm:overflow-visible  overflow-scroll whitespace-nowrap no-scrollbar py-4 sm:w-11/12 w-screen hidden">
-                    <MoreCourses />
-                    <div className="absolute w-[55rem] h-[40rem] right-0 overflow-hidden block">
-                        <Image src="/dashboard-ellipse2.svg" alt="Ellipse" fill />
-                    </div>
-                </div>
-                <div className="z-50 w-screen sm:hidden my-5">
-                    <MoreCoursesSwiper />
-                    {/* <div className="absolute w-[55rem] h-[40rem] right-0 overflow-hidden block -z-20">
-              <Image src="/dashboard-ellipse2.svg" alt="Ellipse" fill />
-            </div> */}
-                </div>
-
-                {/* <div className="overflow-hidden pt-32 sm:mb-[-25px] mb-5 w-screen min-w-[100vw] max-w-full z-30">
-          <Socials/>
-        </div> */}
-                <div className="sm:hidden visible overflow-hidden pt-32 sm:mb-[-25px] mb-4 w-screen min-w-[100vw] self-center justify-self-center max-w-full z-30">
-                    <Socials />
-                </div>
-            </div>
-               
-        </div>
-    );
+                  {/* Footer part for phone devices */}
+                  <div className="sm:hidden visible overflow-hidden pt-32 sm:mb-[-25px] mb-4 w-screen min-w-[100vw] self-center justify-self-center max-w-full z-30">
+                      <Socials />
+                  </div>
+              </div>
+          </div>
+    
+  );
 }
