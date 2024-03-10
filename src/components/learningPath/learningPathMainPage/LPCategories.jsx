@@ -29,7 +29,7 @@ const LPCategories = () => {
         </div>
       </div>
       <div
-        className={`flex flex-wrap justify-center overflow-hidden ${
+        className={`flex flex-wrap justify-center overflow-hidden max-w-6xl mr-8 ml-8 ${
           seeAll ? "h-auto" : "h-20 md:h-40"
         }`}
       >
