@@ -30,7 +30,7 @@ const Sidebar = () => {
           <IoMenuOutline onClick={onClick} className={`left-0 z-50`} size={50} />
         </div>
       <div
-        className={`fixed top-0 left-0 overflow-hidden w-4/5 md:w-[38%] lg:w-[20%] xl:w-1/5 2xl:w-1/5 h-full z-[99] bg-[#161a33] sm:px-2 px-10 text-transparent border-r-2 border-color-3 min-h-max border transform duration-300 translate-x-0 lg:visible ${
+        className={`fixed top-0 left-0 overflow-hidden w-4/5 md:w-[38%] lg:w-[20%] xl:w-1/5 2xl:w-1/5 h-full z-[99] bg-[#161a33] sm:px-1 px-7 text-transparent border-r-2 border-color-3 min-h-max border transform duration-300 translate-x-0 lg:visible ${
             // open ? "translate-x-0" : "-translate-x-full"
             open ? "visible" : "invisible"
           }`}
