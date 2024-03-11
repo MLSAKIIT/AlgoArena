@@ -76,7 +76,7 @@ const LearningPathsPage = async ({ params: { domain }, searchParams }) => {
   return (
     <Fragment>
       <Navbar />
-      <div className="container relative flex flex-col justify-center items-center gap-10 max-w-[120rem]">
+      <div className="container relative flex flex-col justify-center items-center gap-10 max-w-[120rem]  overflow-hidden mb-10">
         <SearchBar domain={domain} query={searchParams.q} />
         <div className="absolute lg:h-[80rem] lg:w-[78rem] lg:top-[-180px] lg:left-[-250px] lg:block hidden -z-10">
           <Image
@@ -98,8 +98,8 @@ const LearningPathsPage = async ({ params: { domain }, searchParams }) => {
           </div>
         )}
 
-        <div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="min-w-[80vw]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4  ">
             {paths.map((path) => (
               <Link
                 href={`/learning-paths/${path.domain}/${path.id}`}
@@ -120,9 +120,7 @@ const LearningPathsPage = async ({ params: { domain }, searchParams }) => {
           )}
         </div>
       </div>
-      <div className="absolute -z-10 right-0 bottom-[15rem] w-[55rem] h-[40rem]  overflow-hidden lg:block hidden pointer-events-none" style={{bottom:"0px !important"}} suppressHydrationWarning>
-        <Image src="/dashboard-ellipse2.svg" alt="Ellipse" fill />
-      </div>
+      
     </Fragment>
   );
 };
@@ -153,7 +151,7 @@ const LearningPathCard = ({ data }) => {
       </CardFooter>
       <div className="pl-6 pr-10 flex items-center justify-between gap-6 absolute bottom-6 w-full">
         <div className="flex items-center gap-2">
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <Image
               src="/assets/icons/play.png"
               alt="play icon"
