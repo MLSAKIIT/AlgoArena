@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import { IoIosClose } from "react-icons/io";
 import ChapterEdit from "./ChapterEdit";
 
-const EditSectionForm = ({ section, addChapter, handleChange }) => {
+const EditSectionForm = ({ chapters, addChapter, handleChange }) => {
   return (
     <>
       <div className="z-20 top-10 flex justify-center items-center">
@@ -15,8 +15,8 @@ const EditSectionForm = ({ section, addChapter, handleChange }) => {
           <CardContent className="flex p-0 justify-center flex-col gap-4 items-center">
             <Label className="w-full text-start">Chapters</Label>
 
-            {section.chapters.length > 0 &&
-              section.chapters.map((chapter, index) => (
+            {chapters.length > 0 &&
+              chapters.map((chapter, index) => (
                 <ChapterEdit
                   key={index}
                   index={index}

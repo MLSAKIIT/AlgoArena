@@ -12,7 +12,7 @@ export const Tags = ({ setFieldValue, value }) => {
   };
 
   const addTag = () => {
-    if (currentTag.length > 2) {
+    if (currentTag.length > 1) {
       const newValue = [...value];
       newValue.push(currentTag);
       setFieldValue("tags", newValue);
