@@ -110,6 +110,7 @@ export default function RegisterForm() {
               placeholder="Password"
               type={showPassword ? "text" : "password"}
               value={values.password}
+              passwordState={showPassword}
               onChange={handleChange}
               onBlur={handleBlur}
               className={cn(`${errors.password && "border-red-500"}`)}
@@ -123,6 +124,7 @@ export default function RegisterForm() {
               name="confirmPassword"
               placeholder="Confirm Password"
               type={showConfirmPassword ? "text" : "password"}
+              passwordState={showConfirmPassword}
               showPassword={() => setShowConfirmPassword((prev) => !prev)}
               value={values.confirmPassword}
               onChange={handleChange}

@@ -1,9 +1,10 @@
 import * as React from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { IoMdEyeOff } from "react-icons/io";
 
 const PasswordInput = React.forwardRef(
-  ({ showPassword, className, type, ...props }, ref) => {
+  ({ showPassword, passwordState, className, type, ...props }, ref) => {
     return (
       <div className="flex relative flex-row">
         <input
@@ -20,12 +21,16 @@ const PasswordInput = React.forwardRef(
           onClick={showPassword}
           className="absolute z-20 bottom-0 top-0 right-4"
         >
-          <Image
-            src="/assets/auth/eye.svg"
-            alt="show-password"
-            height={24}
-            width={24}
-          />
+          {!passwordState ? (
+            <Image
+              src="/assets/auth/eye.svg"
+              alt="show-password"
+              height={24}
+              width={24}
+            />
+          ) : (
+            <IoMdEyeOff className="text-color-2 text-2xl" />
+          )}
         </button>
       </div>
     );

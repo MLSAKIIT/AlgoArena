@@ -139,9 +139,11 @@ const Community = () => {
             Create Post
           </Link>
 
-          <div className="mt-4 py-2 text-center bg-white text-purple-500 border-white border font-bold rounded-full shadow-[0_0_1rem_0px_#9d5ae3]">
-            Create Community
-          </div>
+          <Link href="/dashboard/create-path">
+            <div className="mt-4 py-2 text-center bg-white text-purple-500 border-white border font-bold rounded-full shadow-[0_0_1rem_0px_#9d5ae3]">
+              Create Learning Path
+            </div>
+          </Link>
         </div>
 
         <div className="h-300 p-4 mt-8 border-solid border-purple-500 rounded-lg border-2">
