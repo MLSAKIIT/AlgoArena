@@ -7,16 +7,15 @@ const Hero = () => {
     <div>
       <Navbar />
       <div className="lg:pt-32 pt-10 mb-10 lg:h-96 lg:mb-32 grid  max-w-[120rem]  mx-auto place-items-center">
-        <div className="flex flex-wrap  lg:flex-nowrap justify-evenly mid:gap-x-10/ md:gap-20 mid:mx-4 items-center lg:mx-auto w-[75%]">
+        <div className="flex flex-wrap  lg:flex-nowrap justify-evenly mid:gap-x-10 md:gap-y-10 mdxs:gap-32 mid:mx-4 items-center lg:mx-auto w-[75%]">
           <div className="relative ">
-            <div className="font-theboldfont text-white lg:text-4xl text-xl mid:text-2xl text-center mid:text-start">
-              EXPLORE NEW
-            </div>
-            <div className="font-theboldfont bg-gradient-horizon bg-clip-text text-[transparent] lg:text-4xl mb-1 text-xl mid:text-2xl  mid:text-start mid:hidden block text-center">
+            <div className="font-theboldfont text-white lg:text-4xl text-xl mid:text-2xl text-center mid:text-start md:leading-3 tracking-wider mb-1">
+              EXPLORE &nbsp;NEW
+            </div>            <div className="font-theboldfont bg-gradient-horizon bg-clip-text text-[transparent] lg:text-4xl mb-1 text-xl mid:text-2xl  mid:text-start mid:hidden block text-center md:leading-3 tracking-wider">
               HORIZON
             </div>
             <div className="flex">
-              <div className="font-theboldfont bg-gradient-horizon bg-clip-text text-[transparent] lg:text-4xl mb-1 text-xl mid:text-2xl  mid:text-start hidden mid:flex">
+              <div className="font-theboldfont bg-gradient-horizon bg-clip-text text-[transparent] lg:text-4xl mb-1 text-xl mid:text-2xl  mid:text-start hidden mid:flex tracking-wider">
                 HORIZON
               </div>
               <Image
@@ -28,7 +27,7 @@ const Hero = () => {
               />
             </div>
 
-            <div className="lg:text-xl text-md lg:ml-1 mid:text-xl ">
+            <div className="lg:text-xl text-md lg:ml-1 mid:text-xl md:leading-3 md:mt-1">
               Learn Anything, Anytime, Anywhere
             </div>
             <div className="absolute lg:h-[42.3rem] lg:w-[70rem] lg:top-[-180px] lg:left-[-250px] overflow-hidden rotate-[-15deg] lg:block hidden">
