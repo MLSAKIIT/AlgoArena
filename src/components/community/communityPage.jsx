@@ -16,10 +16,14 @@ const Community = () => {
   const [search, setSearch] = useState("");
   const [posts, setPosts] = useState([]);
   useEffect(() => {
+    revalidatePosts();
+  }, []);
+
+  const revalidatePosts = async () => {
     getPosts()
       .then((res) => setPosts(res))
       .catch((err) => console.log(err));
-  }, []);
+  };
   const buttonNames = ["Recent", "Popularity", "Upvotes", "Domain"];
   const [isOpen, setIsOpen] = useState(false);
   const [isFunnel, setFunnel] = useState(false);
@@ -114,7 +118,11 @@ const Community = () => {
         )}
         {postFilter(searchFilter(posts, search), condition).map(
           (post, index) => (
-            <CommunityPosts key={index} post={post} />
+            <CommunityPosts
+              key={index}
+              post={post}
+              revalidatePosts={revalidatePosts}
+            />
           )
         )}
       </div>
