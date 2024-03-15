@@ -63,7 +63,7 @@ export const likePost = async (postId, state, userId) => {
 export const savePost = async (postId, userId) => {
   try {
     const existingSavedPost = await db.savedPost.findFirst({
-      where: { postId_userId: { postId: postId, userId: userId } },
+      where: { postId: postId, userId: userId },
     });
 
     if (!existingSavedPost) {
