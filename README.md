@@ -1,7 +1,8 @@
 # MLSA ALGO ARENA
+
 ![Home Page](https://github.com/VinamraSaurav/AlgoArena/assets/80186642/19fd8666-9dab-41a1-88a5-6b0d3741791b)
- 
-## 📢 Introduction : 
+
+## 📢 Introduction :
 
 A comprehensive **learning ecosystem**, expertly built on **Next.js**, efficiently designed to cater to a diverse range of learners. We offer a wide variety of courses, including but not limited to programming, data science, design, and marketing, to name a few.
 
@@ -15,12 +16,12 @@ This project has been built to encourage and engage **learners** with a curiosit
 
 ## 📄 Key features :
 
--   **Roadmaps and Learning Paths** - Users can craft their own learning paths. These guides act as a step-by-step route, enabling learners to sift through educational content effectively.
--   **Diverse Learning Domains** - Our platform caters to a broad spectrum of interests and objectives, offering a diverse collection of resources. This includes a rich library of articles, tutorials, videos, interactive exercises, and projects to help users achieve their goals.
--   **User Accounts and Profiles** - Users can set up accounts and profiles to tailor their experiences. This feature lets them **monitor** their learning journey, bookmark their preferred resources, and interact with fellow learners.
--   **User Generated Content** - Experienced users are invited to share their own learning materials and resources, **enhancing the diversity** and depth of the platform's content.
--   **Gamification Elements** - Gamification is integrated into the platform to motivate and engage larners. This includes badges, achievements, and progress milestones, providing a **sense of accomplishment**.
--   **Udemy-like Experience** - Courses and learning paths are freely available to users. They are empowered to track their progress, acknowledge completed sections, provide feedback through reviews, and earn completion certificates. This feature fosters an inclusive learning environment and motivates learners to actively interact with the content.
+- **Roadmaps and Learning Paths** - Users can craft their own learning paths. These guides act as a step-by-step route, enabling learners to sift through educational content effectively.
+- **Diverse Learning Domains** - Our platform caters to a broad spectrum of interests and objectives, offering a diverse collection of resources. This includes a rich library of articles, tutorials, videos, interactive exercises, and projects to help users achieve their goals.
+- **User Accounts and Profiles** - Users can set up accounts and profiles to tailor their experiences. This feature lets them **monitor** their learning journey, bookmark their preferred resources, and interact with fellow learners.
+- **User Generated Content** - Experienced users are invited to share their own learning materials and resources, **enhancing the diversity** and depth of the platform's content.
+- **Gamification Elements** - Gamification is integrated into the platform to motivate and engage larners. This includes badges, achievements, and progress milestones, providing a **sense of accomplishment**.
+- **Udemy-like Experience** - Courses and learning paths are freely available to users. They are empowered to track their progress, acknowledge completed sections, provide feedback through reviews, and earn completion certificates. This feature fosters an inclusive learning environment and motivates learners to actively interact with the content.
 
 ## 🚀 Enhanced Feature :
 
@@ -36,8 +37,9 @@ Introducing Domain Groups, a power-packed addition that supercharges AlgoArena's
 
 |   CONTRIBUTORS    |   MAINTAINERS   |   MENTORS   |  CONENT WRITER  |
 | :---------------: | :-------------: | :---------: | :-------------: |
-|    Utkarsh Jha    | Manish Malhotra | Amaan Bhati | Preasha Ghoshal |
-|  Vinamra Saurav   |   Ankit Kumar   |  Harsh Raj  |                 |
+|    Vaibhav Raj    |   Ankit Kumar   | Amaan Bhati | Preasha Ghoshal |
+|    Utkarsh Jha    | Manish Malhotra |  Harsh Raj  |                 |
+|  Vinamra Saurav   |                 |             |                 |
 | Soumyadeep Mitra  |                 |             |                 |
 |  Akangkha Sarkar  |                 |             |                 |
 |      Shruti       |                 |             |                 |
